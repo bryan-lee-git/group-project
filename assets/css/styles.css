@@ -1,0 +1,30 @@
+body{
+    background: url(../images/group-stage.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+#carouselRow{
+    position: relative;
+    top: 250px;
+}
+
+#tab-card{
+    background-image: url(../images/group-acoustic.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color: orangered;
+}
+#video-card{
+    background-image: url(../images/group-guitarist.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color: orangered;
+}
+#metronome-card{
+    background-image: url(../images/group-metronome.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color: orangered;
+
+}

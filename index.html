@@ -5,9 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>We are the Panda Warriors!</title>
+
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="./assets/css/reset.css"> -->
+    <link rel="stylesheet" href="./assets/css/styles.css">
+
 </head>
-<body>
-    <h1>Panda Warriors!!!</h1>
-     <h2>Are we warriors fighting pandas or pandas who are also warriors?</h2>
+<body class="blue lighten-3">
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="#!">one</a></li>
+        <li><a href="#!">two</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">three</a></li>
+        </ul>
+        <nav>
+            <div class="nav-wrapper orange darken-3">
+                <div class="container">
+                    <a href="#!" class="brand-logo">Logo</a>
+                    <ul class="right hide-on-med-and-down">
+                    <li><a href="sass.html">Home</a></li>
+                    
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><i class="material-icons right">menu</i></a></li>
+                    </ul>
+                </div>    
+            </div>
+        </nav>
+   <div class="container">
+        
+        <div class="row">
+            <div class="col s12">
+                <h3 class="white-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+            </div>
+        </div>    
+
+        <div class="row" id= "carouselRow">
+            <div class="col s8 offset-s2">
+                <div class="carousel carousel-slider center">
+                    <div class="carousel-item waves-effect" id="tab-card" href="#one!">
+                        <h1>Guitar Tabs</h1>
+                        <h4>Search for guitar tabs from your favorite musicians</h4>
+                    </div>
+                    <div class="carousel-item waves-effect" id="video-card" href="#two!">
+                        <h1>Play-through Videos</h1>
+                        <h4>Find play-through videos</h4>
+                    </div>
+                    <div class="carousel-item waves-effect" id="metronome-card" href="#three!">
+                        <h1>Metronome</h1>
+                        <h4>A metronome to keep your rhythm</h4>
+                    </div>
+                </div>
+            </div>    
+        </div>
+    </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>    
+<script src="./assets/js/app.js"></script>
 </body>
 </html>
