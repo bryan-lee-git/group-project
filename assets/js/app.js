@@ -83,3 +83,13 @@ $(document).ready( function () {
     var search = "metallica";
     getTabs(search);
 });
+
+//js for carousel
+$('.carousel.carousel-slider').carousel({
+    fullWidth: true,
+    indicators: true
+  });
+
+//js for dropdown
+$(".dropdown-trigger").dropdown({hover: true});
+
