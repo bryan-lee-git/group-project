@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <title>Tuner</title>
+</head>
+
+    <body>
+
+        <!-- begin tuner display -->
+        <section>
+            <div class="container orange darken-3">
+                <div class="row">
+
+                    <!-- empty column -->
+                    <div class="col sm4"></div>
+
+                    <!-- tuner column -->
+                    <div style="padding-top:50px; padding-bottom: 50px;" class="col sm4 offset-s4">
+                        <canvas class="z-depth-5" style="text-shadow: 1px 1px 1px; border-radius: 150px;" height="300px" id="tuner-instance"></canvas>
+                    </div>
+
+                    <!-- empty column -->
+                    <div class="col sm4"></div>
+                    
+                </div>
+            </div>
+        </section>
+        <!-- end tuner display -->
+
+        <!-- tuner script -->
+        <script src="./js/onlinetuner.min.js"></script>
+
+    </body>
+</html>
