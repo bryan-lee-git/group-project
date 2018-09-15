@@ -1,3 +1,46 @@
+// At Beginning...
+
+$("#tabs-tab").hide();
+$("#videos-tab").hide();
+$("#tuner-tab").hide();
+$("#metronome-tab").hide();
+
+$("#tab-for-tabs").on("click", function(event){
+    $("#header").fadeOut(300);
+    $("#carouselRow").fadeOut(300);
+    $("#tabs-tab").slideToggle(1000);
+    $("#videos-tab").hide();
+    $("#tuner-tab").hide();
+    $("#metronome-tab").hide();
+})
+
+$("#tab-for-play").on("click", function(event){
+    $("#header").fadeOut(300);
+    $("#carouselRow").fadeOut(300);
+    $("#videos-tab").slideToggle(1000);
+    $("#tabs-tab").hide();
+    $("#tuner-tab").hide();
+    $("#metronome-tab").hide();
+})
+
+$("#tab-for-tuner").on("click", function(event){
+    $("#header").fadeOut(300);
+    $("#carouselRow").fadeOut(300);
+    $("#tuner-tab").slideToggle(1000);
+    $("#metronome-tab").hide();
+    $("#tabs-tab").hide();
+    $("#videos-tab").hide();
+})
+
+$("#tab-for-metronome").on("click", function(event){
+    $("#header").fadeOut(300);
+    $("#carouselRow").fadeOut(300);
+    $("#metronome-tab").slideToggle(1000);
+    $("#tabs-tab").hide();
+    $("#videos-tab").hide();
+    $("#tuner-tab").hide();
+})
+
 //----------------------------------------------------------------------------------------
 // MATERIALIZE FUNCTIONALITY
 //----------------------------------------------------------------------------------------

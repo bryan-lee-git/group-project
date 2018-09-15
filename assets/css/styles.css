@@ -2,6 +2,60 @@ body {
     background: url(../images/group-stage.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
+    font-family: 'Josefin Sans', sans-serif;
+    background-attachment: fixed;
+}
+
+nav {
+    margin-bottom: 10px;
+}
+
+h1, h4 {
+    text-shadow: 3px 3px 5px black;
+}
+
+h4 {
+    margin-bottom: 40px;
+}
+
+table, th, td, tr {
+    text-align: center;
+}
+
+input#search {
+    position: relative;
+    top: 7px;
+    height: 50px;
+}
+
+#search-icon {
+    margin-left: 160px;
+}
+
+#search-close {
+    margin-right: 160px;
+}
+
+#tabs-tab {
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px black;
+}
+
+#metro-container, .counter {
+    border-radius: 10px;
+}
+
+#bpm-area, #timer-area, #beat-area {
+    color: white;
+    font-weight: bold;
+}
+
+#play-button {
+    background-color: #1565c0;
+    color: white;
+    font-weight: bold;
 }
 
 .data-tabs {
@@ -18,15 +72,20 @@ body {
 
 .nav-wrapper {
     background-color: orangered;
+    box-shadow: 5px 5px 5px black;
 }
+
 .btn-large {
     background-color: orangered;
 }
+
 .btn-floating:hover {
     background-color: #1565c0;
 }
+
 .left-arrow {
     color: #1565c0;
+    font-weight: bold;
     position: relative;
     right: 250px;
 }
@@ -70,6 +129,15 @@ body {
 #tabs {
     background-color: rgb(21, 18, 26, 0);
     color: orangered;
+    margin-bottom: 10px;
+}
+
+#tuner-instance {
+    margin-top: 150px;
+}
+
+#metronome-tab {
+    margin-top: 50px;
 }
 
 #carouselRow {
@@ -86,3 +154,4 @@ body {
 }
 .tabs .tab a:hover, .tabs .tab a.active {
     color: #1565c0;
+}
