@@ -1,9 +1,11 @@
 body {
-    background: url(../images/group-stage.jpg);
+    background-color: #130f0e;
+    background-image: url(../images/a1-icon-vertical.png);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-position: center;
+    background-position-y: center;
+    background-size: contain;
 }
-
 .data-tabs {
     opacity: 0;
 }
@@ -80,9 +82,18 @@ body {
     position: relative;
     right: 10px;
 }
+#logo_img{
+    height: 30%;
+    width: 30%;
+}
 
 .tabs .tab a {
     color: orangered;
 }
 .tabs .tab a:hover, .tabs .tab a.active {
     color: #1565c0;
+}
+/* #logo_img{
+    position: absolute;
+    z-index: -10; 
+} */
