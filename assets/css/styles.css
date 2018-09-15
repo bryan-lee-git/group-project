@@ -1,72 +1,80 @@
-body{
+body {
     background: url(../images/group-stage.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
 }
-.data-tabs{
+
+.data-tabs {
     opacity: 0;
 }
-.tabs .indicator {
+
+.tabs .indicator  {
     position: absolute;
     bottom: 0;
     height: 2px;
-    background-color: #26a69a;
+    background-color: #1565c0;
     will-change: left, right;
 }
-.nav-wrapper{
+
+.nav-wrapper {
     background-color: orangered;
 }
-.btn-large{
+
+.btn-large {
     background-color: orangered;
 }
-.left-arrow{
-    color: #26a69a;
+
+.left-arrow {
+    color: #1565c0;
     position: relative;
-    right: 350px;
+    right: 250px;
 }
-.right-arrow{
-    color: #26a69a;
+
+.right-arrow {
+    color: #1565c0;
     position: relative;
-    left: 350px
+    left: 250px;
 }
-#welcome-header{
+
+#welcome-header {
     color: orangered;
     font-family: 'Josefin Sans', sans-serif;
 }
-#tab-card{
-    /* background-image: url(../images/group-acoustic.jpg); */
+
+#tab-card {
     background-repeat: no-repeat;
     background-size: 100%;
     color: orangered;
 }
-#video-card{
-    /* background-image: url(../images/group-guitarist.jpg); */
+
+#video-card {
     background-repeat: no-repeat;
     background-size: 100%;
     color: orangered;
 }
-#tuner-card{
-    /* background-image: url(../images/guitar_headstock.jpg); */
+
+#tuner-card {
     background-repeat: no-repeat;
     background-size: 100%;
     color: orangered;
 }
-#metronome-card{
-    /* background-image: url(../images/group-metronome.jpg); */
+
+#metronome-card {
     background-repeat: no-repeat;
     background-size: 100%;
     color: orangered;
 }
-#tabs{
-    background-color: rgb(21, 18, 26);
+
+#tabs {
+    background-color: rgb(21, 18, 26, 0);
     color: orangered;
 }
-#carouselRow{
+
+#carouselRow {
     font-family: 'Josefin Sans', sans-serif;
-    position: relative;
-    top: 250px;
 }
-#search-button{
+
+#search-button {
     position: relative;
     right: 10px;
 }
