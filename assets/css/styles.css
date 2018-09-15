@@ -1,27 +1,29 @@
-body{
+body {
     background: url(../images/group-stage.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
 }
 
-#carouselRow{
+#carouselRow {
     position: relative;
     top: 250px;
 }
 
-#tab-card{
+#tab-card {
     background-image: url(../images/group-acoustic.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
     color: orangered;
 }
-#video-card{
+
+#video-card {
     background-image: url(../images/group-guitarist.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
     color: orangered;
 }
-#metronome-card{
+
+#metronome-card {
     background-image: url(../images/group-metronome.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
