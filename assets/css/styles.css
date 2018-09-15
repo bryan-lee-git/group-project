@@ -19,11 +19,12 @@ body {
 .nav-wrapper {
     background-color: orangered;
 }
-
 .btn-large {
     background-color: orangered;
 }
-
+.btn-floating:hover {
+    background-color: #1565c0;
+}
 .left-arrow {
     color: #1565c0;
     position: relative;
@@ -40,6 +41,7 @@ body {
     color: orangered;
     font-family: 'Josefin Sans', sans-serif;
 }
+
 
 #tab-card {
     background-repeat: no-repeat;
@@ -78,3 +80,9 @@ body {
     position: relative;
     right: 10px;
 }
+
+.tabs .tab a {
+    color: orangered;
+}
+.tabs .tab a:hover, .tabs .tab a.active {
+    color: #1565c0;
