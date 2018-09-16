@@ -31,7 +31,7 @@ function getVideos(userInput) {
             var videoId = video.id.videoId;
 
             // add the video embed to the page using standard YT embed code filled in with individual video IDs
-            $("#test-area").append(
+            $("#videos-tab").append(
                 "<div style='border-radius: 10px; margin-bottom: 10px; margin-top: 10px' class='video-container responsive-video z-depth-5'><iframe src='https://www.youtube.com/embed/" + videoId + "' frameborder='0' allow='autoplay;' allowfullscreen></iframe></div>"
             )
         })

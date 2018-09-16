@@ -9,22 +9,31 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="./assets/js/metronome/metro.css">
     <link rel="stylesheet" href="./assets/css/styles.css">
     <title>A1 Guitar Learning Companion App - Created by Panda Warriors Dev - 2018</title>
 </head>
   
 <!-- Start Body -->
+  
 <body>
 
     <!-- Begin Nav Bar -->
 
     <nav>
-        <div class="nav-wrapper z-depth-5">
+        <div class="nav-wrapper">
             <div class="container">
-                <a href="#!" class="brand-logo"><img width="60px" src="./assets/images/a1-icon-45-shadow.png"></a>
+                <a href="#!" class="brand-logo"><img style="margin-top: 5px;" width="55px" src="./assets/images/a1-icon.png"></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a id="search-button" href="#"><i class="material-icons">search</i></a></li>
-                    <li><a id = "login-button" href="#"><i class= "material-icons">person</i></a></li>
+                    <li>
+                        <form>
+                            <div class="input-field">
+                              <input id="search" type="search" required>
+                              <label id="search-icon" class="label-icon" for="search"><i class="material-icons">search</i></label>
+                              <i id="search-close"class="material-icons">close</i>
+                            </div>
+                        </form>
+                    </li>
                     <li><a id="home-button" href="#"><i class="material-icons">home</i></a></li>
                     <li><a class="dropdown-trigger" id="drop-down-button" href="#!" data-target="dropdown1"><i class="material-icons right">menu</i></a></li>
                 </ul>
@@ -50,32 +59,100 @@
 
     <!-- Begin Main Container -->
 
-    <div class="container">
+    <div id="main-container" class="container">
+
+        <!-- Begin Tabbed Layout -->
+
         <div class="row user-tabs">
+
             <div class="col s12">
-              <ul class="tabs" id="tabs">
-                <li class="tab col s3"><a class="active" id="tab-for-tabs" href="#test1">Tabs</a></li>
-                <li class="tab col s3"><a class="active" id="tab-for-play" href="#test2">Play-through videos</a></li>
-                <li class="tab col s3" ><a class="active" id="tab-for-tuner" href="#test3">Tuner</a></li>
-                <li class="tab col s3"><a class="active" id="tab-for-metronome" href="#test4">Metronome</a></li>
-              </ul>
+                <ul class="tabs" id="tabs">
+                    <li class="tab col s3"><a class="active" id="tab-for-tabs" href="#tabs-tab">Tabs</a></li>
+                    <li class="tab col s3"><a class="active" id="tab-for-play" href="#videos-tab">Play-Through videos</a></li>
+                    <li class="tab col s3" ><a class="active" id="tab-for-tuner" href="#tuner-tab">Tuner</a></li>
+                    <li class="tab col s3"><a class="active" id="tab-for-metronome" href="#metronome-tab">Metronome</a></li>
+                </ul>
             </div>
-            <div class="col s12"></div>
-            <div class="col s12"></div>
-            <div class="col s12"></div>
-            <div class="col s12"></div>
+
+            <!-- Begin Tabs Content -->
+
+            <div id="tabs-tab" class="col s12">
+                <table id="artist-search" class="display">
+                    <thead>
+                        <tr>
+                            <th>Song Name</th>
+                            <th>Tabs Available</th>
+                            <th>Chords Available</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+
+            <!-- End Tabs Content -->
+
+            <!-- Begin Videos Content -->
+
+            <div id="videos-tab" class="col s12"></div>
+
+            <!-- End Videos Content -->
+
+            <!-- Begin Tuner Content -->
+
+            <div id="tuner-tab" class="col s12 center-align">
+                <canvas class="z-depth-5" style="border-radius: 150px;" height="300px" id="tuner-instance"></canvas>
+            </div>
+
+            <!-- End Tuner Content -->
+
+            <!-- Begin Metronome Tab -->
+
+            <div id="metronome-tab" class="col s12">                          
+                <section id="metro-container" class="metronome-container">
+                    <div class="counter"></div>  
+                    <i class="fa fa-cog options-btn"></i> 
+                    <div class="controls">
+                        <label>BPM:
+                        <i class="fa fa-minus bpm-minus"></i>
+                        <input id="bpm-area" type="text" value="60" class="bpm-input" />
+                        <i class="fa fa-plus bpm-plus"></i>
+                        </label>
+                        <label>Beat: <input id="beat-area" type="text" value="4" class="ts-top"/></label>
+                        <div style="margin-bottom: 15px;">
+                            <input type="checkbox" id="timer-check" />
+                            <label for="timer-check"></label>
+                            Timer: <input id="timer-area" type="text" value="60" class="timer" />
+                        </div>
+                        <button class="tap-btn">Tap</button>
+                        <button id="play-button" class="play-btn">Play</button>
+                    </div>
+                            
+                    <div class="options">
+                            <i class="fa fa-caret-down up"></i>
+                        <label>Off Beat Pitch: <input type="range" min="0" max="500" value="200" class="beat-range" /></label>
+                        <label>Accent Pitch: <input type="range" min="0" max="500" value="380" class="accent-range" /></label>
+                    </div>
+                    
+                </section>
+            </div>
+
+            <!-- End Metronome Tab -->
+
         </div>
+        
+        <!-- End Tabbed Layout -->
+
         <!-- Begin Header -->
-        <section>
+
+        <section id="header">
             <div class="row">
                 <div class="col s12">
-                    <h3 class="center-align head-three" id="welcome-header"><strong>A1 Guitar Learning</strong><br>Your guitar learning companion app.</h3>
+                    <h1 class="center-align" id="welcome-header"><strong>A1 Guitar Learning</strong></h1>
+                    <h4 class="white-text head-four center-align">Your guitar learning companion app.</h4>
                 </div>
             </div>
         </section>  
         
-        <hr class="white">
-
         <!-- End Header -->
         <!-- start of the background image -->
         <!-- <div class="row" id="img-row">
@@ -88,34 +165,35 @@
         <!-- Begin Carousel -->
 
         <div class="row" id= "carouselRow">
+            <hr class="white">
             <div class="col s12 m8 offset-m2">
                 <div class="carousel carousel-slider center">
                     <div class="carousel-item waves-effect" id="tab-card" href="#one!">
                         <h1 class="head-one">Guitar Tabs</h1>
-                        <h4 class="head-four">Search for guitar tabs from your favorite musicians</h4>
+                        <h4 class="white-text head-four">Learn songs by your favorite musicians.</h4>
                         <i class="tiny material-icons left-arrow">arrow_back</i>
-                        <a class="btn-floating btn-large" id="tab-icon"><i class="large material-icons">format_align_justify</i></a>
+                        <a class="btn-floating btn-large pulse" id="tab-icon"><i class="large material-icons">format_align_justify</i></a>
                         <i class="tiny material-icons right-arrow">arrow_forward</i>
                     </div>
                     <div class="carousel-item waves-effect" id="video-card" href="#two!">
-                        <h1 class="head-one">Play-through Videos</h1>
-                        <h4 class="head-four">Find play-through videos</h4>
+                        <h1 class="head-one">Play-Through Videos</h1>
+                        <h4 class="white-text head-four">Learn songs by watching others play.</h4>
                         <i class="tiny material-icons left-arrow">arrow_back</i>
-                        <a class="btn-floating btn-large" id="play-icon"><i class="large material-icons">play_circle_filled</i></a>
+                        <a class="btn-floating btn-large pulse" id="play-icon"><i class="large material-icons">play_circle_filled</i></a>
                         <i class="tiny material-icons right-arrow">arrow_forward</i>
                     </div>
                     <div class="carousel-item waves-effect" id="tuner-card" href="#three!">
                         <h1 class="head-one">Guitar Tuner</h1>
-                        <h4 class="head-four">Tune your instrument</h4>
+                        <h4 class="white-text head-four">Don't be a novice. Tune your instrument.</h4>
                         <i class="tiny material-icons left-arrow">arrow_back</i>
-                        <a class="btn-floating btn-large" id="tuner-icon"><i class="large material-icons">music_note</i></a>
+                        <a class="btn-floating btn-large pulse" id="tuner-icon"><i class="large material-icons">music_note</i></a>
                         <i class="tiny material-icons right-arrow">arrow_forward</i>
                     </div>
                     <div class="carousel-item waves-effect" id="metronome-card" href="#four!">
                         <h1 class="head-one">Metronome</h1>
-                        <h4 class="head-four">A metronome to keep your rhythm</h4>
+                        <h4 class="white-text head-four">A metronome to keep your rhythm.</h4>
                         <i class="tiny material-icons left-arrow">arrow_back</i>
-                        <a class="btn-floating btn-large" id="metronome-icon"><i class="large material-icons">graphic_eq</i></a>
+                        <a class="btn-floating btn-large pulse" id="metronome-icon"><i class="large material-icons">graphic_eq</i></a>
                         <i class="tiny material-icons right-arrow">arrow_forward</i>
                     </div>
                 </div>
@@ -124,27 +202,8 @@
 
         <!-- End Carousel -->
 
-        <!-- Begin Tab Table -->
-
-        <!-- <table id="artist-search" class="display">
-            <thead>
-                <tr>
-                    <th>Song Name</th>
-                    <th>Tabs Available</th>
-                    <th>Chords Available</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table> -->
-
-        <!-- End Tab Table -->
-
     <!-- End Main Container -->
 
-    <!-- TEST -->
-        <!-- <div class="row">
-            <div class="col s12 l4" style="border: 1px solid blue; height: 25px;"></div>
-        </div> -->
     </div>
 
     <!-- Scripts -->
@@ -152,7 +211,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>    
+    <script src="./assets/js/metronome/metro.js"></script>
+    <script src="./assets/js/yt/yt.js"></script>
     <script src="./assets/js/songsterr.js"></script>
+    <script src="./assets/js/tuner/js/onlinetuner.min.js"></script>
     <script src="./assets/js/app.js"></script>
 
 </body>
