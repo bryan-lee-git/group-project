@@ -40,6 +40,7 @@
 	};
 	
 	CircleWidget.prototype = {
+		
 			show : function(delta, note, info1, info2) {
 				//backgroud
 				this.ctx.fillStyle = this.bgColor;;
@@ -62,19 +63,19 @@
 				this.ctx.closePath();
 				
 				//Note info
-				this.ctx.font = '70pt Arial';
+				this.ctx.font = '70pt Impact';
 				this.ctx.textAlign = 'center';
 				this.ctx.fillStyle = this.fontColor;
 				this.ctx.fillText(note, this.canvas.width / 2, this.canvas.height / 2 + 15);
 				
 				//information 1
-				this.ctx.font = '20pt Arial';
+				this.ctx.font = '20pt Impact';
 				this.ctx.textAlign = 'center';
 				this.ctx.fillStyle = this.fontColor;
 				this.ctx.fillText(info1, this.canvas.width / 2, this.canvas.height / 2 + 55);
 				
 				//information 1
-				this.ctx.font = '15pt Arial';
+				this.ctx.font = '15pt Impact';
 				this.ctx.textAlign = 'center';
 				this.ctx.fillStyle = this.fontColor;
 				this.ctx.fillText(info2, this.canvas.width / 2, this.canvas.height / 2 + 85);

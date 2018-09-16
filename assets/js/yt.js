@@ -18,12 +18,12 @@ $("#yt-form").on("submit", function(event) {
 // function to pull videos from YT
 function getVideos(userInput) {
 
-   userInput = userInput.replace(/\s/g, "&");
+   userInput = userInput.replace(/\s/g, "+");
 
     var apiKey = "AIzaSyDEN3-Xo9I-Ycjy-cTlOygMnHB3p5ZhVg4";
 
     // Url for ajax query
-    var queryUrl = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=6&q=" + userInput + "+guitar+lesson+playthrough&type=video&videoEmbeddable=true&key=" + apiKey;
+    var queryUrl = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=6&q=" + userInput + "+guitar+lesson&type=video&videoEmbeddable=true&key=" + apiKey;
 
     // ajax query
     $.ajax({
@@ -45,7 +45,7 @@ function getVideos(userInput) {
 
             // add the video embed to the page using standard YT embed code filled in with individual video IDs
             $("#video-view").append(
-                "<div class='col s6'><div style='border-radius: 10px; margin-bottom: 10px; margin-top: 10px' class='video-container z-depth-5'><iframe src='https://www.youtube.com/embed/" + videoId + "' frameborder='0' allow='autoplay;' allowfullscreen='true'></iframe></div></div>"
+                "<div class='col s12 m6 l6'><div style='border-radius: 10px; margin-bottom: 10px; margin-top: 10px' class='video-container z-depth-5'><iframe src='https://www.youtube.com/embed/" + videoId + "' frameborder='0' allow='autoplay;' allowfullscreen='true'></iframe></div></div>"
             )
         })
 

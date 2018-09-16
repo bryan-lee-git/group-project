@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
     <!-- Google Font Embed -->
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     <!-- Google Fonts Material Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- Metronome CSS -->
@@ -48,7 +49,7 @@
         <div class="nav-wrapper">
             <div class="container">
                 
-                <a href="#!" class="brand-logo"><img style="margin-top: 5px;" width="55px" src="./assets/images/a1-icon.png"></a>
+                <a href="#home-tab" class="brand-logo"><img style="margin-top: 5px;" width="55px" src="./assets/images/a1-icon.png"></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a id="user-button" href="#log-in"><i class="material-icons">person</i></a></li>
                     <li><a id="home-button" href="#home-tab"><i class="material-icons">home</i></a></li>
@@ -120,7 +121,7 @@
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix">search</i>
                                     <input type="text" id="youtube-search" class="autocomplete">
-                                    <label for="youtube-search">Search Playthrough Videos By Artist Name</label>
+                                    <label for="youtube-search">Search Videos By Artist Name</label>
                                 </div>
                             </form>
                         </div>
@@ -146,7 +147,7 @@
                 <section id="metro-container" class="metronome-container">
                     <div class="counter"></div>  
                     <i class="fa fa-cog options-btn"></i> 
-                    <div class="controls">
+                    <div id="control-container" class="controls">
                         <label>BPM:
                         <i class="fa fa-minus bpm-minus"></i>
                         <input id="bpm-area" type="text" value="60" class="bpm-input" />
