@@ -284,7 +284,19 @@ div#artist-search_paginate.dataTables_paginate.paging_simple_numbers {
 #artist-search_paginate a {
     margin-left: 20px;
 }
+.input-field .prefix.active{
+    color: orangered !important;
+}
 
+/* label focus color */
+.input-field input:focus + label {
+    color: orangered !important;
+}
+  /* label underline focus color */
+.row .input-field input:focus {
+    border-bottom: 1px solid orangered !important;
+    box-shadow: 0 1px 0 0 orangered !important
+}
 
 @media screen and (max-width: 700px) and (min-width: 300px){
     h1{
