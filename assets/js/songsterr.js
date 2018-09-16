@@ -45,22 +45,22 @@ function fillTable(child) {
 
         // if there is a guitar tab...
         if (type === "TEXT_GUITAR_TAB") {
-            guitarTabUrl = "<a href='http://www.songsterr.com/a/wa/bestMatchForQueryString?s=" + child.title + "&a=" + child.artist.name + "&track=guitar&inst=guitar'> Guitar Tab</a>";
+            guitarTabUrl = "<a target='_blank' href='http://www.songsterr.com/a/wa/bestMatchForQueryString?s=" + child.title + "&a=" + child.artist.name + "&track=guitar&inst=guitar'> Guitar Tab</a>";
             types.push(guitarTabUrl);
 
         // if there is a bass tab...            
         } else if (type === "TEXT_BASS_TAB") {
-            bassTabUrl = "<a href='http://www.songsterr.com/a/wa/bestMatchForQueryString?s=" + child.title + "&a=" + child.artist.name + "&track=bass&inst=bass'> Bass Tab</a>";
+            bassTabUrl = "<a target='_blank' href='http://www.songsterr.com/a/wa/bestMatchForQueryString?s=" + child.title + "&a=" + child.artist.name + "&track=bass&inst=bass'> Bass Tab</a>";
             types.push(bassTabUrl);
         }
 
         // if there is a player tab...
         if (type === "PLAYER") {
-            playerTabUrl = "<a href='http://www.songsterr.com/a/wa/bestMatchForQueryString?s=" + child.title + "&a=" + child.artist.name + "&track=player'> Tab Player</a>";
+            playerTabUrl = "<a target='_blank' href='http://www.songsterr.com/a/wa/bestMatchForQueryString?s=" + child.title + "&a=" + child.artist.name + "&track=player'> Tab Player</a>";
             types.push(playerTabUrl);
         }
         if (type === "CHORDS") {
-            chordsTabUrl = "<a href='https://www.songsterr.com/a/wsa/" + child.artist.name + "-" + child.title + "-chords-s" + child.id + "'> View Chords</a>";
+            chordsTabUrl = "<a target='_blank' href='https://www.songsterr.com/a/wsa/" + child.artist.name + "-" + child.title + "-chords-s" + child.id + "'> View Chords</a>";
             types.push(chordsTabUrl);
         }
     })
