@@ -1,26 +1,4 @@
 //----------------------------------------------------------------------------------------
-// MATERIALIZE FUNCTIONALITY
-//----------------------------------------------------------------------------------------
-
- // carousel functionality (Google Materialize)
-
- $('.carousel.carousel-slider').carousel({
-    fullWidth: true,
-    indicators: true
-});
-
-$(document).ready(function(){
-    // floating buttons
-    $('.fixed-action-btn').floatingActionButton();
-    // nav bar dropdown (Google Materialize)
-    $(".dropdown-trigger").dropdown({hover: true});
-    // collapsible initialization
-    $('.collapsible').collapsible();
-    // tabs initialization
-    $('.tabs').tabs();
-});
-
-//----------------------------------------------------------------------------------------
 // Tabs Click Dispaly/Hide Functionality
 //----------------------------------------------------------------------------------------
 
@@ -31,7 +9,7 @@ $("#tuner-tab").hide();
 $("#metronome-tab").hide();
 
 // home button
-$("#home-button").on("click", function(event) {
+$("#home-button, .brand-logo").on("click", function(event) {
     $("#home-tab").slideDown(1000);
     $("#tabs-tab").hide();
     $("#videos-tab").hide();
@@ -74,3 +52,25 @@ $("#tab-for-metronome, #metronome-carousel-btn").on("click", function(event){
     $("#videos-tab").hide();
     $("#tuner-tab").hide();
 })
+
+//----------------------------------------------------------------------------------------
+// MATERIALIZE FUNCTIONALITY
+//----------------------------------------------------------------------------------------
+
+ // carousel functionality (Google Materialize)
+
+ $('.carousel.carousel-slider').carousel({
+    fullWidth: true,
+    indicators: true
+});
+
+$(document).ready(function(){
+    // nav bar dropdown (Google Materialize)
+    $(".dropdown-trigger").dropdown({hover: true});
+    // floating buttons
+    $('.fixed-action-btn').floatingActionButton();
+    // collapsible initialization
+    $('.collapsible').collapsible();
+    // tabs initialization
+    $('.tabs').tabs();
+});

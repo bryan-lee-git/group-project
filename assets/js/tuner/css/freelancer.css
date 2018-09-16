@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
 
 body {
     overflow-x: hidden;
@@ -13,7 +14,7 @@ a, a:hover, a:focus, a:active, a.active {
     outline: 0 none;
 }
 h1, h2, h3, h4, h5, h6 {
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Press Start 2P', cursive;
     font-weight: 700;
     text-transform: uppercase;
 }
@@ -36,7 +37,7 @@ hr.star-light, hr.star-primary {
 hr.star-light:after, hr.star-primary:after {
     content: "";
     display: inline-block;
-    font-family: FontAwesome;
+    font-family: 'Press Start 2P', cursive;
     font-size: 2em;
     padding: 0 0.25em;
     position: relative;
@@ -74,7 +75,7 @@ header img {
 }
 header .intro-text .name {
     display: block;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Press Start 2P', cursive;
     font-size: 2em;
     font-weight: 700;
     text-transform: uppercase;
@@ -112,7 +113,7 @@ header .intro-text .skills {
 }
 }
 .navbar {
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Press Start 2P', cursive;
     font-weight: 700;
     text-transform: uppercase;
 }
