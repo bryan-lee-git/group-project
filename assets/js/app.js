@@ -1,46 +1,3 @@
-// At Beginning...
-
-$("#tabs-tab").hide();
-$("#videos-tab").hide();
-$("#tuner-tab").hide();
-$("#metronome-tab").hide();
-
-$("#tab-for-tabs").on("click", function(event){
-    $("#header").fadeOut(300);
-    $("#carouselRow").fadeOut(300);
-    $("#tabs-tab").slideToggle(1000);
-    $("#videos-tab").hide();
-    $("#tuner-tab").hide();
-    $("#metronome-tab").hide();
-})
-
-$("#tab-for-play").on("click", function(event){
-    $("#header").fadeOut(300);
-    $("#carouselRow").fadeOut(300);
-    $("#videos-tab").slideToggle(1000);
-    $("#tabs-tab").hide();
-    $("#tuner-tab").hide();
-    $("#metronome-tab").hide();
-})
-
-$("#tab-for-tuner").on("click", function(event){
-    $("#header").fadeOut(300);
-    $("#carouselRow").fadeOut(300);
-    $("#tuner-tab").slideToggle(1000);
-    $("#metronome-tab").hide();
-    $("#tabs-tab").hide();
-    $("#videos-tab").hide();
-})
-
-$("#tab-for-metronome").on("click", function(event){
-    $("#header").fadeOut(300);
-    $("#carouselRow").fadeOut(300);
-    $("#metronome-tab").slideToggle(1000);
-    $("#tabs-tab").hide();
-    $("#videos-tab").hide();
-    $("#tuner-tab").hide();
-})
-
 //----------------------------------------------------------------------------------------
 // MATERIALIZE FUNCTIONALITY
 //----------------------------------------------------------------------------------------
@@ -52,22 +9,68 @@ $("#tab-for-metronome").on("click", function(event){
     indicators: true
 });
 
-// nav bar dropdown (Google Materialize)
-
-$(".dropdown-trigger").dropdown({hover: true});
-
-// tabs initialization
-
 $(document).ready(function(){
+    // floating buttons
+    $('.fixed-action-btn').floatingActionButton();
+    // nav bar dropdown (Google Materialize)
+    $(".dropdown-trigger").dropdown({hover: true});
+    // collapsible initialization
+    $('.collapsible').collapsible();
+    // tabs initialization
     $('.tabs').tabs();
 });
 
-// floating buttons
-$(document).ready(function(){
-    $('.fixed-action-btn').floatingActionButton();
-  });
+//----------------------------------------------------------------------------------------
+// Tabs Click Dispaly/Hide Functionality
+//----------------------------------------------------------------------------------------
 
-// collapsible initialization
-$(document).ready(function(){
-$('.collapsible').collapsible();
-});
+//hide all tab areas until called upon
+$("#tabs-tab").hide();
+$("#videos-tab").hide();
+$("#tuner-tab").hide();
+$("#metronome-tab").hide();
+
+// home button
+$("#home-button").on("click", function(event) {
+    $("#home-tab").slideDown(1000);
+    $("#tabs-tab").hide();
+    $("#videos-tab").hide();
+    $("#tuner-tab").hide();
+    $("#metronome-tab").hide();
+})
+
+// tabs tab button
+$("#tab-for-tabs, #tab-carousel-btn").on("click", function(event){
+    $("#home-tab").hide();
+    $("#tabs-tab").slideToggle(1000);
+    $("#videos-tab").hide();
+    $("#tuner-tab").hide();
+    $("#metronome-tab").hide();
+})
+
+// videos tab button
+$("#tab-for-play, #videos-carousel-btn").on("click", function(event){
+    $("#home-tab").hide();
+    $("#videos-tab").slideToggle(1000);
+    $("#tabs-tab").hide();
+    $("#tuner-tab").hide();
+    $("#metronome-tab").hide();
+})
+
+// tuner tab button
+$("#tab-for-tuner, #tuner-carousel-btn").on("click", function(event){
+    $("#home-tab").hide();
+    $("#tuner-tab").slideToggle(1000);
+    $("#metronome-tab").hide();
+    $("#tabs-tab").hide();
+    $("#videos-tab").hide();
+})
+
+// metronome tab button
+$("#tab-for-metronome, #metronome-carousel-btn").on("click", function(event){
+    $("#home-tab").hide();
+    $("#metronome-tab").slideToggle(1000);
+    $("#tabs-tab").hide();
+    $("#videos-tab").hide();
+    $("#tuner-tab").hide();
+})

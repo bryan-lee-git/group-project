@@ -2,13 +2,18 @@
 // SONGSTER API
 //----------------------------------------------------------------------------------------
 
+// hide the table
+$("#artist-search").hide();
+
 // take in the form input value when it is submitted and run it through the getTabs function
 
-$("#form-submit").on("click", function(event) {
+$("#tab-form").on("submit", function(event) {
     event.preventDefault();
-    var userInput = $("#user-input").val().trim();
-    userInput = removeSpaces(userInput);
+    var userInput = $("#tab-search").val().trim();
+    $("tbody").empty();
     getTabs(userInput);
+    $("#artist-search").fadeIn(2000);
+    document.getElementById("tab-form").reset();
 });
 
 // function to fill up the data table from the getTabs resulting children
@@ -74,6 +79,8 @@ function fillTable(child) {
 
 function getTabs(userInput) {
 
+    userInput = userInput.replace(/\s/g, "&");
+
     var queryURL = "http://www.songsterr.com/a/ra/songs/byartists.json?artists=" + userInput;
 
     $.ajax({
@@ -87,11 +94,3 @@ function getTabs(userInput) {
         $('#artist-search').DataTable();
     })
 };
-
-// testing that the getTabs function works
-
-$(document).ready(function () {
-    var search = "red hot chili peppers";
-    search = search.replace(/\s/g, "&");
-    getTabs(search);
-});
