@@ -1,5 +1,5 @@
 //----------------------------------------------------------------------------------------
-// Tabs Click Dispaly/Hide Functionality
+// Tabs Click Display/Hide Functionality
 //----------------------------------------------------------------------------------------
 
 //hide all tab areas until called upon
@@ -15,10 +15,12 @@ $("#home-button, .brand-logo").on("click", function(event) {
     $("#videos-tab").hide();
     $("#tuner-tab").hide();
     $("#metronome-tab").hide();
+    $("#tabs-tab").removeClass("active");
+    $(".dropdown-trigger").dropdown('close');
 })
 
 // tabs tab button
-$("#tab-for-tabs, #tab-carousel-btn").on("click", function(event){
+$("#tab-for-tabs, #tab-carousel-btn, #tab-dropdown").on("click", function(event){
     $("#home-tab").hide();
     $("#tabs-tab").slideToggle(1000);
     $("#videos-tab").hide();
@@ -27,7 +29,7 @@ $("#tab-for-tabs, #tab-carousel-btn").on("click", function(event){
 })
 
 // videos tab button
-$("#tab-for-play, #videos-carousel-btn").on("click", function(event){
+$("#tab-for-play, #videos-carousel-btn, #videos-dropdown").on("click", function(event){
     $("#home-tab").hide();
     $("#videos-tab").slideToggle(1000);
     $("#tabs-tab").hide();
@@ -36,7 +38,7 @@ $("#tab-for-play, #videos-carousel-btn").on("click", function(event){
 })
 
 // tuner tab button
-$("#tab-for-tuner, #tuner-carousel-btn").on("click", function(event){
+$("#tab-for-tuner, #tuner-carousel-btn, #tuner-dropdown").on("click", function(event){
     $("#home-tab").hide();
     $("#tuner-tab").slideToggle(1000);
     $("#metronome-tab").hide();
@@ -45,7 +47,7 @@ $("#tab-for-tuner, #tuner-carousel-btn").on("click", function(event){
 })
 
 // metronome tab button
-$("#tab-for-metronome, #metronome-carousel-btn").on("click", function(event){
+$("#tab-for-metronome, #metronome-carousel-btn, #metronome-dropdown").on("click", function(event){
     $("#home-tab").hide();
     $("#metronome-tab").slideToggle(1000);
     $("#tabs-tab").hide();
@@ -66,7 +68,7 @@ $("#tab-for-metronome, #metronome-carousel-btn").on("click", function(event){
 
 $(document).ready(function(){
     // nav bar dropdown (Google Materialize)
-    $(".dropdown-trigger").dropdown({hover: true});
+    $('.dropdown-trigger').dropdown({hover: true});
     // floating buttons
     $('.fixed-action-btn').floatingActionButton();
     // collapsible initialization
@@ -74,3 +76,7 @@ $(document).ready(function(){
     // tabs initialization
     $('.tabs').tabs();
 });
+
+$("#dropdown1").on("mouseleave", function(event) {
+    $("#dropdown1").fadeOut(500);
+})

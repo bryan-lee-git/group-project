@@ -3,7 +3,7 @@
 /* Global Element Styles */
 
 body {
-    background-color: #130f0e;
+    background-color: #282828;
     background-image: url(../images/a1-icon-shadow-blue.png);
     background-repeat: no-repeat;
     font-family: 'Josefin Sans', sans-serif;
@@ -27,18 +27,49 @@ h4 {
 
 /* Tabs Table Styles */
 
+table {
+    background-color: #404040;
+    border-radius: 10px;  
+    box-shadow: inset 4px 4px 10px #222, inset -4px -4px 10px #222;
+    padding: 20px;
+}
+
+table {
+    border-collapse: collapse;
+  }
+  table td {
+    border: 1px solid #606060; 
+  }
+  table tr:first-child td {
+    border-top: 0;
+  }
+  table tr td:first-child {
+    border-left: 0;
+  }
+  table tr:last-child td {
+    border-bottom: 0;
+  }
+  table tr td:last-child {
+    border-right: 0;
+  }
+
 table, th, td, tr {
     text-align: center;
 }
 
 td {
     height: 50px;
+    color: white;
+    font-weight: bold;
 }
 
 th {
+    text-shadow: 1px 1px 1px black;
     text-transform: uppercase;
     color: orangered;
     font-weight: bold;
+    font-size: 20px;
+    padding-top: 20px !important;
 }
 
 #artist-search {
@@ -48,7 +79,6 @@ th {
 /* Search Input Form Styles */
 
 #tab-form, #yt-form {
-    width: 90%;
     margin: 0 auto;
     background-color: #404040;
     padding: 30px;
@@ -63,13 +93,10 @@ th {
     padding-bottom: 40px;
 }
 
-#metro-container {
-        box-shadow: inset 4px 4px 10px #222, inset -4px -4px 10px #222;
-
-}
-
 #metro-container, .counter {
     border-radius: 10px;
+    box-shadow: inset 4px 4px 10px #222, inset -4px -4px 10px #222;
+    width: 100%;
 }
 
 #bpm-area, #timer-area, #beat-area {
@@ -96,9 +123,8 @@ th {
 /* Tuner Styles */
 
 canvas#tuner-instance {
-    font-family: 'Press Start 2P', cursive;
     margin-top: 100px;
-    box-shadow: 3px 3px 5px black, -3px -3px 5px black;
+    box-shadow: 4px 4px 10px black;
 }
 
 /* Materialize Specific Styles */
@@ -131,7 +157,7 @@ a#tab-for-tabs, a#tab-for-play, a#tab-for-tuner, a#tab-for-metronome {
 
 .nav-wrapper {
     background-color: orangered;
-    box-shadow: 5px 5px 2px black;
+    box-shadow: 5px 5px 4px black;
 }
 
 .btn-large {
@@ -144,7 +170,6 @@ a#tab-for-tabs, a#tab-for-play, a#tab-for-tuner, a#tab-for-metronome {
 
 .left-arrow {
     color: #1565c0;
-    font-weight: bold;
     position: relative;
     right: 250px;
 }
@@ -182,9 +207,18 @@ a#tab-for-tabs, a#tab-for-play, a#tab-for-tuner, a#tab-for-metronome {
     color: #1565c0;
 }
 
+#dropdown1 {
+    opacity: 1.0;
+    top: -65px;
+    background-color: #1565c0;
+}
+
+#dropdown1 a:hover {
+    background-color: orangered;
+}
+
 .dropdown-content{
     width: max-content !important;
-    height:auto !important;
 }
 
 /* DataTables.js Override Styles */
@@ -219,6 +253,39 @@ div#artist-search_paginate.dataTables_paginate.paging_simple_numbers {
     text-decoration: underline;
 }
 
+#artist-search_filter {
+    width: 50%;
+    float: left;
+    color: white;
+}
+
+#artist-search_length {
+    width: 50%;
+    float: left;
+    display:none;
+}
+
+#artist-search_filter input {
+    max-width: 90%;
+}
+
+#artist-search_info {
+    display: inline-block;
+    width: 50%;
+    margin: 0;
+}
+
+#artist-search_paginate {
+    width: 50%;
+    display: inline-block;
+    text-align:right;
+}
+
+#artist-search_paginate a {
+    margin-left: 20px;
+}
+
+
 @media screen and (max-width: 700px) and (min-width: 300px){
     h1{
         font-size: 35px;
@@ -231,6 +298,9 @@ div#artist-search_paginate.dataTables_paginate.paging_simple_numbers {
     }
     .btn-large{
         size: 20px;
+    }
+    #tab-form, #yt-form {
+        width: 90%;
     }
 }
 @media screen and (max-width: 992px) and (min-width: 701px){

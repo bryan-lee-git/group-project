@@ -6,19 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!-- DataTables.js CSS -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
     <!-- Materialize CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
+    <link type="text/css" rel="stylesheet" href="./assets/materialize/css/materialize.min.css" media="screen,projection">
+    <!-- DataTables.js CSS -->
+    <!-- <link type="text/css" rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css"> -->
     <!-- Google Font Embed -->
-    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link type="text/css" href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
     <!-- Google Fonts Material Icons -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- Metronome CSS -->
-    <link rel="stylesheet" href="./assets/js/metronome/metro.css">
+    <link type="text/css" rel="stylesheet" href="./assets/js/metronome/metro.css">
     <!-- Main CSS -->
-    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link type="text/css" rel="stylesheet" href="./assets/css/styles.css">
 
     <title>A1 Guitar Learning Companion App - Created by Panda Warriors Dev - 2018</title>
 </head>
@@ -26,22 +25,6 @@
 <!-- Start Body -->
   
 <body>
-
-    <!-- Nav Dropdown  UL -->
-
-    <div class="col s12">
-        <ul id="dropdown1" class="dropdown-content blue darken-3">
-            <li><a class="white-text" href="#tabs-tab">Tabs</a></li>
-            <li class="divider"></li>
-            <li><a class="white-text" href="#video-tab">Videos</a></li>
-            <li class="divider"></li>
-            <li><a class="white-text" href="#tuner-tab">Tuner</a></li>
-            <li class="divider"></li>
-            <li><a class="white-text" href="#metronome-tab">Metronome</a></li>
-        </ul>
-    </div>
-
-    <!-- End Nav Dropdown UL -->
 
     <!-- Begin Nav Bar -->
 
@@ -53,14 +36,26 @@
                 <ul class="right hide-on-med-and-down">
                     <li><a id="user-button" href="#log-in"><i class="material-icons">person</i></a></li>
                     <li><a id="home-button" href="#home-tab"><i class="material-icons">home</i></a></li>
-                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><i class="material-icons">menu</i></a></li>
+                    <li><a class="dropdown-trigger" data-target="dropdown1"><i class="material-icons">menu</i></a></li>
                 </ul>
-                  
             </div>    
         </div>
     </nav>
 
     <!-- End Nav Bar -->
+
+    <!-- Nav Dropdown  UL -->
+
+    <div class="col s12">
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a id="tab-dropdown"class="white-text" href="#tabs-tab">Tabs</a></li>
+            <li><a id="videos-dropdown"class="white-text" href="#video-tab">Videos</a></li>
+            <li><a id="tuner-dropdown"class="white-text" href="#tuner-tab">Tuner</a></li>
+            <li><a id="metronome-dropdown"class="white-text" href="#metronome-tab">Metronome</a></li>
+        </ul>
+    </div>
+
+    <!-- End Nav Dropdown UL -->
 
     <!-- Begin Main Container -->
 
@@ -136,7 +131,7 @@
 
             <div id="tuner-tab" class="col s12 center-align">
                 <canvas class="z-depth-5" style="border-radius: 150px;" height="300px" id="tuner-instance"></canvas><br>
-                <h4 class="white-text">Standard tuning is E-A-D-G-B-E.<br>If the circle turns green, the string is in tune.</h4>
+                <h4 class="white-text">Standard tuning is E-A-D-G-B-E.<br>If the circle turns <span class="green-text">green</span>, the string is in <span class="green-text">tune.</span></h4>
             </div>
 
             <!-- End Tuner Content -->
@@ -250,10 +245,11 @@
     
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
     <!-- DataTables.js -->
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
     <!-- Materialize -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./assets/materialize/js/materialize.min.js"></script>
     <!-- YouTube API -->
     <script src="./assets/js/yt.js"></script>
     <!-- Songsterr API -->

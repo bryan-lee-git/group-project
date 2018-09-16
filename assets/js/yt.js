@@ -11,14 +11,15 @@ $("#yt-form").on("submit", function(event) {
     var userInput = $("#youtube-search").val().trim();
     $("#video-view").empty();
     getVideos(userInput);
-    $("#video-view").fadeIn(2000);
     document.getElementById("yt-form").reset();
 })
 
 // function to pull videos from YT
 function getVideos(userInput) {
 
-   userInput = userInput.replace(/\s/g, "+");
+    $("#video-view").fadeIn(2000);
+
+    userInput = userInput.replace(/\s/g, "+");
 
     var apiKey = "AIzaSyDEN3-Xo9I-Ycjy-cTlOygMnHB3p5ZhVg4";
 
@@ -50,4 +51,4 @@ function getVideos(userInput) {
         })
 
     })
-}
+}; getVideos("beginner guitar videos");
