@@ -5,6 +5,7 @@ body {
     font-family: 'Josefin Sans', sans-serif;
     background-position: center;
     background-size: 35%;
+    background-attachment: fixed;
 }
 
 nav {
@@ -14,7 +15,6 @@ nav {
 h1, h4 {
     text-shadow: 3px 3px 5px black;
 }
-
 h4 {
     margin-bottom: 40px;
 }
@@ -28,7 +28,6 @@ input#search {
     top: 7px;
     height: 50px;
 }
-
 #search-icon {
     margin-left: 160px;
 }
@@ -164,7 +163,44 @@ input#search {
     color: #1565c0;
 }
 
-/* #logo_img{
-    position: absolute;
-    z-index: -10; 
-} */
+@media screen and (max-width: 700px) and (min-width: 300px){
+    h1{
+        font-size: 25px;
+    }
+    h4{
+        font-size: 15px;
+    }
+    p{
+        font-size: 9px;
+    }
+    .btn-large{
+        size: 20px;
+    }
+}
+@media screen and (max-width: 992px) and (min-width: 701px){
+    h1{
+        font-size: 35px;
+    }
+    h4{
+        font-size: 25px;
+    }
+    .btn-large{
+        size: 25px;
+    }
+}
+@media screen and (max-width: 1199px) and (min-width: 993px){
+    h1{
+        font-size: 45px;
+    }
+    h4{
+        font-size: 30px;
+    }
+}
+@media screen and (min-width: 1200px){
+    h1{
+        font-size: 55px;
+    }
+    h4{
+        font-size: 40px;
+    }
+} 
