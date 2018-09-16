@@ -1,8 +1,10 @@
 body {
     background-color: #130f0e;
-    background-image: url(../images/a1-icon-vertical.png);
+    background-image: url(../images/a1-icon-shadow-blue.png);
     background-repeat: no-repeat;
     font-family: 'Josefin Sans', sans-serif;
+    background-position: center;
+    background-size: 35%;
 }
 
 nav {
