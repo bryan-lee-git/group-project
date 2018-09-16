@@ -11,8 +11,8 @@ $("#tab-form").on("submit", function(event) {
     event.preventDefault();
     var userInput = $("#tab-search").val().trim();
     $("tbody").empty();
-    getTabs(userInput);
     $("#artist-search").fadeIn(2000);
+    getTabs(userInput);
     document.getElementById("tab-form").reset();
 });
 
@@ -81,7 +81,7 @@ function getTabs(userInput) {
 
     userInput = userInput.replace(/\s/g, "&");
 
-    var queryURL = "http://www.songsterr.com/a/ra/songs/byartists.json?artists=" + userInput;
+    var queryURL = "https://www.songsterr.com/a/ra/songs/byartists.json?artists=" + userInput;
 
     $.ajax({
         url: queryURL,

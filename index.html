@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
     <!-- Google Font Embed -->
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     <!-- Google Fonts Material Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- Metronome CSS -->
@@ -29,7 +30,7 @@
     <!-- Nav Dropdown  UL -->
 
     <div class="col s12">
-        <ul id="dropdown1" class="dropdown-content">
+        <ul id="dropdown1" class="dropdown-content blue darken-3">
             <li><a class="white-text" href="#tabs-tab">Tabs</a></li>
             <li class="divider"></li>
             <li><a class="white-text" href="#video-tab">Videos</a></li>
@@ -48,12 +49,11 @@
         <div class="nav-wrapper">
             <div class="container">
                 
-                <a href="#!" class="brand-logo"><img style="margin-top: 5px;" width="55px" src="./assets/images/a1-icon.png"></a>
+                <a href="#home-tab" class="brand-logo"><img style="margin-top: 5px;" width="55px" src="./assets/images/a1-icon.png"></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a id="user-button" href="#"><i class="material-icons">person</i></a></li>
-                    <li><a id="home-button" href="#"><i class="material-icons">home</i></a></li>
+                    <li><a id="user-button" href="#log-in"><i class="material-icons">person</i></a></li>
                     <li><a id="home-button" href="#home-tab"><i class="material-icons">home</i></a></li>
-                    <li><a class="dropdown-trigger" id="drop-down-button" href="#!" data-target="dropdown1"><i class="material-icons right">menu</i></a></li>
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><i class="material-icons">menu</i></a></li>
                 </ul>
                   
             </div>    
@@ -90,7 +90,7 @@
                             <div class="input-field col s12">
                                 <i class="material-icons prefix">search</i>
                                 <input type="text" id="tab-search" class="autocomplete">
-                                <label for="tab-search">Search Guitar, Bass, and Chord Tabs By Artist Name</label>
+                                <label for="tab-search">Search Tabs By Artist Name</label>
                             </div>
                         </form>
                         </div>
@@ -121,7 +121,7 @@
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix">search</i>
                                     <input type="text" id="youtube-search" class="autocomplete">
-                                    <label for="youtube-search">Search for Playthrough and Lesson Videos By Artist Name</label>
+                                    <label for="youtube-search">Search Videos By Artist Name</label>
                                 </div>
                             </form>
                         </div>
@@ -147,7 +147,7 @@
                 <section id="metro-container" class="metronome-container">
                     <div class="counter"></div>  
                     <i class="fa fa-cog options-btn"></i> 
-                    <div class="controls">
+                    <div id="control-container" class="controls">
                         <label>BPM:
                         <i class="fa fa-minus bpm-minus"></i>
                         <input id="bpm-area" type="text" value="60" class="bpm-input" />
@@ -210,30 +210,30 @@
                         <div class="carousel-item waves-effect" id="tab-card" href="#one!">
                             <h1 class="head-one blue-text darken-5">Guitar Tabs</h1>
                             <h4 class="white-text head-four">Learn songs by your favorite musicians.</h4>
-                            <i class="tiny material-icons left-arrow">arrow_back</i>
+                            <i class="medium material-icons left-arrow">arrow_back</i>
                             <a href="#tabs-tab" id="tab-carousel-btn" class="btn-floating btn-large pulse" id="tab-icon"><i class="large material-icons">format_align_justify</i></a>
-                            <i class="tiny material-icons right-arrow">arrow_forward</i>
+                            <i class="medium material-icons right-arrow">arrow_forward</i>
                         </div>
                         <div class="carousel-item waves-effect" id="video-card" href="#two!">
                             <h1 class="head-one blue-text darken-5">Play-Through Videos</h1>
                             <h4 class="white-text head-four">Learn songs by watching others play.</h4>
-                            <i class="tiny material-icons left-arrow">arrow_back</i>
+                            <i class="medium material-icons left-arrow">arrow_back</i>
                             <a href="#videos-tab" id="videos-carousel-btn" class="btn-floating btn-large pulse" id="play-icon"><i class="large material-icons">play_circle_filled</i></a>
-                            <i class="tiny material-icons right-arrow">arrow_forward</i>
+                            <i class="medium material-icons right-arrow">arrow_forward</i>
                         </div>
                         <div class="carousel-item waves-effect" id="tuner-card" href="#three!">
                             <h1 class="head-one blue-text darken-5">Guitar Tuner</h1>
                             <h4 class="white-text head-four">Don't be a novice. Tune your instrument.</h4>
-                            <i class="tiny material-icons left-arrow">arrow_back</i>
+                            <i class="medium material-icons left-arrow">arrow_back</i>
                             <a href="#tuner-tab" id="tuner-carousel-btn" class="btn-floating btn-large pulse" id="tuner-icon"><i class="large material-icons">music_note</i></a>
-                            <i class="tiny material-icons right-arrow">arrow_forward</i>
+                            <i class="medium material-icons right-arrow">arrow_forward</i>
                         </div>
                         <div class="carousel-item waves-effect" id="metronome-card" href="#four!">
                             <h1 class="head-one blue-text darken-5">Metronome</h1>
                             <h4 class="white-text head-four">A metronome to keep your rhythm.</h4>
-                            <i class="tiny material-icons left-arrow">arrow_back</i>
+                            <i class="medium material-icons left-arrow">arrow_back</i>
                             <a href="#metronome-tab" id="metronome-carousel-btn" class="btn-floating btn-large pulse" id="metronome-icon"><i class="large material-icons">graphic_eq</i></a>
-                            <i class="tiny material-icons right-arrow">arrow_forward</i>
+                            <i class="medium material-icons right-arrow">arrow_forward</i>
                         </div>
                     </div>
                 </div>    

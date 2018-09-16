@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
 /* Global Element Styles */
 
 body {
@@ -6,7 +8,7 @@ body {
     background-repeat: no-repeat;
     font-family: 'Josefin Sans', sans-serif;
     background-position: center bottom;
-    background-size: 700px;
+    background-size: 680px;
     background-attachment: fixed;
 }
 
@@ -46,17 +48,24 @@ th {
 /* Search Input Form Styles */
 
 #tab-form, #yt-form {
+    width: 90%;
+    margin: 0 auto;
     background-color: #404040;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 5px 5px 5px black;
+    box-shadow: inset 4px 4px 10px #222, inset -4px -4px 10px #222;
     height: 150px;
 }
 
 /* Metronome Styles */
 
+#control-container {
+    padding-bottom: 40px;
+}
+
 #metro-container {
-    box-shadow: 5px 5px 5px black;
+        box-shadow: inset 4px 4px 10px #222, inset -4px -4px 10px #222;
+
 }
 
 #metro-container, .counter {
@@ -80,10 +89,16 @@ th {
     font-weight: bold;
 }
 
+#play-button:hover, #tap-button:hover {
+    background-color: #404040;
+}
+
 /* Tuner Styles */
 
-#tuner-instance {
+canvas#tuner-instance {
+    font-family: 'Press Start 2P', cursive;
     margin-top: 100px;
+    box-shadow: 3px 3px 5px black, -3px -3px 5px black;
 }
 
 /* Materialize Specific Styles */
@@ -116,7 +131,7 @@ a#tab-for-tabs, a#tab-for-play, a#tab-for-tuner, a#tab-for-metronome {
 
 .nav-wrapper {
     background-color: orangered;
-    box-shadow: 5px 5px 5px black;
+    box-shadow: 5px 5px 2px black;
 }
 
 .btn-large {
@@ -206,10 +221,10 @@ div#artist-search_paginate.dataTables_paginate.paging_simple_numbers {
 
 @media screen and (max-width: 700px) and (min-width: 300px){
     h1{
-        font-size: 25px;
+        font-size: 35px;
     }
     h4{
-        font-size: 15px;
+        font-size: 20px;
     }
     p{
         font-size: 9px;
