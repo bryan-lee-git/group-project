@@ -10,10 +10,11 @@
 });
 
 $(document).ready(function(){
-    // floating buttons
-    $('.fixed-action-btn').floatingActionButton();
+    $('select').material_select();
     // nav bar dropdown (Google Materialize)
     $(".dropdown-trigger").dropdown({hover: true});
+    // floating buttons
+    $('.fixed-action-btn').floatingActionButton();
     // collapsible initialization
     $('.collapsible').collapsible();
     // tabs initialization
