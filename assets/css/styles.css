@@ -1,46 +1,62 @@
+/* Global Element Styles */
+
 body {
     background-color: #130f0e;
     background-image: url(../images/a1-icon-shadow-blue.png);
     background-repeat: no-repeat;
     font-family: 'Josefin Sans', sans-serif;
-    background-position: center;
-    background-size: 35%;
+    background-position: center bottom;
+    background-size: 700px;
+    background-attachment: fixed;
 }
 
 nav {
     margin-bottom: 10px;
+    height: 65px;
 }
 
 h1, h4 {
-    text-shadow: 3px 3px 5px black;
+    text-shadow: 3px 3px 1px black;
+    font-weight: bold;
 }
 
 h4 {
     margin-bottom: 40px;
 }
 
+/* Tabs Table Styles */
+
 table, th, td, tr {
     text-align: center;
 }
 
-input#search {
-    position: relative;
-    top: 7px;
+td {
     height: 50px;
 }
 
-#search-icon {
-    margin-left: 160px;
+th {
+    text-transform: uppercase;
+    color: orangered;
+    font-weight: bold;
 }
 
-#search-close {
-    margin-right: 160px;
+#artist-search {
+    margin-bottom: 20px;
 }
 
-#tabs-tab {
-    background-color: rgba(255, 255, 255, 0.4);
+/* Search Input Form Styles */
+
+#tab-form, #yt-form {
+    background-color: #404040;
     padding: 30px;
     border-radius: 10px;
+    box-shadow: 5px 5px 5px black;
+    height: 150px;
+}
+
+/* Metronome Styles */
+
+#metro-container {
     box-shadow: 5px 5px 5px black;
 }
 
@@ -57,9 +73,34 @@ input#search {
     background-color: #1565c0;
     color: white;
     font-weight: bold;
-    background-position: center;
-    background-position-y: center;
-    background-size: contain;
+}
+
+#tap-button {
+    background-color: orangered;
+    color: white;
+    font-weight: bold;
+}
+
+/* Tuner Styles */
+
+#tuner-instance {
+    margin-top: 100px;
+}
+
+/* Materialize Specific Styles */
+
+#tabs {
+    background-color: rgb(21, 18, 26, 0);
+    color: orangered;
+    margin-bottom: 20px;
+}
+
+a#tab-for-tabs, a#tab-for-play, a#tab-for-tuner, a#tab-for-metronome {
+    font-weight: bold;
+}
+
+#metronome-tab {
+    margin-top: 50px;
 }
 
 .data-tabs {
@@ -100,59 +141,22 @@ input#search {
     left: 250px;
 }
 
+/* Site Layout Header/Carousel Styles */
+
 #welcome-header {
     color: orangered;
     font-family: 'Josefin Sans', sans-serif;
 }
 
-
-#tab-card {
-    background-repeat: no-repeat;
-    background-size: 100%;
+#tab-card, #video-card, #tuner-card, #metronome-card {
     color: orangered;
-}
-
-#video-card {
-    background-repeat: no-repeat;
-    background-size: 100%;
-    color: orangered;
-}
-
-#tuner-card {
-    background-repeat: no-repeat;
-    background-size: 100%;
-    color: orangered;
-}
-
-#metronome-card {
-    background-repeat: no-repeat;
-    background-size: 100%;
-    color: orangered;
-}
-
-#tabs {
-    background-color: rgb(21, 18, 26, 0);
-    color: orangered;
-    margin-bottom: 10px;
-}
-
-#tuner-instance {
-    margin-top: 150px;
-}
-
-#metronome-tab {
-    margin-top: 50px;
 }
 
 #carouselRow {
     font-family: 'Josefin Sans', sans-serif;
 }
 
-#search-button {
-    position: relative;
-    right: 10px;
-}
-#logo_img{
+#logo_img {
     height: 30%;
     width: 30%;
 }
@@ -164,7 +168,39 @@ input#search {
     color: #1565c0;
 }
 
-/* #logo_img{
-    position: absolute;
-    z-index: -10; 
-} */
+.dropdown-content{
+    width: max-content !important;
+    height:auto !important;
+}
+
+/* DataTables.js Override Styles */
+
+div#artist-search_paginate.dataTables_paginate.paging_simple_numbers {
+    color: #1565c0;
+    font-weight: bold;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    color: orangered !important;
+    font-weight: bold;
+}
+
+.dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
+    color: orangered;
+    font-weight: bold;
+}
+
+#artist-search_wrapper {
+    margin-bottom: 20px;
+}
+
+#artist-search_wrapper a {
+    color: #1565c0;
+    font-weight: bold;
+}
+
+#artist-search_wrapper a:hover {
+    color: orangered;
+    font-weight: bold;
+    text-decoration: underline;
+}

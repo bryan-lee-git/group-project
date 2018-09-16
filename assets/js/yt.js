@@ -2,15 +2,28 @@
 // YOUTUBE API
 //----------------------------------------------------------------------------------------
 
-// function to get list of videos from YouTube Data API
+// hide video view until videos are called for
+$("#video-view").hide();
+
+// click function to get list of videos from YouTube Data API
+$("#yt-form").on("submit", function(event) {
+    event.preventDefault();
+    var userInput = $("#youtube-search").val().trim();
+    $("#video-view").empty();
+    getVideos(userInput);
+    $("#video-view").fadeIn(2000);
+    document.getElementById("yt-form").reset();
+})
 
 // function to pull videos from YT
 function getVideos(userInput) {
 
+   userInput = userInput.replace(/\s/g, "&");
+
     var apiKey = "AIzaSyDEN3-Xo9I-Ycjy-cTlOygMnHB3p5ZhVg4";
 
     // Url for ajax query
-    var queryUrl = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=6&q=metallica+master+of+puppets+guitar+lesson&type=video&videoEmbeddable=true&key=" + apiKey;
+    var queryUrl = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=6&q=" + userInput + "+guitar+lesson+playthrough&type=video&videoEmbeddable=true&key=" + apiKey;
 
     // ajax query
     $.ajax({
@@ -31,12 +44,10 @@ function getVideos(userInput) {
             var videoId = video.id.videoId;
 
             // add the video embed to the page using standard YT embed code filled in with individual video IDs
-            $("#videos-tab").append(
-                "<div style='border-radius: 10px; margin-bottom: 10px; margin-top: 10px' class='video-container responsive-video z-depth-5'><iframe src='https://www.youtube.com/embed/" + videoId + "' frameborder='0' allow='autoplay;' allowfullscreen></iframe></div>"
+            $("#video-view").append(
+                "<div class='col s6'><div style='border-radius: 10px; margin-bottom: 10px; margin-top: 10px' class='video-container z-depth-5'><iframe src='https://www.youtube.com/embed/" + videoId + "' frameborder='0' allow='autoplay;' allowfullscreen='true'></iframe></div></div>"
             )
         })
 
     })
-
-// run the getVideos function
-} getVideos();
+}
