@@ -99,7 +99,10 @@ thead {
 #artist-search {
     margin-bottom: 20px;
 }
-
+.carousel-nav-arrows{
+    color: orangered;
+    
+}
 /* Search Input Form Styles */
 
 #tab-form, #yt-form {
@@ -191,18 +194,6 @@ a#tab-for-tabs, a#tab-for-play, a#tab-for-tuner, a#tab-for-metronome {
 
 .btn-floating:hover {
     background-color: #1565c0;
-}
-
-.left-arrow {
-    color: #1565c0;
-    position: relative;
-    right: 250px;
-}
-
-.right-arrow {
-    color: #1565c0;
-    position: relative;
-    left: 250px;
 }
 
 /* Site Layout Header/Carousel Styles */
