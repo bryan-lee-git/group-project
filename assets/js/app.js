@@ -56,6 +56,7 @@ $("#tab-for-tuner, #tuner-carousel-btn, #tuner-dropdown").on("click", function(e
     $("#metronome-tab").hide();
     $("#tabs-tab").hide();
     $("#videos-tab").hide();
+    initializeTuner();
 })
 
 // metronome tab button
