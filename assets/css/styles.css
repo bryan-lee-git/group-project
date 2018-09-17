@@ -2,19 +2,36 @@
 
 /* Global Element Styles */
 
+  main {
+    flex: 1 0 auto;
+  }
+
 body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
     background-color: #282828;
-    background-image: url(../images/a1-icon-shadow-blue.png);
+    background-image: url(../images/a1-icon-shadow-blue-2.png);
     background-repeat: no-repeat;
     font-family: 'Josefin Sans', sans-serif;
-    background-position: center bottom;
+    background-position: center;
     background-size: 680px;
     background-attachment: fixed;
 }
 
+footer {
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 11px;
+    position: fixed;
+    left: 0;
+    bottom: -40px;
+    width: 100%;
+    z-index: -10;
+}
+
 nav {
     margin-bottom: 10px;
-    height: 65px;
 }
 
 h1, h4 {
@@ -32,6 +49,7 @@ table {
     border-radius: 10px;  
     box-shadow: inset 4px 4px 10px #222, inset -4px -4px 10px #222;
     padding: 20px;
+    font-size: 20px;
 }
 
 table {
@@ -131,6 +149,7 @@ thead {
 canvas#tuner-instance {
     margin-top: 100px;
     box-shadow: 4px 4px 10px black;
+    visibility: visible;
 }
 
 /* Materialize Specific Styles */
@@ -265,6 +284,13 @@ div#artist-search_paginate.dataTables_paginate.paging_simple_numbers {
     color: white;
 }
 
+#artist-search_filter label {
+    font-size: 15px !important;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
 #artist-search_length {
     width: 50%;
     float: left;
@@ -272,8 +298,8 @@ div#artist-search_paginate.dataTables_paginate.paging_simple_numbers {
 }
 
 #artist-search_filter input {
-    max-width: 90%;
-    color: orangered;
+    max-width: 88%;
+    color: white;
 }
 
 #artist-search_info {
@@ -291,6 +317,7 @@ div#artist-search_paginate.dataTables_paginate.paging_simple_numbers {
 #artist-search_paginate a {
     margin-left: 20px;
 }
+
 .input-field .prefix.active{
     color: orangered !important;
 }
@@ -300,7 +327,7 @@ div#artist-search_paginate.dataTables_paginate.paging_simple_numbers {
     color: orangered !important;
 }
   /* label underline focus color */
-.row .input-field input:focus {
+.row .input-field input:focus, #artist-search_filter input:focus {
     border-bottom: 1px solid orangered !important;
     box-shadow: 0 1px 0 0 orangered !important
 }
@@ -320,6 +347,9 @@ div#artist-search_paginate.dataTables_paginate.paging_simple_numbers {
     }
     #tab-form, #yt-form {
         width: 90%;
+    }
+    #a-one-logo img {
+        width: 40px;
     }
 }
 @media screen and (max-width: 992px) and (min-width: 701px){

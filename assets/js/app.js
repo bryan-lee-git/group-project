@@ -15,8 +15,6 @@ $("#home-button, .brand-logo").on("click", function(event) {
     $("#videos-tab").hide();
     $("#tuner-tab").hide();
     $("#metronome-tab").hide();
-    $("#tabs-tab").removeClass("active");
-    $(".dropdown-trigger").dropdown('close');
 })
 
 // tabs tab button
@@ -79,4 +77,9 @@ $(document).ready(function(){
 
 $("#dropdown1").on("mouseleave", function(event) {
     $("#dropdown1").fadeOut(500);
+})
+
+$(".dropdown-trigger, #tab-dropdown, #videos-dropdown, #tuner-dropdown, #metronome-dropdown").on("click", function(event) {
+    event.preventDefault();
+    $("#dropdown1").fadeToggle(500);
 })
