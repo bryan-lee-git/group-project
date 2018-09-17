@@ -25,7 +25,7 @@ footer {
     font-size: 11px;
     position: fixed;
     left: 0;
-    bottom: -40px;
+    bottom: -45px;
     width: 100%;
     z-index: -10;
 }
@@ -89,21 +89,43 @@ th {
     font-size: 20px;
     padding-top: 20px !important;
     background-color: rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-left: 1px solid rgba(0, 0, 0, 0.4);
     border-radius: 10px;
 }
 
+th:hover {
+    color: #1565c0;
+    text-shadow: 1px 1px 1px black;
+
+}
+
 thead {
-    box-shadow: 4px 4px 10px #222, -4px -4px 10px #222;
+    box-shadow: 4px 4px 10px #222;
     border-radius: 10px;
 }
+
+tbody tr:hover, td:hover {
+    background-color: #282828;
+    text-shadow: none;
+}
+
+
 #artist-search {
     margin-bottom: 20px;
 }
-.carousel-nav-arrows{
-    color: orangered;
-    
+
+#carousel-arrows {
+ margin-top: -55px;
 }
+
+.carousel-nav-arrows {
+    color: orangered;
+}
+
+.carousel-nav-arrows:hover {
+    color: #1565c0;
+}
+
 /* Search Input Form Styles */
 
 #tab-form, #yt-form {
@@ -183,6 +205,11 @@ a#tab-for-tabs, a#tab-for-play, a#tab-for-tuner, a#tab-for-metronome {
     background-color: #1565c0;
     will-change: left, right;
 }
+
+/* .carousel .indicators {
+    position: relative;
+    top: 300px;
+} */
 
 .nav-wrapper {
     background-color: orangered;
@@ -280,7 +307,6 @@ div#artist-search_paginate.dataTables_paginate.paging_simple_numbers {
     font-size: 15px !important;
     color: white;
     font-weight: bold;
-    text-transform: uppercase;
 }
 
 #artist-search_length {
@@ -304,6 +330,8 @@ div#artist-search_paginate.dataTables_paginate.paging_simple_numbers {
     width: 50%;
     display: inline-block;
     text-align:right;
+    word-break: break-all;
+    margin-bottom: 30px;
 }
 
 #artist-search_paginate a {
@@ -346,6 +374,12 @@ div#artist-search_paginate.dataTables_paginate.paging_simple_numbers {
     }
     table {
         font-size: 15px;
+    }
+    #metronome-tab {
+        margin-top: -10px;
+    }
+    canvas#tuner-instance {
+        margin-top: 20px;
     }
 }
 @media screen and (max-width: 992px) and (min-width: 701px){
