@@ -11,10 +11,10 @@ $("#tab-form").on("submit", function(event) {
     $("#current-search").remove();
     event.preventDefault();
     var userInput = $("#tab-search").val().trim();
+    $('#artist-search').DataTable().destroy();
     getTabs(userInput);
     document.getElementById("tab-form").reset();
     $("#artist-search").before("<h4 id='current-search' style='margin-top: 10px;' class='col s6 white-text'>Results for: " + userInput + "<h4>");
-
 });
 
 // function to fill up the data table from the getTabs resulting children
@@ -97,5 +97,6 @@ function getTabs(userInput) {
         })
         
         $('#artist-search').DataTable();
+
     })
 };

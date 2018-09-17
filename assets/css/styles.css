@@ -90,6 +90,7 @@ th {
     padding-top: 20px !important;
     background-color: rgba(255, 255, 255, 0.2);
     border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
 }
 
 thead {
@@ -320,7 +321,8 @@ div#artist-search_paginate.dataTables_paginate.paging_simple_numbers {
   /* label underline focus color */
 .row .input-field input:focus, #artist-search_filter input:focus {
     border-bottom: 1px solid orangered !important;
-    box-shadow: 0 1px 0 0 orangered !important
+    box-shadow: 0 1px 0 0 orangered !important;
+    color: white;
 }
 
 @media screen and (max-width: 700px) and (min-width: 300px){
@@ -341,6 +343,9 @@ div#artist-search_paginate.dataTables_paginate.paging_simple_numbers {
     }
     #a-one-logo img {
         width: 40px;
+    }
+    table {
+        font-size: 15px;
     }
 }
 @media screen and (max-width: 992px) and (min-width: 701px){
