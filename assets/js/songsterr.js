@@ -8,12 +8,13 @@ $("#artist-search").hide();
 // take in the form input value when it is submitted and run it through the getTabs function
 
 $("#tab-form").on("submit", function(event) {
+    $("#current-search").remove();
     event.preventDefault();
     var userInput = $("#tab-search").val().trim();
-    $("tbody").empty();
     getTabs(userInput);
     document.getElementById("tab-form").reset();
-    $("#artist-search").before("<h4 style='margin-top: 10px;' class='col s6 white-text'>Results for: " + userInput + "<h4>");
+    $("#artist-search").before("<h4 id='current-search' style='margin-top: 10px;' class='col s6 white-text'>Results for: " + userInput + "<h4>");
+
 });
 
 // function to fill up the data table from the getTabs resulting children
@@ -79,6 +80,8 @@ function fillTable(child) {
 
 function getTabs(userInput) {
 
+    $("tbody").empty();
+
     $("#artist-search").fadeIn(2000);
 
     userInput = userInput.replace(/\s/g, "&");
@@ -92,7 +95,7 @@ function getTabs(userInput) {
         songsterr.forEach(function(child) {
             fillTable(child);
         })
-
+        
         $('#artist-search').DataTable();
     })
 };
