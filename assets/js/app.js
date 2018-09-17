@@ -8,6 +8,20 @@ $("#videos-tab").hide();
 $("#tuner-tab").hide();
 $("#metronome-tab").hide();
 
+ // move next carousel
+ $('.moveNextCarousel').click(function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    $('.carousel').carousel('next');
+ });
+
+ // move prev carousel
+ $('.movePrevCarousel').click(function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    $('.carousel').carousel('prev');
+ });
+
 // home button
 $("#home-button, .brand-logo").on("click", function(event) {
     $("#home-tab").slideDown(1000);
