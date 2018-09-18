@@ -190,9 +190,14 @@ canvas#tuner-instance {
 /* Materialize Specific Styles */
 
 #tabs {
-    background-color: rgb(21, 18, 26, 0);
+    background-color: transparent;
     color: orangered;
     margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.tab-active {
+    border-bottom: 1px solid orangered;
 }
 
 a#tab-for-tabs, a#tab-for-play, a#tab-for-tuner, a#tab-for-metronome {
@@ -268,8 +273,15 @@ a#tab-for-tabs, a#tab-for-play, a#tab-for-tuner, a#tab-for-metronome {
 .tabs .tab a {
     color: orangered;
 }
-.tabs .tab a:hover, .tabs .tab a.active {
+
+.tabs .tab a:hover {
     color: #1565c0;
+    background-color: rgba(1, 1, 1, 0.2);
+}
+
+.tabs .tab a.active {
+    color: #1565c0;
+    background-color: rgba(1, 1, 1, 0.2);
 }
 
 #dropdown1 {
