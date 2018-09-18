@@ -79,21 +79,24 @@ $("#tab-for-metronome, #metronome-carousel-btn, #metronome-dropdown").on("click"
     indicators: true
 });
 
+// run materialize functions for site styling functionality.
 $(document).ready(function(){
     // nav bar dropdown (Google Materialize)
-    $('.dropdown-trigger').dropdown({hover: true});
+    $('.dropdown-trigger').dropdown();
     // floating buttons
     $('.fixed-action-btn').floatingActionButton();
     // collapsible initialization
     $('.collapsible').collapsible();
-    // tabs initialization
+    // tabs initialization, mobile swipe
     $('.tabs').tabs();
 });
 
+// when the mouse leaves the dropdown navigation menu area, fade it out of view
 $("#dropdown1").on("mouseleave", function(event) {
     $("#dropdown1").fadeOut(500);
 })
 
+// when the dropdown icon or any dropdown menu item is clicked on, hide the dropdown menu
 $(".dropdown-trigger, #tab-dropdown, #videos-dropdown, #tuner-dropdown, #metronome-dropdown").on("click", function(event) {
     event.preventDefault();
     $("#dropdown1").fadeToggle(500);
