@@ -8,6 +8,7 @@ var userInput = "";
 
 // load next set of videos button
 $("#next-btn").on("click", function(event) {
+    $(window).scrollTop(0);
     event.preventDefault();
     currentPage++;
     $("#video-view").empty();
