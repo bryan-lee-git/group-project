@@ -16,6 +16,10 @@
     <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- Metronome CSS -->
     <link type="text/css" rel="stylesheet" href="./assets/js/metronome/metro.css">
+    <!--Firbase-->
+    <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.4.1/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.4.1/firebaseui.css" />
     <!-- Main CSS -->
     <link type="text/css" rel="stylesheet" href="./assets/css/styles.css">
 
@@ -33,12 +37,12 @@
             <div class="container">
                 <a href="#home-tab" id="a-one-logo" class="brand-logo left"><img style="margin-top: 8px; margin-left:10px;" width="50px" src="./assets/images/a1-icon.png"></a>
                 <ul class="right">
+                    <li><a class="dropdown-trigger" data-target="user-dropdown" id="user"></a></li>
                     <li><a id="user-button" href="#log-in"><i class="material-icons">person</i></a></li>
                     <li><a id="home-button" href="#home-tab"><i class="material-icons">home</i></a></li>
-                    <li><a class="dropdown-trigger" data-target="dropdown1"><i class="material-icons">menu</i></a></li>
+                    <li><a class="dropdown-trigger" data-target="dropdown1" id="menu"><i class="material-icons">menu</i></a></li>
                 </ul>
                     <!-- Nav Dropdown  UL -->
-
                 <div class="col s12">
                     <ul id="dropdown1" class="right dropdown-content">
                         <li><a id="tab-dropdown"class="white-text" href="#tabs-tab">Tabs</a></li>
@@ -48,12 +52,25 @@
                     </ul>
                 </div>
 
+                <!--User UL dropdown Content-->
+                <div class="col s12">
+                    <ul class="right dropdown-content" id="user-dropdown">
+                        <li><a href="" id="edit-profile" class="white-text">Edit Profile</a></li>
+                        <li><a href="" id="invite-members" class="white-text">Invite Memebers</a></li>
+                        <li><a href="" id="logout" class="white-text">Logout</a></li>
+                    </ul>
+                </div>
+
     <!-- End Nav Dropdown UL -->
             </div>    
         </div>
     </nav>
 
     <!-- End Nav Bar -->
+
+    <!--Begin Firebase UI container div-->
+    <div id="firebaseui-auth-container"></div>
+    <!--End Firebase UI container div-->
 
     <!-- Begin Main Container -->
 
