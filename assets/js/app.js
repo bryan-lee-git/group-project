@@ -9,6 +9,7 @@ $("#tuner-tab").hide();
 $("#metronome-tab").hide();
 $("#about-tab").hide();
 
+
  // move next carousel
  $('.moveNextCarousel').click(function(e){
     e.preventDefault();
@@ -25,57 +26,83 @@ $("#about-tab").hide();
 
 // home button
 $("#home-button, .brand-logo").on("click", function(event) {
+    $(window).scrollTop(0);
     $("#home-tab").slideDown(1000);
     $("#tabs-tab").hide();
     $("#videos-tab").hide();
     $("#tuner-tab").hide();
     $("#metronome-tab").hide();
+    $("#tab-for-tabs").removeClass("tab-active");
+    $("#tab-for-play").removeClass("tab-active");
+    $("#tab-for-tuner").removeClass("tab-active");
+    $("#tab-for-metronome").removeClass("tab-active");
     $("#about-tab").hide();
 })
 
 // tabs tab button
 $("#tab-for-tabs, #tab-carousel-btn, #tab-dropdown").on("click", function(event){
+    $(window).scrollTop(0);
     $("#home-tab").hide();
     $("#tabs-tab").slideToggle(1000);
     $("#videos-tab").hide();
     $("#tuner-tab").hide();
     $("#metronome-tab").hide();
+    $("#tab-for-tabs").addClass("tab-active");
+    $("#tab-for-play").removeClass("tab-active");
+    $("#tab-for-tuner").removeClass("tab-active");
+    $("#tab-for-metronome").removeClass("tab-active");
     $("#about-tab").hide();
 })
 
 // videos tab button
 $("#tab-for-play, #videos-carousel-btn, #videos-dropdown").on("click", function(event){
+    $(window).scrollTop(0);
     $("#home-tab").hide();
     $("#videos-tab").slideToggle(1000);
     $("#tabs-tab").hide();
     $("#tuner-tab").hide();
     $("#metronome-tab").hide();
+    $("#tab-for-tabs").removeClass("tab-active");
+    $("#tab-for-play").addClass("tab-active");
+    $("#tab-for-tuner").removeClass("tab-active");
+    $("#tab-for-metronome").removeClass("tab-active");
     $("#about-tab").hide();
 })
 
 // tuner tab button
 $("#tab-for-tuner, #tuner-carousel-btn, #tuner-dropdown").on("click", function(event){
+    $(window).scrollTop(0);
     $("#home-tab").hide();
     $("#tuner-tab").slideToggle(1000);
     $("#metronome-tab").hide();
     $("#tabs-tab").hide();
     $("#videos-tab").hide();
+    $("#tab-for-tabs").removeClass("tab-active");
+    $("#tab-for-play").removeClass("tab-active");
+    $("#tab-for-tuner").addClass("tab-active");
+    $("#tab-for-metronome").removeClass("tab-active");
     $("#about-tab").hide();
     initializeTuner();
 })
 
 // metronome tab button
 $("#tab-for-metronome, #metronome-carousel-btn, #metronome-dropdown").on("click", function(event){
+    $(window).scrollTop(500);
     $("#home-tab").hide();
     $("#metronome-tab").slideToggle(1000);
     $("#tabs-tab").hide();
     $("#videos-tab").hide();
     $("#tuner-tab").hide();
+    $("#tab-for-tabs").removeClass("tab-active");
+    $("#tab-for-play").removeClass("tab-active");
+    $("#tab-for-tuner").removeClass("tab-active");
+    $("#tab-for-metronome").addClass("tab-active");
     $("#about-tab").hide();
 })
 
 // about us dropdown button
 $("#about-dropdown").on("click", function(event){
+    $(window).scrollTop(0);
     $("#home-tab").hide();
     $("#about-tab").slideToggle(1000);
     $("#tuner-tab").hide();
@@ -104,7 +131,6 @@ $(document).ready(function(){
     // collapsible initialization
     $('.collapsible').collapsible();
     // tabs initialization, mobile swipe
-    $('.tabs').tabs();
 });
 
 // when the mouse leaves the dropdown navigation menu area, fade it out of view
