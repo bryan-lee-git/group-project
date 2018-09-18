@@ -206,7 +206,7 @@ a#tab-for-tabs, a#tab-for-play, a#tab-for-tuner, a#tab-for-metronome {
     position: absolute;
     bottom: 0;
     height: 2px;
-    background-color: #1565c0;
+    background-color: transparent;
     will-change: left, right;
 }
 

@@ -82,7 +82,7 @@ $("#tab-for-metronome, #metronome-carousel-btn, #metronome-dropdown").on("click"
 // run materialize functions for site styling functionality.
 $(document).ready(function(){
     // nav bar dropdown (Google Materialize)
-    $('.dropdown-trigger').dropdown();
+    $('.dropdown-trigger').dropdown({hover: true});
     // floating buttons
     $('.fixed-action-btn').floatingActionButton();
     // collapsible initialization
