@@ -31,10 +31,23 @@ footer {
 }
 
 nav {
+    
     margin-bottom: 10px;
 }
 
-.material-icons:hover {
+.firebase-auth {
+    position: relative;
+    color: white;
+}
+
+#firebaseui-auth-container {
+    position: absolute;
+    right: 0;
+    bottom: -100;
+}
+
+
+#user-button:hover, #home-button:hover, #menu-button:hover, #user:hover {
     color: #1565c0;
     transform: scale(1.4, 1.4);
 }
