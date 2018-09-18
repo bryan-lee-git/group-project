@@ -31,30 +31,29 @@
     <nav>
         <div class="nav-wrapper">
             <div class="container">
-                <a href="#home-tab" id="a-one-logo" class="brand-logo left"><img style="margin-top: 8px;" width="50px" src="./assets/images/a1-icon.png"></a>
+                <a href="#home-tab" id="a-one-logo" class="brand-logo left"><img style="margin-top: 8px; margin-left:10px;" width="50px" src="./assets/images/a1-icon.png"></a>
                 <ul class="right">
                     <li><a id="user-button" href="#log-in"><i class="material-icons">person</i></a></li>
                     <li><a id="home-button" href="#home-tab"><i class="material-icons">home</i></a></li>
                     <li><a class="dropdown-trigger" data-target="dropdown1"><i class="material-icons">menu</i></a></li>
                 </ul>
+                    <!-- Nav Dropdown  UL -->
+
+                <div class="col s12">
+                    <ul id="dropdown1" class="right dropdown-content">
+                        <li><a id="tab-dropdown"class="white-text" href="#tabs-tab">Tabs</a></li>
+                        <li><a id="videos-dropdown"class="white-text" href="#video-tab">Videos</a></li>
+                        <li><a id="tuner-dropdown"class="white-text" href="#tuner-tab">Tuner</a></li>
+                        <li><a id="metronome-dropdown"class="white-text" href="#metronome-tab">Metronome</a></li>
+                    </ul>
+                </div>
+
+    <!-- End Nav Dropdown UL -->
             </div>    
         </div>
     </nav>
 
     <!-- End Nav Bar -->
-
-    <!-- Nav Dropdown  UL -->
-
-    <div class="col s12">
-        <ul id="dropdown1" class="dropdown-content">
-            <li><a id="tab-dropdown"class="white-text" href="#tabs-tab">Tabs</a></li>
-            <li><a id="videos-dropdown"class="white-text" href="#video-tab">Videos</a></li>
-            <li><a id="tuner-dropdown"class="white-text" href="#tuner-tab">Tuner</a></li>
-            <li><a id="metronome-dropdown"class="white-text" href="#metronome-tab">Metronome</a></li>
-        </ul>
-    </div>
-
-    <!-- End Nav Dropdown UL -->
 
     <!-- Begin Main Container -->
 
@@ -120,7 +119,17 @@
                             </form>
                         </div>
                     </div>
-                    <div id="video-view" class="col s12"></div>
+
+                    <div class="container">
+
+                        <button style="margin-bottom: 15px; border-radius: 5px;" id="prev-btn" class="z-depth-5 blue darken-3 btn col s12">Previous Page</button>
+
+                        <div id="video-view" class="col s12"></div>
+
+                        <button style="margin-top: 5px; margin-bottom: 20px; border-radius: 5px;" id="next-btn" class="z-depth-5 blue darken-3 btn col s12">Next Page</button>
+
+                    </div>
+ 
                 </div>
             </div>
 
@@ -130,8 +139,8 @@
 
             <div id="tuner-tab" class="col s12 center-align">
                 <canvas class="z-depth-5" style="border-radius: 150px;" height="300px" id="tuner-instance"></canvas><br>
-                <h4 class="white-text">Standard tuning is E-A-D-G-B-E.<br>If the circle turns <span class="green-text">green</span>, the string is in <span class="green-text">tune.</span><br>
-                Learn about alternate guitar tunings <a target="_blank" href="https://en.wikipedia.org/wiki/List_of_guitar_tunings">here.</a>
+                <h4 class="white-text">Standard tuning is E-A-D-G-B-E.<br>If the circle turns <span class="green-text">green</span>, the string is in <span class="green-text">tune.</span><br><br>
+                See alternate guitar tunings <a target="_blank" href="https://en.wikipedia.org/wiki/List_of_guitar_tunings">here.</a>
                 </h4>
             </div>
 
@@ -272,7 +281,10 @@
     
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <!-- Added this angular js file for canvas functionality on iPhone -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+    <!-- fitText.js for making font-sizes flexible -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FitText.js/1.2.0/jquery.fittext.min.js"></script>
     <!-- DataTables.js -->
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
     <!-- Materialize -->

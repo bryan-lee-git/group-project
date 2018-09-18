@@ -177,7 +177,7 @@ tbody tr:hover, td:hover {
 /* Tuner Styles */
 
 canvas#tuner-instance {
-    margin-top: 100px;
+    margin-top: 80px;
     box-shadow: 4px 4px 10px black;
     visibility: visible;
 }
@@ -206,8 +206,12 @@ a#tab-for-tabs, a#tab-for-play, a#tab-for-tuner, a#tab-for-metronome {
     position: absolute;
     bottom: 0;
     height: 2px;
-    background-color: #1565c0;
+    background-color: transparent;
     will-change: left, right;
+}
+
+.indicator {
+    display: none;
 }
 
 /* .carousel .indicators {
@@ -239,6 +243,14 @@ a#tab-for-tabs, a#tab-for-play, a#tab-for-tuner, a#tab-for-metronome {
     color: orangered;
 }
 
+#video-view {
+    margin-bottom: 20px;
+}
+
+#prev-btn:hover, #next-btn:hover {
+    background-color: orangered !important;
+}
+
 #carouselRow {
     font-family: 'Josefin Sans', sans-serif;
 }
@@ -259,6 +271,7 @@ a#tab-for-tabs, a#tab-for-play, a#tab-for-tuner, a#tab-for-metronome {
     opacity: 1.0;
     top: -65px;
     background-color: #1565c0;
+    
 }
 
 #dropdown1 a:hover {

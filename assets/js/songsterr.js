@@ -99,4 +99,7 @@ function getTabs(userInput) {
         $('#artist-search').DataTable();
 
     })
-};
+}; 
+
+getTabs("Nirvana");
+$("#artist-search").before("<h4 id='current-search' style='margin-top: 10px;' class='col s6 white-text'>Results for: " + "Nirvana" + "<h4>");
