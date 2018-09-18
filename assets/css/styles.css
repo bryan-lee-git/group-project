@@ -35,7 +35,7 @@ nav {
 }
 
 .material-icons:hover {
-    color: black;
+    color: #1565c0;
     transform: scale(1.4, 1.4);
 }
 
