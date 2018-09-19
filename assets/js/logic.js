@@ -1,3 +1,49 @@
+//----------------------------------------------------------------------------------------
+// MATERIALIZE FUNCTIONALITY
+//----------------------------------------------------------------------------------------
+
+ // carousel functionality (Google Materialize)
+
+ $('.carousel.carousel-slider').carousel({
+  fullWidth: true,
+  indicators: true
+});
+
+cycle();
+
+// run materialize functions for site styling functionality.
+$(document).ready(function(){
+  // nav bar dropdown (Google Materialize)
+  $('.dropdown-trigger').dropdown({hover: true});
+  // floating buttons
+  $('.fixed-action-btn').floatingActionButton();
+  // collapsible initialization
+  $('.collapsible').collapsible();
+  // tabs initialization, mobile swipe
+});
+
+//Animate the carousel
+
+function cycle() {
+  var timer = setInterval(advance, 4000);
+  function advance() {
+      $('.carousel').carousel('next');
+  }
+};
+
+// when the mouse leaves the dropdown navigation menu area, fade it out of view
+
+$("#dropdown1").on("mouseleave", function(event) {
+  $("#dropdown1").fadeOut(200);
+
+})
+
+// when the dropdown icon or any dropdown menu item is clicked on, hide the dropdown menu
+$(".dropdown-trigger, #tab-dropdown, #videos-dropdown, #tuner-dropdown, #metronome-dropdown").on("click", function() {
+  event.preventDefault();
+  $("#dropdown1").fadeToggle(200);
+})
+
 // move next carousel
 $('.moveNextCarousel').click(function(e){
     e.preventDefault();
