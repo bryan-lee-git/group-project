@@ -2,6 +2,7 @@
 // SONGSTER API
 //----------------------------------------------------------------------------------------
 
+
 // hide the table
 $("#artist-search").hide();
 
@@ -66,16 +67,38 @@ function fillTable(child) {
             types.push(chordsTabUrl);
         }
     })
-
+    
     // fill table with child data
     $("tbody").append(
         "<tr>"
+        + "<td>" + "<i class='material-icons favs' id='" + child.title + "' name='" + child.title + "'>favorite_border</i>"
         + "<td>" + child.title + "</td>"
         + "<td>" + types + "</td>"
         + "<td>" + chords + chordsTabUrl + "</td>"
         + "</tr>"
     )
+    console.log("child.title = " + child.title);
+
 };
+
+//listener on Favs to add to favorites
+
+$(".display").on("click", ".favs", function(event){
+    event.preventDefault();
+
+    var pickedTab = event.currentTarget.attributes.name.nodeValue;
+    var favTab = {
+        tabName: pickedTab
+        };
+    
+    firebase.database().ref("user/favs").push(favTab);
+
+    
+    console.log("hopefully, this is the value of the database: " + firebase.database().ref("user/favs/favtab").val().tabName);
+   console.log("here's the favs click event: " + console.dir(event));
+    console.log("Here's the child data to save into favTab: " + event.currentTarget.attributes.name.nodeValue);
+
+});
 
 // function to get list of tabs via the songsterr.com API
 

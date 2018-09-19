@@ -176,6 +176,11 @@ var config = {
 
   var database = firebase.database();
 
+  database.ref("user/favs").on("child_added", function(snap) {
+    var favTab = snap.val().favTab;
+    var favVid = snap.val().favVid;
+  });
+
 //---------------------------------------------------------------------------
 // Firebase Authentication Config with UI
 //---------------------------------------------------------------------------
