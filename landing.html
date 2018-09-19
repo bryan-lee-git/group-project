@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Materialize CSS -->
+    <link type="text/css" rel="stylesheet" href="./assets/materialize/css/materialize.min.css" media="screen,projection">
+
+    <!-- Google Font Embed -->
+    <link type="text/css" href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+
+    <!-- Google Fonts Material Icons -->
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Metronome Custom CSS -->
+    <link type="text/css" rel="stylesheet" href="./assets/js/metronome/metro.css">
+
+    <!--Firebase-->
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.4.1/firebaseui.css" />
+   
+    <!-- Main Custom CSS -->
+    <link type="text/css" rel="stylesheet" href="./assets/css/styles.css">
+    
+    <title>A1 Guitar Learning Companion App - Created by Panda Warriors Dev Group - 2018</title>
+
+</head>
+
+<!-- Start UI -->
+  
+<body>
+
+        <!-- Begin Main Nav Bar -->
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper">
+                    <div class="container">
+
+                        <a href="#b" id="a-one-logo" class="brand-logo left"><img style="margin-top: 8px; margin-left:10px;" width="50px" src="./assets/images/a1-icon.png"></a>
+    
+                        <ul class="right">
+                            <li><a class="dropdown-trigger" data-target="show-signin" id="user-button"><i class="material-icons">person</i></a></li>
+                        </ul>
+                         
+                         
+                    </div>    
+                </div>
+
+            </nav>
+        </div> <!--End Navbar-->
+
+        <!--Begin Firebase UI container div-->
+        <div class="firebase-auth">    
+            <div id="firebaseui-auth-container">
+                <h5>Sign-In</h5>
+            </div>
+            <!--End Firebase UI container div-->
+        </div> 
+
+     <!-- Begin Landing Page Header -->
+      
+     <div id="home-tab">
+
+            <section id="header">
+                <div class="row">
+                    <div class="col s12">
+                        <h1 class="center-align" id="welcome-header">A1 Guitar Learning</h1>
+                        <h4 class="white-text head-four center-align">Your guitar learning companion app.</h4>
+                    </div>
+                </div>
+            </section>  
+            
+            <!-- End Landing Page Header -->
+
+            <!-- Begin Landing Page Feature Carousel -->
+
+            <div class="row" id= "carouselRow">
+                <div class="col s8 offset-s2 divider grey darken-2"></div>
+                <div class="col s12 m8 offset-m2">
+                    <div class="carousel carousel-slider center">
+                        <div class="carousel-item waves-effect" id="tab-card" href="#one!">
+                            <h1 class="head-one blue-text darken-5">Guitar Tabs</h1>
+                            <h4 class="white-text head-four">Learn songs by your favorite musicians.</h4>
+                            <a href="#tabs-tab" id="tab-carousel-btn" class="btn-floating btn-large pulse" id="tab-icon"><i class="large material-icons">format_align_justify</i></a>
+                            <br/>
+                            <div id="carousel-arrows" class="row">
+                                <a href="Previo" class="col s2 movePrevCarousel middle-indicator-text waves-effect waves-light content-indicator">
+                                    <i class="material-icons left medium middle-indicator-text carousel-nav-arrows">arrow_back</i>
+                                </a>
+                                <a href="Siguiente" class="col s2 offset-s8 moveNextCarousel middle-indicator-text waves-effect waves-light content-indicator">
+                                    <i class="material-icons right medium middle-indicator-text carousel-nav-arrows">arrow_forward</i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-item waves-effect" id="video-card" href="#two!">
+                            <h1 class="head-one blue-text darken-5">Play-Through Videos</h1>
+                            <h4 class="white-text head-four">Learn songs by watching others play.</h4>
+                            <a href="#videos-tab" id="videos-carousel-btn" class="btn-floating btn-large pulse" id="play-icon"><i class="large material-icons">play_circle_filled</i></a>
+                            <br/>
+                            <div id="carousel-arrows" class="row">
+                                <a href="Previo" class="col s2 movePrevCarousel middle-indicator-text waves-effect waves-light content-indicator">
+                                    <i class="material-icons left medium middle-indicator-text carousel-nav-arrows">arrow_back</i>
+                                </a>
+                                <a href="Siguiente" class="col s2 offset-s8 moveNextCarousel middle-indicator-text waves-effect waves-light content-indicator">
+                                    <i class="material-icons right medium middle-indicator-text carousel-nav-arrows">arrow_forward</i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item waves-effect" id="tuner-card" href="#three!">
+                            <h1 class="head-one blue-text darken-5">Guitar Tuner</h1>
+                            <h4 class="white-text head-four">Don't be a novice. Tune your instrument.</h4>
+                            <a href="#tuner-tab" id="tuner-carousel-btn" class="btn-floating btn-large pulse" id="tuner-icon"><i class="large material-icons">music_note</i></a>
+                            <br/>
+                            <div id="carousel-arrows" class="row">
+                                <a href="Previo" class="col s2 movePrevCarousel middle-indicator-text waves-effect waves-light content-indicator">
+                                    <i class="material-icons left medium middle-indicator-text carousel-nav-arrows">arrow_back</i>
+                                </a>
+                                <a href="Siguiente" class="col s2 offset-s8 moveNextCarousel middle-indicator-text waves-effect waves-light content-indicator">
+                                    <i class="material-icons right medium middle-indicator-text carousel-nav-arrows">arrow_forward</i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item waves-effect" id="metronome-card" href="#four!">
+                            <h1 class="head-one blue-text darken-5">Metronome</h1>
+                            <h4 class="white-text head-four">A metronome to keep your rhythm.</h4>
+                            <a href="#metronome-tab" id="metronome-carousel-btn" class="btn-floating btn-large pulse" id="metronome-icon"><i class="large material-icons">graphic_eq</i></a>
+                            <br/>
+                            <div id="carousel-arrows" class="row">
+                                <a href="Previo" class="col s2 movePrevCarousel middle-indicator-text waves-effect waves-light content-indicator">
+                                    <i class="material-icons left medium middle-indicator-text carousel-nav-arrows">arrow_back</i>
+                                </a> 
+                                <a href="Siguiente" class="col s2 offset-s8 moveNextCarousel middle-indicator-text waves-effect waves-light content-indicator">
+                                    <i class="material-icons right medium middle-indicator-text carousel-nav-arrows">arrow_forward</i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </div>
+
+        <!-- End Landing Feature Carousel -->
+
+    </div>
+
+    <!-- End Main Container -->
+
+    <!-- Begin Footer -->
+
+    <footer id="footer" class="col l12 s12 m12 center-align">
+        Developed by Panda Warriors Development Group | Copyright 2018
+    </footer>
+
+    <!-- End Footer -->
+
+    <!-- All Scripts -->
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.4.1/firebaseui.js"></script>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    
+    <!-- Added this angular js file for canvas functionality on iPhone -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+    
+    <!-- fitText.js for making font-sizes flexible -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FitText.js/1.2.0/jquery.fittext.min.js"></script>
+
+     <!-- Materialize -->
+     <script src="./assets/materialize/js/materialize.min.js"></script>
+
+     <!--Landing page specific js file-->
+     <script src="./assets/js/logic.js"></script>
+    

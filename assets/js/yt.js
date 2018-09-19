@@ -8,6 +8,7 @@ var userInput = "";
 
 // load next set of videos button
 $("#next-btn").on("click", function(event) {
+    $(window).scrollTop(0);
     event.preventDefault();
     currentPage++;
     $("#video-view").empty();
@@ -58,7 +59,7 @@ function getVideos(userInput) {
     }).then(function(videoData) {
 
         // console log the whole data request response
-        console.log(videoData);
+        // console.log(videoData);
 
         // create a shorter variable for videoData
         var videos = [];
@@ -80,7 +81,7 @@ function getVideos(userInput) {
         videos.forEach(function(video) {
 
             // console log the video object
-            console.log(video);
+            // console.log(video);
             
             // make a shorter variable for the video's Id
             var videoId = video.id.videoId;
