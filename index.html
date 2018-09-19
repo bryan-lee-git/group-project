@@ -42,16 +42,17 @@
                     <a href="#home-tab" id="a-one-logo" class="brand-logo left"><img style="margin-top: 8px; margin-left:10px;" width="50px" src="./assets/images/a1-icon.png"></a>
 
                     <ul class="right">
-                        <li><a class="dropdown-trigger" data-target="user-dropdown" id="user"></a></li>
-                        <li><a id="user-button" href="#log-in"><i class="material-icons">person</i></a></li>
+                        <li><a id="logout" >Logout</a></li>
+                        <li><a id="user-button"  class="dropdown-trigger" data-target="user-dropdown"><i class="material-icons">person</i></a></li>
                         <li><a id="home-button" href="#home-tab"><i class="material-icons">home</i></a></li>
-                        <li><a class="dropdown-trigger" data-target="dropdown1"><i class="material-icons">menu</i></a></li>
+                        <li><a class="dropdown-trigger" data-target="dropdown1" id="nav-menu"><i class="material-icons">menu</i></a></li>
                     </ul>
 
                     <!--User UL dropdown Content-->
                   
                       <div class="col s12">
-                          <ul class="right dropdown-content" id="user-dropdown">
+                          <ul id="user-dropdown" class="right dropdown-content" >
+                              <li><a id="user"></a></li>
                               <li><a href="" id="edit-profile" class="white-text">Edit Profile</a></li>
                               <li><a href="" id="invite-members" class="white-text">Invite Memebers</a></li>
                               <li><a href="" id="logout" class="white-text">Logout</a></li>
@@ -74,7 +75,7 @@
                 </div>    
             </div>
         </nav>
-    </div>
+    </div> <!--End Navbar-->
 
 
     <!-- End Main Nav Bar -->

@@ -22,7 +22,8 @@ $("#tab-form").on("submit", function(event) {
 function fillTable(child) {
 
     // console log entire child object
-    // console.log(child);
+
+    console.log(child);
 
     // set variable to hold chords icon
     var chords = "";
@@ -85,6 +86,8 @@ function getTabs(userInput) {
     $("#artist-search").fadeIn(2000);
 
     userInput = userInput.replace(/\s/g, "&");
+
+    console.log("Here's what the user input looks like: " + userInput);
 
     var queryURL = "https://www.songsterr.com/a/ra/songs/byartists.json?artists=" + userInput;
 
