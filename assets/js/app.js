@@ -3,11 +3,13 @@
 //----------------------------------------------------------------------------------------
 
 //hide all tab areas until called upon
-$("#tabs-tab").hide();
-$("#videos-tab").hide();
-$("#tuner-tab").hide();
-$("#metronome-tab").hide();
-$("#about-tab").hide();
+$(document).ready(function() {
+    $("#tabs-tab").hide();
+    $("#videos-tab").hide();
+    $("#tuner-tab").hide();
+    $("#metronome-tab").hide();
+    $("#about-tab").hide();
+});
 
 cycle();
 
@@ -26,7 +28,7 @@ cycle();
  });
 
 // home button
-$("#home-button, .brand-logo").on("click", function(event) {
+$("#home-button, .brand-logo").on("click", function() {
     $(window).scrollTop(0);
     $("#home-tab").slideDown(1000);
     $("#tabs-tab").hide();
@@ -41,7 +43,7 @@ $("#home-button, .brand-logo").on("click", function(event) {
 })
 
 // tabs tab button
-$("#tab-for-tabs, #tab-carousel-btn, #tab-dropdown").on("click", function(event){
+$("#tab-for-tabs, #tab-carousel-btn, #tab-dropdown").on("click", function(){
     $(window).scrollTop(0);
     $("#home-tab").hide();
     $("#tabs-tab").slideToggle(1000);
@@ -56,7 +58,7 @@ $("#tab-for-tabs, #tab-carousel-btn, #tab-dropdown").on("click", function(event)
 })
 
 // videos tab button
-$("#tab-for-play, #videos-carousel-btn, #videos-dropdown").on("click", function(event){
+$("#tab-for-play, #videos-carousel-btn, #videos-dropdown").on("click", function(){
     $(window).scrollTop(0);
     $("#home-tab").hide();
     $("#videos-tab").slideToggle(1000);
@@ -71,7 +73,7 @@ $("#tab-for-play, #videos-carousel-btn, #videos-dropdown").on("click", function(
 })
 
 // tuner tab button
-$("#tab-for-tuner, #tuner-carousel-btn, #tuner-dropdown").on("click", function(event){
+$("#tab-for-tuner, #tuner-carousel-btn, #tuner-dropdown").on("click", function(){
     $(window).scrollTop(0);
     $("#home-tab").hide();
     $("#tuner-tab").slideToggle(1000);
@@ -87,7 +89,7 @@ $("#tab-for-tuner, #tuner-carousel-btn, #tuner-dropdown").on("click", function(e
 })
 
 // metronome tab button
-$("#tab-for-metronome, #metronome-carousel-btn, #metronome-dropdown").on("click", function(event){
+$("#tab-for-metronome, #metronome-carousel-btn, #metronome-dropdown").on("click", function(){
     $(window).scrollTop(500);
     $("#home-tab").hide();
     $("#metronome-tab").slideToggle(1000);
@@ -102,7 +104,7 @@ $("#tab-for-metronome, #metronome-carousel-btn, #metronome-dropdown").on("click"
 })
 
 // about us dropdown button
-$("#about-dropdown").on("click", function(event){
+$("#about-dropdown").on("click", function(){
     $(window).scrollTop(0);
     $("#home-tab").hide();
     $("#about-tab").slideToggle(1000);
@@ -144,12 +146,14 @@ function cycle() {
 };
 
 // when the mouse leaves the dropdown navigation menu area, fade it out of view
+
 $("#dropdown1").on("mouseleave", function(event) {
     $("#dropdown1").fadeOut(200);
+
 })
 
 // when the dropdown icon or any dropdown menu item is clicked on, hide the dropdown menu
-$(".dropdown-trigger, #tab-dropdown, #videos-dropdown, #tuner-dropdown, #metronome-dropdown").on("click", function(event) {
+$(".dropdown-trigger, #tab-dropdown, #videos-dropdown, #tuner-dropdown, #metronome-dropdown").on("click", function() {
     event.preventDefault();
     $("#dropdown1").fadeToggle(200);
 })

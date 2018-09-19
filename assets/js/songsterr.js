@@ -22,7 +22,7 @@ $("#tab-form").on("submit", function(event) {
 function fillTable(child) {
 
     // console log entire child object
-    console.log("The search was for: " + userInput);
+
     console.log(child);
 
     // set variable to hold chords icon
@@ -98,9 +98,7 @@ function getTabs(userInput) {
         songsterr.forEach(function(child) {
             fillTable(child);
         })
-        
         $('#artist-search').DataTable();
-
     })
 }; 
 
