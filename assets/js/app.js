@@ -4,16 +4,13 @@
 
 //hide all tab areas until called upon
 
-$(document).ready(function() {
-    $("#firebaseui-auth-container").hide(0);
-    $("#tabs-tab").hide();
-    $("#videos-tab").hide();
-    $("#tuner-tab").hide();
-    $("#metronome-tab").hide();
-    $("#about-tab").hide();
-    $("#credit-tab").hide();
-
-});
+$("#firebaseui-auth-container").hide(0);
+$("#tabs-tab").hide();
+$("#videos-tab").hide();
+$("#tuner-tab").hide();
+$("#metronome-tab").hide();
+$("#about-tab").hide();
+$("#credit-tab").hide();
 
 cycle();
 
@@ -166,13 +163,21 @@ function cycle() {
 };
 
 // when the mouse leaves the dropdown navigation menu area, fade it out of view
-$("#dropdown1").on("mouseleave", function(event) {
+$("#dropdown1").on("mouseleave", function() {
     $("#dropdown1").fadeOut(200);
 })
 
-// when the mouse leaves the dropdown navigation menu area, fade it out of view
-$("#user-dropdown").on("mouseleave", function(event) {
+$("#content-button").on("mouseover", function() {
     $("#user-dropdown").fadeOut(200);
+})
+
+// when the mouse leaves the dropdown navigation menu area, fade it out of view
+$("#user-dropdown").on("mouseleave", function() {
+    $("#user-dropdown").fadeOut(200);
+})
+
+$("#user-button").on("mouseover", function() {
+    $("#dropdown1").fadeOut(200);
 })
 
 // when the dropdown icon or any dropdown menu item is clicked on, hide the dropdown menu
