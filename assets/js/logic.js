@@ -99,8 +99,9 @@ var uiConfig = {
   }
 };
 
-$("#user-button").on("click", function(){
-  $(".firebase-auth").show();
+$("#user-button, .carousel-slider").on("click", function(){
+  $(".firebase-auth").fadeToggle(500);
+  $("#home-tab").fadeToggle(500);
 });
 
 $(".carousel-slider").on("click", function(){

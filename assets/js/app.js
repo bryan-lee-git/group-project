@@ -5,6 +5,7 @@
 //hide all tab areas until called upon
 
 $(document).ready(function() {
+    $("#firebaseui-auth-container").hide(0);
     $("#tabs-tab").hide();
     $("#videos-tab").hide();
     $("#tuner-tab").hide();

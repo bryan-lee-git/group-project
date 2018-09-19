@@ -40,10 +40,32 @@ nav {
     color: white;
 }
 
+.firebaseui-card-content input:focus {
+    border-bottom: 1px solid orangered !important;
+    box-shadow: 0 1px 0 0 orangered !important;
+    color: #1565c0;
+}
+
 #firebaseui-auth-container {
-    position: absolute;
+    text-align:center;
+    z-index: 200;
+    position:absolute;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    margin-top: 150px;
+    left: 0;
     right: 0;
-    bottom: -100;
+    background-color: #1565c0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px #222, -4px -4px 10px #222;
+}
+
+#firebaseui-auth-container p {
+    color: white;
+    text-shadow: 1px 1px 1px black;
+
 }
 
 .nav-wrapper i:hover {
@@ -162,7 +184,6 @@ tbody tr:hover, td:hover {
     background-color: #404040;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: inset 4px 4px 10px #222, inset -4px -4px 10px #222;
     height: 150px;
 }
 
@@ -480,6 +501,9 @@ a {
     }
     canvas#tuner-instance {
         margin-top: 20px;
+    }
+    #firebaseui-auth-container {
+        margin-top: 100px;
     }
 }
 @media screen and (max-width: 992px) and (min-width: 701px){
