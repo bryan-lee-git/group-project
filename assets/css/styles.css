@@ -52,7 +52,7 @@ nav {
     position:absolute;
     margin-left: auto;
     margin-right: auto;
-    width: 300px;
+    width: 400px;
     margin-top: 150px;
     left: 0;
     right: 0;
@@ -428,12 +428,21 @@ div#artist-search_paginate.dataTables_paginate.paging_simple_numbers {
 }
 /*about page styling*/
 #about-contain {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     background-color: rgba(0, 0, 0, 0.4);
     padding: 30px;
     border-radius: 10px;
     box-shadow: inset 4px 4px 10px #222, inset -4px -4px 10px #222;
 }
+
+.credit-para a {
+    color: #1565c0;
+}
+
+.credit-para a:hover {
+    color: orangered;
+}
+
 .about-head {
     color: orangered;
     text-align: center;
