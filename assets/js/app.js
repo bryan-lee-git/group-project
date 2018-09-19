@@ -9,6 +9,7 @@ $("#tuner-tab").hide();
 $("#metronome-tab").hide();
 $("#about-tab").hide();
 
+cycle();
 
  // move next carousel
  $('.moveNextCarousel').click(function(e){
@@ -133,15 +134,24 @@ $(document).ready(function(){
     // tabs initialization, mobile swipe
 });
 
+//Animate the carousel
+
+function cycle() {
+    var timer = setInterval(advance, 4000);
+    function advance() {
+        $('.carousel').carousel('next');
+    }
+};
+
 // when the mouse leaves the dropdown navigation menu area, fade it out of view
 $("#dropdown1").on("mouseleave", function(event) {
-    $("#dropdown1").fadeOut(500);
+    $("#dropdown1").fadeOut(200);
 })
 
 // when the dropdown icon or any dropdown menu item is clicked on, hide the dropdown menu
 $(".dropdown-trigger, #tab-dropdown, #videos-dropdown, #tuner-dropdown, #metronome-dropdown").on("click", function(event) {
     event.preventDefault();
-    $("#dropdown1").fadeToggle(500);
+    $("#dropdown1").fadeToggle(200);
 })
 
 //---------------------------------------------------------------------------
@@ -178,7 +188,7 @@ var config = {
         var phoneNumber = user.phoneNumber;
         var providerData = user.providerData;
 
-        $("#user").text(user.displayName);
+        $("#user").text(displayName);
        
        
       } else {
