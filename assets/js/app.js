@@ -8,6 +8,7 @@ $("#videos-tab").hide();
 $("#tuner-tab").hide();
 $("#metronome-tab").hide();
 $("#about-tab").hide();
+$("#credit-tab").hide();
 
  // move next carousel
  $('.moveNextCarousel').click(function(e){
@@ -31,6 +32,7 @@ $("#home-button, .brand-logo").on("click", function(event) {
     $("#tuner-tab").hide();
     $("#metronome-tab").hide();
     $("#about-tab").hide();
+    $("#credit-tab").hide();
 })
 
 // tabs tab button
@@ -41,6 +43,7 @@ $("#tab-for-tabs, #tab-carousel-btn, #tab-dropdown").on("click", function(event)
     $("#tuner-tab").hide();
     $("#metronome-tab").hide();
     $("#about-tab").hide();
+    $("#credit-tab").hide();
 })
 
 // videos tab button
@@ -51,6 +54,7 @@ $("#tab-for-play, #videos-carousel-btn, #videos-dropdown").on("click", function(
     $("#tuner-tab").hide();
     $("#metronome-tab").hide();
     $("#about-tab").hide();
+    $("#credit-tab").hide();
 })
 
 // tuner tab button
@@ -61,6 +65,7 @@ $("#tab-for-tuner, #tuner-carousel-btn, #tuner-dropdown").on("click", function(e
     $("#tabs-tab").hide();
     $("#videos-tab").hide();
     $("#about-tab").hide();
+    $("#credit-tab").hide();
     initializeTuner();
 })
 
@@ -72,12 +77,25 @@ $("#tab-for-metronome, #metronome-carousel-btn, #metronome-dropdown").on("click"
     $("#videos-tab").hide();
     $("#tuner-tab").hide();
     $("#about-tab").hide();
+    $("#credit-tab").hide();
 })
 
 // about us dropdown button
 $("#about-dropdown").on("click", function(event){
     $("#home-tab").hide();
     $("#about-tab").slideToggle(1000);
+    $("#tuner-tab").hide();
+    $("#metronome-tab").hide();
+    $("#tabs-tab").hide();
+    $("#videos-tab").hide();
+    $("#credit-tab").hide();
+})
+
+//credit dropdown button
+$("#credit-dropdown").on("click", function(event){
+    $("#home-tab").hide();
+    $("#credit-tab").slideToggle(1000);
+    $("#about-tab").hide();
     $("#tuner-tab").hide();
     $("#metronome-tab").hide();
     $("#tabs-tab").hide();
