@@ -137,7 +137,6 @@ $(document).ready(function(){
 });
 
 //Animate the carousel
-
 function cycle() {
     var timer = setInterval(advance, 4000);
     function advance() {
@@ -146,10 +145,13 @@ function cycle() {
 };
 
 // when the mouse leaves the dropdown navigation menu area, fade it out of view
-
 $("#dropdown1").on("mouseleave", function(event) {
     $("#dropdown1").fadeOut(200);
+})
 
+// when the mouse leaves the dropdown navigation menu area, fade it out of view
+$("#user-dropdown").on("mouseleave", function(event) {
+    $("#user-dropdown").fadeOut(200);
 })
 
 // when the dropdown icon or any dropdown menu item is clicked on, hide the dropdown menu
@@ -173,14 +175,14 @@ var config = {
   };
   
   firebase.initializeApp(config);
-
   var database = firebase.database();
 
 //---------------------------------------------------------------------------
 // Firebase Authentication Config with UI
 //---------------------------------------------------------------------------
 
-  initApp = function() {
+initApp = function() {
+
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
         // User is signed in.
@@ -203,12 +205,12 @@ var config = {
     }, function(error) {
       console.log(error);
     });
-  };
+};
 
-  window.addEventListener('load', function() {
+window.addEventListener('load', function() {
     initApp()
-  });
+});
 
-  $("#logout").on("click", function(){
+$("#logout").on("click", function(){
     firebase.auth().signOut();
 })
