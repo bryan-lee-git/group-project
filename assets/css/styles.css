@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
 
-/* Global Element Styles */
+/* ------------------------- Global Element Styles -------------------------  */
 
-  main {
+main {
     flex: 1 0 auto;
-  }
+}
 
 body {
     display: flex;
@@ -15,8 +14,12 @@ body {
     background-repeat: no-repeat;
     font-family: 'Josefin Sans', sans-serif;
     background-position: center center;
-    background-size: 680px;
+    background-size: 660px;
     background-attachment: fixed;
+}
+
+a {
+    color: #1565c0;
 }
 
 footer {
@@ -31,10 +34,29 @@ footer {
     margin-top:0px;
 }
 
+footer a {
+    color: lightgrey;
+}
+
 nav {
     
     margin-bottom: 10px;
 }
+
+a:hover {
+    color: orangered;
+}
+
+h1, h4 {
+    text-shadow: 3px 3px 1px black;
+    font-weight: bold;
+}
+
+h4 {
+    margin-bottom: 40px;
+}
+
+/* ------------------------- Firebase Login Styles ------------------------- */
 
 .firebase-auth {
     position: relative;
@@ -53,7 +75,7 @@ nav {
     position:absolute;
     margin-left: auto;
     margin-right: auto;
-    width: 400px;
+    width: 360px;
     margin-top: 150px;
     left: 0;
     right: 0;
@@ -69,29 +91,23 @@ nav {
 
 }
 
-.nav-wrapper i:hover {
-    color: white;
-    transform: scale(1.3, 1.3);
-}
-
-a:hover {
-    color: orangered;
-}
-
-h1, h4 {
-    text-shadow: 3px 3px 1px black;
-    font-weight: bold;
-}
-
-h4 {
-    margin-bottom: 40px;
-}
-
 h1.firebaseui-title {
     text-shadow:none;
 }
 
-/* Tabs Table Styles */
+/* ------------------------- Tabs Table Styles ------------------------- */
+
+#tabs-tab {
+    padding: 0;
+}
+
+#tabs-view {
+    margin-top: -20px;
+    margin-bottom: 30px;
+    background-color: rgba(30, 30, 30, 0.7);
+    padding: 30px 30px 30px 30px;
+    border-radius: 10px;
+}
 
 table {
     background-color: #404040;
@@ -179,7 +195,7 @@ tbody tr:hover, td:hover {
     color: #1565c0;
 }
 
-/* Search Input Form Styles */
+/* ------------------------- Search Input Form Styles ------------------------- */
 
 #tab-form, #yt-form {
     margin: 0 auto;
@@ -189,113 +205,17 @@ tbody tr:hover, td:hover {
     height: 150px;
 }
 
-/* Metronome Styles */
-
-#control-container {
-    padding-bottom: 40px;
+#yt-form {
+    margin-bottom: -20px;
 }
 
-#metro-container, .counter {
+/* ------------------------- Videos Tab Styles ------------------------- */
+
+#videos-tab-view {
+    margin-bottom: 30px;
+    background-color: rgba(30, 30, 30, 0.7);
+    padding: 30px 60px 30px 60px;
     border-radius: 10px;
-    box-shadow: inset 4px 4px 10px #222, inset -4px -4px 10px #222;
-    width: 100%;
-}
-
-#bpm-area, #timer-area, #beat-area {
-    color: white;
-    font-weight: bold;
-}
-
-#play-button {
-    background-color: #1565c0;
-    color: white;
-    font-weight: bold;
-}
-
-#tap-button {
-    background-color: orangered;
-    color: white;
-    font-weight: bold;
-}
-
-#play-button:hover, #tap-button:hover {
-    background-color: #404040;
-}
-
-/* Tuner Styles */
-
-canvas#tuner-instance {
-    margin-top: 80px;
-    box-shadow: 4px 4px 10px black;
-    visibility: visible;
-}
-
-/* Materialize Specific Styles */
-
-#tabs {
-    background-color: transparent;
-    color: orangered;
-    margin-bottom: 20px;
-    margin-top: 10px;
-}
-
-.tab-active {
-    border-bottom: 1px solid orangered;
-    background-color: rgba(1, 1, 1, 0.2);
-}
-
-a#tab-for-tabs, a#tab-for-play, a#tab-for-tuner, a#tab-for-metronome {
-    font-weight: bold;
-}
-
-#metronome-tab {
-    margin-top: 50px;
-}
-
-.data-tabs {
-    opacity: 0;
-}
-
-.tabs .indicator  {
-    position: absolute;
-    bottom: 0;
-    height: 2px;
-    background-color: transparent;
-    will-change: left, right;
-}
-
-.indicator {
-    display: none;
-}
-
-/* .carousel .indicators {
-    position: relative;
-    top: 300px;
-} */
-
-.nav-wrapper {
-    background-color: orangered;
-    box-shadow: 5px 5px 4px black;
-}
-
-.btn-large {
-    background-color: orangered;
-}
-
-.btn-floating:hover {
-    background-color: #1565c0;
-}
-
-/* Site Layout Header/Carousel Styles */
-
-#welcome-header {
-    color: orangered;
-    font-family: 'Josefin Sans', sans-serif;
-    margin-top: 15px;
-}
-
-#tab-card, #video-card, #tuner-card, #metronome-card {
-    color: orangered;
 }
 
 #video-view {
@@ -331,6 +251,124 @@ a#tab-for-tabs, a#tab-for-play, a#tab-for-tuner, a#tab-for-metronome {
 
 #prev-btn:hover, #next-btn:hover, #prev-btn2:hover, #next-btn2:hover {
     background-color: orangered !important;
+}
+
+/* ------------------------- Metronome Styles ------------------------- */
+
+#metronome-tab {
+    background-color: rgba(30, 30, 30, 0.7);
+    padding: 40px 60px 40px 60px;
+    border-radius: 10px;
+}
+
+#control-container {
+    padding-bottom: 40px;
+}
+
+#metro-container, .counter {
+    border-radius: 10px;
+    box-shadow: inset 4px 4px 10px #222, inset -4px -4px 10px #222;
+    width: 100%;
+}
+
+#bpm-area, #timer-area, #beat-area {
+    color: white;
+    font-weight: bold;
+}
+
+#play-button {
+    background-color: #1565c0;
+    color: white;
+    font-weight: bold;
+}
+
+#tap-button {
+    background-color: orangered;
+    color: white;
+    font-weight: bold;
+}
+
+#play-button:hover, #tap-button:hover {
+    background-color: #404040;
+}
+
+/* ------------------------- Tuner Styles ------------------------- */
+
+#tuner-tab {
+    margin-bottom: 55px;
+    background-color: rgba(30, 30, 30, 0.7);
+    padding: 10px 60px 10px 60px;
+    border-radius: 10px;
+}
+
+canvas#tuner-instance {
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 4px 4px 10px black;
+    visibility: visible;
+}
+
+/* ------------------------- Materialize Specific Styles ------------------------- */
+
+#tabs {
+    background-color: transparent;
+    color: orangered;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.tab-active {
+    border-bottom: 1px solid orangered;
+    background-color: rgba(1, 1, 1, 0.2);
+}
+
+a#tab-for-tabs, a#tab-for-play, a#tab-for-tuner, a#tab-for-metronome {
+    font-weight: bold;
+}
+
+.data-tabs {
+    opacity: 0;
+}
+
+.tabs .indicator  {
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    background-color: transparent;
+    will-change: left, right;
+}
+
+.indicator {
+    display: none;
+}
+
+.nav-wrapper {
+    background-color: orangered;
+    box-shadow: 5px 5px 4px black;
+}
+
+.nav-wrapper i:hover {
+    color: white;
+    transform: scale(1.3, 1.3);
+}
+
+.btn-large {
+    background-color: orangered;
+}
+
+.btn-floating:hover {
+    background-color: #1565c0;
+}
+
+#welcome-header {
+    color: orangered;
+    font-family: 'Josefin Sans', sans-serif;
+    margin-top: 40px;
+}
+
+#tab-card, #video-card, #tuner-card, #metronome-card {
+    color: orangered;
 }
 
 #carouselRow {
@@ -370,11 +408,23 @@ a#tab-for-tabs, a#tab-for-play, a#tab-for-tuner, a#tab-for-metronome {
     width: max-content !important;
 }
 
-/* DataTables.js Override Styles */
+.input-field .prefix.active{
+    color: orangered !important;
+}
+
+.input-field input:focus + label {
+    color: orangered !important;
+}
+
+/* ------------------------- DataTables.js Override Styles ------------------------- */
 
 div#artist-search_paginate.dataTables_paginate.paging_simple_numbers {
     color: #1565c0;
     font-weight: bold;
+}
+
+a#artist-search_paginate:hover {
+    color: white;
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button {
@@ -388,7 +438,6 @@ div#artist-search_paginate.dataTables_paginate.paging_simple_numbers {
 }
 
 #artist-search_wrapper {
-    margin-bottom: 20px;
     position: relative;
     z-index: 10;
 }
@@ -408,6 +457,7 @@ div#artist-search_paginate.dataTables_paginate.paging_simple_numbers {
     width: 50%;
     float: left;
     color: white;
+    margin-top: -30px;
 }
 
 #artist-search_filter label {
@@ -445,35 +495,34 @@ div#artist-search_paginate.dataTables_paginate.paging_simple_numbers {
     margin-left: 20px;
 }
 
-.input-field .prefix.active{
-    color: orangered !important;
-}
-
-/* label focus color */
-.input-field input:focus + label {
-    color: orangered !important;
-}
-  /* label underline focus color */
 .row .input-field input:focus, #artist-search_filter input:focus {
     border-bottom: 1px solid orangered !important;
     box-shadow: 0 1px 0 0 orangered !important;
     color: white;
 }
-/*about page styling*/
+
+/* ------------------------- About Page Styling -------------------------*/
+
 #about-contain {
-    margin-bottom: 40px;
-    background-color: rgba(0, 0, 0, 0.4);
-    padding: 30px;
+    margin-bottom: 50px;
+    background-color: rgba(30, 30, 30, 0.7);
+    padding: 30px 60px 30px 60px;
     border-radius: 10px;
-    box-shadow: inset 4px 4px 10px #222, inset -4px -4px 10px #222;
+    position: relative;
+    z-index: 10;
 }
 
 .about-names {
     margin-bottom: 0px;
     margin-top: 0px;
 }
+
 .credit-para a {
     color: #1565c0;
+}
+
+p.credit-para {
+    margin-top: 5px;
 }
 
 .credit-para a:hover {
@@ -485,40 +534,44 @@ div#artist-search_paginate.dataTables_paginate.paging_simple_numbers {
     text-align: center;
     text-shadow: 3px 3px 1px black;
 }
+
 .about-names {
     color: rgb(189, 189, 189);
     text-align: center;
     font-size:24px;
     text-shadow: 3px 3px 1px black;
 }
+
 .about-para {
     color: rgb(189, 189, 189);
     text-align: center;
     font-size: 24px;
     text-shadow: 3px 3px 1px black;
 }
-/*credit page styling*/
+
+/* ------------------------- Credit Page Styling ------------------------- */
+
 #credit-contain {
-    margin-bottom: 20px;
-    background-color: rgba(0, 0, 0, 0.4);
-    padding: 30px;
+    margin-bottom: 50px;
+    background-color: rgba(30, 30, 30, 0.7);
+    padding: 30px 60px 30px 60px;
     border-radius: 10px;
-    box-shadow: inset 4px 4px 10px #222, inset -4px -4px 10px #222;
 }
+
 .credit-head {
     color: orangered;
     text-align: center;
     text-shadow: 3px 3px 1px black;
 }
+
 .credit-para {
     color: rgb(189, 189, 189);
     text-align: center;
     font-size: 24px;
     text-shadow: 3px 3px 1px black;
 }
-a {
-    color: rgb(189, 189, 189);
-}
+
+/* ------------------------- Media Queries ------------------------- */
 
 @media screen and (max-width: 700px) and (min-width: 300px){
     h1{
@@ -551,10 +604,20 @@ a {
     #firebaseui-auth-container {
         margin-top: 100px;
     }
-    #button-row2 {
-        margin-bottom:60px;
+ 
+    #welcome-header {
+        margin-top: 40px;
+    }
+    #tabs-view, #videos-tab-view, #tuner-tab, #metronome-tab {
+        padding: 30px 20px 30px 20px;
+        background-color: transparent;
+        box-shadow:none;
+    }
+    #credit-contain, #about-contain {
+        padding: 30px 20px 30px 20px;
     }
 }
+
 @media screen and (max-width: 992px) and (min-width: 701px){
     h1{
         font-size: 35px;
@@ -566,6 +629,7 @@ a {
         size: 25px;
     }
 }
+
 @media screen and (max-width: 1199px) and (min-width: 993px){
     h1{
         font-size: 45px;
@@ -574,6 +638,7 @@ a {
         font-size: 30px;
     }
 }
+
 @media screen and (min-width: 1200px){
     h1{
         font-size: 55px;

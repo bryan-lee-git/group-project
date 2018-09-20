@@ -124,18 +124,21 @@
                         </div>
                     </div>
                 </div>
-                
-                <table id="artist-search" class="display">
-                    <thead>
-                        <tr>
-                            <th>Song <i style="margin-bottom: 20px;position: relative; top: 7px;" class="small material-icons">sort</i></th>
-                            <th>Tabs <i style="margin-bottom: 20px;position: relative; top: 7px;" class="small material-icons">sort</i></th>
-                            <th>Chords <i style="margin-bottom: 20px;position: relative; top: 7px;" class="small material-icons">sort</i></th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
 
+                <div class="row">
+                    <div id="tabs-view" class="col s12 z-depth-5">
+                        <table id="artist-search" class="display">
+                            <thead>
+                                <tr>
+                                    <th>Song <i style="margin-bottom: 20px;position: relative; top: 7px;" class="small material-icons">sort</i></th>
+                                    <th>Tabs <i style="margin-bottom: 20px;position: relative; top: 7px;" class="small material-icons">sort</i></th>
+                                    <th>Chords <i style="margin-bottom: 20px;position: relative; top: 7px;" class="small material-icons">sort</i></th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
 
             <!-- End Tabs Tab Content -->
@@ -158,27 +161,32 @@
                     </div>
                 </div>
 
-                <div id="button-row1" class="row">
-                    <button style="border-radius: 5px;" id="prev-btn" class="z-depth-5 blue darken-3 btn-large col s2 left"><i id="prev-icon" class="material-icons">trending_flat</i></button>
-                    <button style="border-radius: 5px;" id="next-btn" class="z-depth-5 blue darken-3 btn-large col s2 right"><i class="material-icons">trending_flat</i></button>
-                </div>
+                <div class="row">
+                    <div id="videos-tab-view" class="col s12 z-depth-5">
 
-                <div id="video-row" class="row">
-                    <div id="video-view" class="col s12"></div>
-                </div>
+                        <div id="button-row1" class="row">
+                            <button style="border-radius: 5px;" id="prev-btn" class="z-depth-5 blue darken-3 btn-large col s2 left"><i id="prev-icon" class="material-icons">trending_flat</i></button>
+                            <button style="border-radius: 5px;" id="next-btn" class="z-depth-5 blue darken-3 btn-large col s2 right"><i class="material-icons">trending_flat</i></button>
+                        </div>
+        
+                        <div id="video-row" class="row">
+                            <div id="video-view" class="col s12"></div>
+                        </div>
+        
+                        <div id="button-row2" class="row">
+                            <button style="border-radius: 5px;" id="prev-btn2" class="z-depth-5 blue darken-3 btn-large col s2 left"><i id="prev-icon" class="material-icons">trending_flat</i></button>
+                            <button style="border-radius: 5px;" id="next-btn2" class="z-depth-5 blue darken-3 btn-large col s2 right"><i class="material-icons">trending_flat</i></button>
+                        </div>
 
-                <div id="button-row2" class="row">
-                        <button style="border-radius: 5px;" id="prev-btn2" class="z-depth-5 blue darken-3 btn-large col s2 left"><i id="prev-icon" class="material-icons">trending_flat</i></button>
-                        <button style="border-radius: 5px;" id="next-btn2" class="z-depth-5 blue darken-3 btn-large col s2 right"><i class="material-icons">trending_flat</i></button>
+                    </div>
                 </div>
-                    
             </div>
 
             <!-- End Videos Tab Content -->
 
             <!-- Begin Tuner Tab Content -->
 
-            <div id="tuner-tab" class="col s12 center-align">
+            <div id="tuner-tab" class="col s12 center-align z-depth-5">
                 <canvas class="z-depth-5" style="border-radius: 150px;" height="300px" id="tuner-instance"></canvas><br>
                 <h4 class="white-text">Standard tuning is E-A-D-G-B-E.<br>If the circle turns <span class="green-text">green</span>, the string is in <span class="green-text">tune.</span><br><br>
                 See alternate guitar tunings <a target="_blank" href="https://en.wikipedia.org/wiki/List_of_guitar_tunings">here.</a>
@@ -189,7 +197,7 @@
 
             <!-- Begin Metronome Tab -->
 
-            <div id="metronome-tab" class="col s12">      
+            <div id="metronome-tab" class="col s12 z-depth-5">      
 
                 <section id="metro-container" class="metronome-container">
                     <div class="counter"></div>  
@@ -230,21 +238,21 @@
 
         <div id="about-tab" class="col s12">
             <div class="row">
-                <div id="about-contain" class="col s10 offset-s1">
+                <div id="about-contain" class="col s10 offset-s1 z-depth-5">
                     <h1 class="about-head">Panda Warriors Dev Group</h1>
-                    <p class="about-names">Jim - The Sensei</p>
-                    <p class="about-names">Eric - The Samurai</p>
-                    <p class="about-names">Bryan - The Ninja</p>
-                    <p class="about-names">Bronson - The Shaolin Monk</p>
+                    <p class="about-names"><a target="blank" href="https://github.com/jamesschlader">Jim Schlader - The Sensei <img width="30px" style="margin-bottom: -5px;" src="./assets/images/github-hover.png" alt="Jim Schlader Github"></a></p>
+                    <p class="about-names"><a target="blank" href="https://github.com/bishopcanno">Eric Bishop - The Samurai <img width="30px" style="margin-bottom: -5px;" src="./assets/images/github-hover.png" alt="Eric Bishop Github"></a></p>
+                    <p class="about-names"><a target="blank" href="https://github.com/bryan-lee-git">Bryan Lee - The Ninja <img width="30px" style="margin-bottom: -5px;" src="./assets/images/github-hover.png" alt="Bryan Lee Github"></a></p>
+                    <p class="about-names"><a target="blank" href="https://github.com/Skeeter404">Bronson Bird - The Shaolin Monk <img width="30px" style="margin-bottom: -5px;" src="./assets/images/github-hover.png" alt="Bronson Bird Github"></a></p>
+                    <br><br>
+
+                    <div class="col s12 divider grey darken-2"></div>
                     <br>
 
-                    <div class="col s10 offset-s1 divider grey darken-2"></div>
-                    <br>
-
-                    <h3 class="about-head">The "why" behind A1 Guitar Learning</h3>
+                    <h3 class="about-head">The "Why" Behind A1 Guitar Learner</h3>
 
                     <p class="about-para">Let's start with getting the name out of the way... We named ourselves "The Panda Warriors", totally off of a whim. We wanted to have fun with this project and we seemed to accomplish exactly that.</p>
-                    <p class="about-para">The A1 in "A1 Guitar Learning stands for "All-in-one". We wanted to create one application that a user could go to in order to find everything that they need to begin playing the guitar!</p>
+                    <p class="about-para">The A1 in "A1 Guitar Learner" stands for "All-in-one". We wanted to create one application that a user could go to in order to find everything that they need to begin playing the guitar!</p>
                     <p class="about-para">The four of us started this project for a Coding and Web Development course that we were taking through the University of Utah. It has been a really fun learning experience and a great way to immerse ourselves into the world of Web Development.</p>
                     <p class="about-para">One thing that we all seemed to have in common was our love of music and our innate desire to help others find their love for it as well. We decided to build off of that and create something that was easy to use, fun, and useful on the go. Hopefully this helps tons of people across the globe begin their journey of learning how to play the guitar!</p>
                 </div>
@@ -257,19 +265,46 @@
 
         <div id="credit-tab" class="col s12">
             <div class="row">
-                <div id="credit-contain" class="col s8 offset-s2">
-                    <h1 class="credit-head">Credit where credit is due!</h1>
-                    <p class="credit-para">We would like to extend credit to the other great developers that built some of the amazing things that we implemented into our application.<br> 
-                    These people/sources include: </p>
-                    <p class="credit-para">
-                    <img width="30px" style="margin-bottom: -5px;" src="./assets/images/songsterr-icon.png" alt="Songsterr API icon"><a href="https://www.songsterr.com/a/wa/api"> Songsterr API</a>
-                    <img width="30px" style="margin-bottom: -5px;" src="./assets/images/yt-icon.png" alt="YouTube API icon"><a href="https://developers.google.com/youtube/v3/docs/"> Youtube Data API</a>
-                    <img width="30px" style="margin-bottom: -5px;" src="./assets/images/materialize-logo.png" alt="Google Materialize API icon"><a href="https://materializecss.com/"> Google Materialize</a></p><br>
-                    <div class="col s8 offset-s2 divider grey darken-2"></div>
+                <div id="credit-contain" class="col s10 offset-s1 z-depth-5">
+
+                    <h1 class="credit-head">Credit Where Credit Is Due!</h1>
+
+                    <p class="credit-para">We would like to extend credit to the other great developers that built some of the amazing things that we implemented into our application.</p>
+                    
+                    <div class="col s12 divider grey darken-2"></div><br><br>
+
+
+                    <div class="row">
+                        <div class="col s12 m4 l4">
+                            <p class="credit-para"><img width="30px" style="margin-bottom: -5px;" src="./assets/images/songsterr-icon.png" alt="Songsterr API icon"><a target="_blank" href="https://www.songsterr.com/a/wa/api"> Songsterr API </a></p>
+                        </div>
+                        <div class="col s12 m4 l4">
+                            <p class="credit-para"><img width="30px" style="margin-bottom: -5px;" src="./assets/images/yt-icon.png" alt="YouTube API icon"><a target="_blank" href="https://developers.google.com/youtube/v3/docs/"> Youtube Data API </a></p>
+                        </div>
+                        <div class="col s12 m4 l4">
+                                <p class="credit-para"><img width="30px" style="margin-bottom: -5px;" src="./assets/images/datatablesjs-icon.png" alt="DataTables.js icon"><a target="_blank" href="https://datatables.net/"> DataTables.js </a></p>
+                        </div>
+
+                        <div class="col s12 m4 l4">
+                            <p class="credit-para"><img width="30px" style="margin-bottom: -5px;" src="./assets/images/materialize-logo.png" alt="Google Materialize API icon"><a target="_blank" href="https://materializecss.com/"> Google Materialize </a></p>
+                        </div>
+
+                        <div class="col s12 m4 l4">
+                            <p class="credit-para"><img width="30px" style="margin-bottom: -5px;" src="./assets/images/material-design-icon.png" alt="Google Material Design Icons"><a target="_blank" href="https://material.io/tools/icons/?icon=trending_flat&style=baseline"> Google Material Design </a></p>
+                        </div>
+
+                        <div class="col s12 m4 l4">
+                            <p class="credit-para"><img width="30px" style="margin-bottom: -5px;" src="./assets/images/firebase-icon.png" alt="Google Firebase"><a target="_blank" href="https://firebase.google.com/"> Google Firebase </a></p>
+                        </div>
+
+                    </div>
+                    <div class="col s12 divider grey darken-2"></div>
                     <br>
+
                     <p class="credit-para">
-                    <a href="https://codepen.io/ganderzz/pen/Ezlfu">Metronome source code by Ezlfu</a><br>
-                    <a href="https://github.com/citronneur/onlinetuner.co">Tuner source code by citronneur/onlinetuner.co</a></p>
+                    <a target="_blank" href="https://codepen.io/ganderzz/pen/Ezlfu">Metronome by Ezlfu</a><br>
+                    <a target="_blank" href="https://github.com/citronneur/onlinetuner.co">Tuner by Onlinetuner.co</a></p>
+
                 </div>
             </div>
         </div>
@@ -294,12 +329,12 @@
             <!-- Begin Landing Page Feature Carousel -->
 
             <div class="row" id= "carouselRow">
-                <div class="col s8 offset-s2 divider grey darken-2"></div>
+                <div class="col s8 offset-s2 divider grey darken-2"></div><br>
                 <div class="col s12 m8 offset-m2">
                     <div class="carousel carousel-slider center">
                         <div class="carousel-item waves-effect" id="tab-card" href="#one!">
-                            <h1 class="head-one blue-text darken-5">Guitar Tabs<br> + Chords</h1>
-                            <h4 class="white-text head-four">Learn songs by your<br>favorite musicians.</h4>
+                            <h1 class="head-one blue-text darken-5">Guitar Tabs + Chords</h1>
+                            <h4 class="white-text head-four">Learn songs by your favorite musicians.</h4>
                             <a href="#tabs-tab" id="tab-carousel-btn" class="btn-floating btn-large pulse" id="tab-icon"><i class="large material-icons">format_align_justify</i></a>
                             <br/>
                             <div id="carousel-arrows" class="row">
@@ -329,7 +364,7 @@
 
                         <div class="carousel-item waves-effect" id="tuner-card" href="#three!">
                             <h1 class="head-one blue-text darken-5">Guitar Tuner</h1>
-                            <h4 class="white-text head-four">Don't be a novice.<br>Tune your instrument.</h4>
+                            <h4 class="white-text head-four">Don't be a novice. Tune your instrument.</h4>
                             <a href="#tuner-tab" id="tuner-carousel-btn" class="btn-floating btn-large pulse" id="tuner-icon"><i class="large material-icons">music_note</i></a>
                             <br/>
                             <div id="carousel-arrows" class="row">
@@ -370,7 +405,7 @@
     <!-- Begin Footer -->
 
     <footer id="footer" class="col l12 s12 m12 center-align">
-        Panda Warriors Development Group | © 2018<br>
+        Panda Warriors Development Group © 2018<br>
         <a id="about-dropdown" href="#about-tab">About</a> | <a id="credit-dropdown" href="#credit-tab">Credits</a>
     </footer>
 
