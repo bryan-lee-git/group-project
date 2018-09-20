@@ -162,34 +162,55 @@ $("#user-button").on("touchstart", function() {
 // MATERIALIZE FUNCTIONALITY
 //----------------------------------------------------------------------------------------
 
-// carousel functionality (Google Materialize)
+// carousel functionality (Swiper)
 
-$('.carousel.carousel-slider').carousel({
-    fullWidth: true,
-    indicators: true
+$(document).ready(function () {
+    //initialize swiper when document ready
+    var mySwiper = new Swiper ('.swiper-container', {
+        // Optional parameters include horizontal scrolling, looping, nav arrows, pagination with dynamic bullets, and autoplay
+        direction: 'horizontal',
+        loop: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            dynamicBullets: true,
+        },
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },      
+    })
 });
+
+// $('.carousel.carousel-slider').carousel({
+//     fullWidth: true,
+//     indicators: true
+// });
 
 //Animate the carousel
-function cycle() {
-    var timer = setInterval(advance, 4000);
-    function advance() {
-        $('.carousel').carousel('next');
-    }
-}; cycle();
+// function cycle() {
+//     var timer = setInterval(advance, 4000);
+//     function advance() {
+//         $('.carousel').carousel('next');
+//     }
+// }; cycle();
 
 // move next carousel
-$('.moveNextCarousel').click(function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    $('.carousel').carousel('next');
-});
+// $('.moveNextCarousel').click(function(e){
+//     e.preventDefault();
+//     e.stopPropagation();
+//     $('.carousel').carousel('next');
+// });
 
 // move prev carousel
-$('.movePrevCarousel').click(function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    $('.carousel').carousel('prev');
-});
+// $('.movePrevCarousel').click(function(e){
+//     e.preventDefault();
+//     e.stopPropagation();
+//     $('.carousel').carousel('prev');
+// });
 
 // run materialize functions for site styling functionality.
 $(document).ready(function(){
