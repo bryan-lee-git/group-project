@@ -2,7 +2,7 @@
 // Tabs Click Display/Hide Functionality
 //----------------------------------------------------------------------------------------
 
-//hide all tab areas until called upon
+// first hide all areas until called upon
 
 $("#firebaseui-auth-container").hide(0);
 $("#tabs-tab").hide();
@@ -11,22 +11,6 @@ $("#tuner-tab").hide();
 $("#metronome-tab").hide();
 $("#about-tab").hide();
 $("#credit-tab").hide();
-
-cycle();
-
- // move next carousel
- $('.moveNextCarousel').click(function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    $('.carousel').carousel('next');
- });
-
- // move prev carousel
- $('.movePrevCarousel').click(function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    $('.carousel').carousel('prev');
- });
 
 // home button
 $("#home-button, .brand-logo").on("click", function() {
@@ -95,7 +79,7 @@ $("#tab-for-tuner, #tuner-carousel-btn, #tuner-dropdown").on("click", function()
 
 // metronome tab button
 $("#tab-for-metronome, #metronome-carousel-btn, #metronome-dropdown").on("click", function(){
-    $(window).scrollTop(500);
+    $(window).scrollTop(0);
     $("#home-tab").hide();
     $("#metronome-tab").slideToggle(1000);
     $("#tabs-tab").hide();
@@ -123,6 +107,7 @@ $("#about-dropdown").on("click", function(){
 
 //credit dropdown button
 $("#credit-dropdown").on("click", function(event){
+    $(window).scrollTop(0);
     $("#home-tab").hide();
     $("#credit-tab").slideToggle(1000);
     $("#about-tab").hide();
@@ -132,15 +117,78 @@ $("#credit-dropdown").on("click", function(event){
     $("#videos-tab").hide();
 })
 
+// when the mouse leaves the dropdown navigation menu area, fade it out of view
+$("#dropdown1").on("mouseleave", function() {
+    $("#dropdown1").fadeOut(200);
+})
+
+// hide the menus whenever the mouse is over the body (which means the mouse has left the dropdown content)
+$("#main-container").on("mouseover", function() {
+    $("#dropdown1, #user-dropdown").fadeOut(200);
+})
+
+// content dropdown on content icon mouseover
+$("#content-button").on("mouseover", function() {
+    $("#user-dropdown").fadeOut(200);
+})
+
+// when the mouse leaves the dropdown navigation menu area, fade it out of view
+$("#user-dropdown").on("mouseleave", function() {
+    $("#user-dropdown").fadeOut(200);
+})
+
+// user dropdown on icon mouseover
+$("#user-button").on("mouseover", function() {
+    $("#dropdown1").fadeOut(200);
+})
+
+// when the dropdown icon or any dropdown menu item is clicked on, hide the dropdown menu
+$("#tab-dropdown, #videos-dropdown, #tuner-dropdown, #metronome-dropdown").on("click", function() {
+    event.preventDefault();
+    $("#dropdown1").fadeToggle(200);
+})
+
+// content dropdown menu for mobile
+$("#content-button").on("touchstart", function() {
+    $("#dropdown1").fadeToggle(200);
+})
+
+// user dropdown menu for mobile
+$("#user-button").on("touchstart", function() {
+    $("#user-dropdown").fadeToggle(200);
+})
+
 //----------------------------------------------------------------------------------------
 // MATERIALIZE FUNCTIONALITY
 //----------------------------------------------------------------------------------------
 
- // carousel functionality (Google Materialize)
+// carousel functionality (Google Materialize)
 
- $('.carousel.carousel-slider').carousel({
+$('.carousel.carousel-slider').carousel({
     fullWidth: true,
     indicators: true
+});
+
+//Animate the carousel
+function cycle() {
+    var timer = setInterval(advance, 4000);
+    function advance() {
+        $('.carousel').carousel('next');
+    }
+}; cycle();
+
+// move next carousel
+$('.moveNextCarousel').click(function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    $('.carousel').carousel('next');
+});
+
+// move prev carousel
+$('.movePrevCarousel').click(function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    $('.carousel').carousel('prev');
 });
 
 // run materialize functions for site styling functionality.
@@ -153,38 +201,6 @@ $(document).ready(function(){
     $('.collapsible').collapsible();
     // tabs initialization, mobile swipe
 });
-
-//Animate the carousel
-function cycle() {
-    var timer = setInterval(advance, 4000);
-    function advance() {
-        $('.carousel').carousel('next');
-    }
-};
-
-// when the mouse leaves the dropdown navigation menu area, fade it out of view
-$("#dropdown1").on("mouseleave", function() {
-    $("#dropdown1").fadeOut(200);
-})
-
-$("#content-button").on("mouseover", function() {
-    $("#user-dropdown").fadeOut(200);
-})
-
-// when the mouse leaves the dropdown navigation menu area, fade it out of view
-$("#user-dropdown").on("mouseleave", function() {
-    $("#user-dropdown").fadeOut(200);
-})
-
-$("#user-button").on("mouseover", function() {
-    $("#dropdown1").fadeOut(200);
-})
-
-// when the dropdown icon or any dropdown menu item is clicked on, hide the dropdown menu
-$(".dropdown-trigger, #tab-dropdown, #videos-dropdown, #tuner-dropdown, #metronome-dropdown").on("click", function() {
-    event.preventDefault();
-    $("#dropdown1").fadeToggle(200);
-})
 
 //---------------------------------------------------------------------------
 // Firebase Config 
@@ -200,8 +216,8 @@ var config = {
     messagingSenderId: "502946428711"
   };
   
-  firebase.initializeApp(config);
-  var database = firebase.database();
+firebase.initializeApp(config);
+var database = firebase.database();
 
 //---------------------------------------------------------------------------
 // Firebase Authentication Config with UI

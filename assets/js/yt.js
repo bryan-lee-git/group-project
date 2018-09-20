@@ -7,7 +7,7 @@ var currentPage = 0;
 var userInput = "";
 
 // load next set of videos button
-$("#next-btn").on("click", function(event) {
+$("#next-btn, #next-btn2").on("click", function(event) {
     $(window).scrollTop(0);
     event.preventDefault();
     currentPage++;
@@ -16,7 +16,7 @@ $("#next-btn").on("click", function(event) {
 })
 
 // load previous set of videos button
-$("#prev-btn").on("click", function(event) {
+$("#prev-btn, #prev-btn2").on("click", function(event) {
     if (currentPage > 0) {
         event.preventDefault();
         currentPage--;
@@ -88,7 +88,7 @@ function getVideos(userInput) {
 
             // add the video embed to the page using standard YT embed code filled in with individual video IDs
             $("#video-view").prepend(
-                "<div class='col s12 m6 l6'><div style='border-radius: 10px; margin-bottom: 10px; margin-top: 10px' class='video-container z-depth-5'><iframe src='https://www.youtube.com/embed/" + videoId + "' frameborder='0' allow='autoplay;' allowfullscreen='true'></iframe></div></div>"
+                "<div class='col s12 m6 l6'><div style='border-radius: 10px; margin-bottom: 10px; margin-top: 10px' class='video-container'><iframe src='https://www.youtube.com/embed/" + videoId + "' frameborder='0' allow='autoplay;' allowfullscreen='true'></iframe></div></div>"
             )
         })
     })
