@@ -39,12 +39,12 @@
             <div class="nav-wrapper">
                 <div class="container">
                   
-                    <a href="#home-tab" id="a-one-logo" class="brand-logo left"><img style="margin-top: 8px; margin-left:10px;" width="50px" src="./assets/images/a1-icon.png"></a>
+                    <a href="#home-tab" id="a-one-logo" class="brand-logo left"><img style="margin-top: 8px; margin-left:5px;" width="50px" src="./assets/images/a1-icon.png"></a>
 
                     <ul class="right">
                         <li><a id="user-button" class="dropdown-trigger" data-target="user-dropdown"><i class="material-icons">person</i></a></li>
                         <li><a id="home-button" href="#home-tab"><i class="material-icons">home</i></a></li>
-                        <li><a id="content-button" class="dropdown-trigger" data-target="dropdown1" id="nav-menu"><i class="material-icons">menu</i></a></li>
+                        <li><a id="content-button" class="dropdown-trigger" data-target="dropdown1"><i class="material-icons">menu</i></a></li>
                     </ul>
 
                     <!-- User UL dropdown Content -->
@@ -66,8 +66,6 @@
                               <li><a id="videos-dropdown"class="white-text" href="#video-tab">Videos</a></li>
                               <li><a id="tuner-dropdown"class="white-text" href="#tuner-tab">Tuner</a></li>
                               <li><a id="metronome-dropdown"class="white-text" href="#metronome-tab">Metronome</a></li>
-                              <li><a id="about-dropdown"class="white-text" href="#about-tab">About Us</a></li>
-                              <li><a id="credit-dropdown"class="white-text" href="#credit-tab">Credits</a></li>
                           </ul>
                       </div>
 
@@ -81,9 +79,11 @@
     <!-- End Main Nav Bar -->
 
     <!--Begin Firebase UI container div-->
+
     <div class="container">
         <div a href="#" class="col s6 offset-3 z-depth-5" id="firebaseui-auth-container"></div>
-</div>
+    </div>
+
     <!--End Firebase UI container div-->
 
     <!-- Begin Main Container -->
@@ -118,7 +118,7 @@
                             <div class="input-field col s12">
                                 <i class="material-icons prefix">search</i>
                                 <input type="text" id="tab-search" class="autocomplete">
-                                <label for="tab-search">Search Tabs By Artist Name</label>
+                                <label for="tab-search">Search Tabs & Chords by Artist</label>
                             </div>
                         </form>
                         </div>
@@ -143,6 +143,7 @@
             <!-- Begin Videos Tab Content -->
 
             <div id="videos-tab" class="col s12">
+                
                 <div class="row">
                     <div class="col s12">
                         <div class="row">
@@ -150,23 +151,27 @@
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix">search</i>
                                     <input type="text" id="youtube-search" class="autocomplete">
-                                    <label for="youtube-search">Search Videos By Artist Name</label>
+                                    <label for="youtube-search">Search for Lesson Videos</label>
                                 </div>
                             </form>
                         </div>
                     </div>
-
-                    <div class="container">
-
-                        <button style="margin-bottom: 15px; border-radius: 5px;" id="prev-btn" class="z-depth-5 blue darken-3 btn col s12">Previous Page</button>
-
-                        <div id="video-view" class="col s12"></div>
-
-                        <button style="margin-top: 5px; margin-bottom: 20px; border-radius: 5px;" id="next-btn" class="z-depth-5 blue darken-3 btn col s12">Next Page</button>
-
-                    </div>
- 
                 </div>
+
+                <div id="button-row1" class="row">
+                    <button style="border-radius: 5px;" id="prev-btn" class="z-depth-5 blue darken-3 btn-large col s2 left"><i id="prev-icon" class="material-icons">trending_flat</i></button>
+                    <button style="border-radius: 5px;" id="next-btn" class="z-depth-5 blue darken-3 btn-large col s2 right"><i class="material-icons">trending_flat</i></button>
+                </div>
+
+                <div id="video-row" class="row">
+                    <div id="video-view" class="col s12"></div>
+                </div>
+
+                <div id="button-row2" class="row">
+                        <button style="border-radius: 5px;" id="prev-btn2" class="z-depth-5 blue darken-3 btn-large col s2 left"><i id="prev-icon" class="material-icons">trending_flat</i></button>
+                        <button style="border-radius: 5px;" id="next-btn2" class="z-depth-5 blue darken-3 btn-large col s2 right"><i class="material-icons">trending_flat</i></button>
+                </div>
+                    
             </div>
 
             <!-- End Videos Tab Content -->
@@ -225,7 +230,7 @@
 
         <div id="about-tab" class="col s12">
             <div class="row">
-                <div id="about-contain" class="col s8 offset-s2">
+                <div id="about-contain" class="col s10 offset-s1">
                     <h1 class="about-head">Panda Warriors Dev Group</h1>
                     <p class="about-names">Jim - The Sensei</p>
                     <p class="about-names">Eric - The Samurai</p>
@@ -278,7 +283,7 @@
             <section id="header">
                 <div class="row">
                     <div class="col s12">
-                        <h1 class="center-align" id="welcome-header">A1 Guitar Learning</h1>
+                        <h1 class="center-align" id="welcome-header">A1 Guitar Learner</h1>
                         <h4 class="white-text head-four center-align">Your guitar learning companion app.</h4>
                     </div>
                 </div>
@@ -293,8 +298,8 @@
                 <div class="col s12 m8 offset-m2">
                     <div class="carousel carousel-slider center">
                         <div class="carousel-item waves-effect" id="tab-card" href="#one!">
-                            <h1 class="head-one blue-text darken-5">Guitar Tabs</h1>
-                            <h4 class="white-text head-four">Learn songs by your favorite musicians.</h4>
+                            <h1 class="head-one blue-text darken-5">Guitar Tabs<br> + Chords</h1>
+                            <h4 class="white-text head-four">Learn songs by your<br>favorite musicians.</h4>
                             <a href="#tabs-tab" id="tab-carousel-btn" class="btn-floating btn-large pulse" id="tab-icon"><i class="large material-icons">format_align_justify</i></a>
                             <br/>
                             <div id="carousel-arrows" class="row">
@@ -308,8 +313,8 @@
                         </div>
                         
                         <div class="carousel-item waves-effect" id="video-card" href="#two!">
-                            <h1 class="head-one blue-text darken-5">Play-Through Videos</h1>
-                            <h4 class="white-text head-four">Learn songs by watching others play.</h4>
+                            <h1 class="head-one blue-text darken-5">Lesson Videos</h1>
+                            <h4 class="white-text head-four">Learn by watching others play.</h4>
                             <a href="#videos-tab" id="videos-carousel-btn" class="btn-floating btn-large pulse" id="play-icon"><i class="large material-icons">play_circle_filled</i></a>
                             <br/>
                             <div id="carousel-arrows" class="row">
@@ -324,7 +329,7 @@
 
                         <div class="carousel-item waves-effect" id="tuner-card" href="#three!">
                             <h1 class="head-one blue-text darken-5">Guitar Tuner</h1>
-                            <h4 class="white-text head-four">Don't be a novice. Tune your instrument.</h4>
+                            <h4 class="white-text head-four">Don't be a novice.<br>Tune your instrument.</h4>
                             <a href="#tuner-tab" id="tuner-carousel-btn" class="btn-floating btn-large pulse" id="tuner-icon"><i class="large material-icons">music_note</i></a>
                             <br/>
                             <div id="carousel-arrows" class="row">
@@ -365,7 +370,8 @@
     <!-- Begin Footer -->
 
     <footer id="footer" class="col l12 s12 m12 center-align">
-        A1 Guitar Learning Companion App © 2018 | Developed by Panda Warriors Development Group
+        Panda Warriors Development Group | © 2018<br>
+        <a id="about-dropdown" href="#about-tab">About</a> | <a id="credit-dropdown" href="#credit-tab">Credits</a>
     </footer>
 
     <!-- End Footer -->

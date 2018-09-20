@@ -14,7 +14,7 @@ body {
     background-image: url(../images/a1-icon-shadow-blue-2.png);
     background-repeat: no-repeat;
     font-family: 'Josefin Sans', sans-serif;
-    background-position: center;
+    background-position: center center;
     background-size: 680px;
     background-attachment: fixed;
 }
@@ -27,7 +27,8 @@ footer {
     left: 0;
     bottom: -45px;
     width: 100%;
-    z-index: -10;
+    z-index: 0;
+    margin-top:0px;
 }
 
 nav {
@@ -81,6 +82,7 @@ h1, h4 {
     text-shadow: 3px 3px 1px black;
     font-weight: bold;
 }
+
 h4 {
     margin-bottom: 40px;
 }
@@ -239,6 +241,7 @@ canvas#tuner-instance {
 
 .tab-active {
     border-bottom: 1px solid orangered;
+    background-color: rgba(1, 1, 1, 0.2);
 }
 
 a#tab-for-tabs, a#tab-for-play, a#tab-for-tuner, a#tab-for-metronome {
@@ -288,6 +291,7 @@ a#tab-for-tabs, a#tab-for-play, a#tab-for-tuner, a#tab-for-metronome {
 #welcome-header {
     color: orangered;
     font-family: 'Josefin Sans', sans-serif;
+    margin-top: 15px;
 }
 
 #tab-card, #video-card, #tuner-card, #metronome-card {
@@ -295,10 +299,37 @@ a#tab-for-tabs, a#tab-for-play, a#tab-for-tuner, a#tab-for-metronome {
 }
 
 #video-view {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
-#prev-btn:hover, #next-btn:hover {
+#video-row {
+    margin-bottom: -10px;
+    position: relative;
+    z-index: 100;
+}
+
+#button-row1 {
+    margin-bottom:10px;
+}
+
+#prev-btn, #prev-btn2 {
+    margin-left: 25px;
+    margin-bottom:-50px;
+}
+
+#prev-icon {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+#next-btn, #next-btn2 {
+    margin-right: 25px;
+}
+
+#prev-btn:hover, #next-btn:hover, #prev-btn2:hover, #next-btn2:hover {
     background-color: orangered !important;
 }
 
@@ -358,6 +389,8 @@ div#artist-search_paginate.dataTables_paginate.paging_simple_numbers {
 
 #artist-search_wrapper {
     margin-bottom: 20px;
+    position: relative;
+    z-index: 10;
 }
 
 #artist-search_wrapper a {
@@ -428,13 +461,17 @@ div#artist-search_paginate.dataTables_paginate.paging_simple_numbers {
 }
 /*about page styling*/
 #about-contain {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     background-color: rgba(0, 0, 0, 0.4);
     padding: 30px;
     border-radius: 10px;
     box-shadow: inset 4px 4px 10px #222, inset -4px -4px 10px #222;
 }
 
+.about-names {
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
 .credit-para a {
     color: #1565c0;
 }
@@ -513,6 +550,9 @@ a {
     }
     #firebaseui-auth-container {
         margin-top: 100px;
+    }
+    #button-row2 {
+        margin-bottom:60px;
     }
 }
 @media screen and (max-width: 992px) and (min-width: 701px){

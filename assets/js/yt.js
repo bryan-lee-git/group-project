@@ -7,7 +7,7 @@ var currentPage = 0;
 var userInput = "";
 
 // load next set of videos button
-$("#next-btn").on("click", function(event) {
+$("#next-btn, #next-btn2").on("click", function(event) {
     $(window).scrollTop(0);
     event.preventDefault();
     currentPage++;
@@ -16,7 +16,7 @@ $("#next-btn").on("click", function(event) {
 })
 
 // load previous set of videos button
-$("#prev-btn").on("click", function(event) {
+$("#prev-btn, #prev-btn2").on("click", function(event) {
     if (currentPage > 0) {
         event.preventDefault();
         currentPage--;

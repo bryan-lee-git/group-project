@@ -95,7 +95,7 @@ $("#tab-for-tuner, #tuner-carousel-btn, #tuner-dropdown").on("click", function()
 
 // metronome tab button
 $("#tab-for-metronome, #metronome-carousel-btn, #metronome-dropdown").on("click", function(){
-    $(window).scrollTop(500);
+    $(window).scrollTop(0);
     $("#home-tab").hide();
     $("#metronome-tab").slideToggle(1000);
     $("#tabs-tab").hide();
@@ -167,6 +167,10 @@ $("#dropdown1").on("mouseleave", function() {
     $("#dropdown1").fadeOut(200);
 })
 
+$("#main-container").on("mouseover", function() {
+    $("#dropdown1, #user-dropdown").fadeOut(200);
+})
+
 $("#content-button").on("mouseover", function() {
     $("#user-dropdown").fadeOut(200);
 })
@@ -181,9 +185,17 @@ $("#user-button").on("mouseover", function() {
 })
 
 // when the dropdown icon or any dropdown menu item is clicked on, hide the dropdown menu
-$(".dropdown-trigger, #tab-dropdown, #videos-dropdown, #tuner-dropdown, #metronome-dropdown").on("click", function() {
+$("#tab-dropdown, #videos-dropdown, #tuner-dropdown, #metronome-dropdown").on("click", function() {
     event.preventDefault();
     $("#dropdown1").fadeToggle(200);
+})
+
+$("#content-button").on("touchstart", function() {
+    $("#dropdown1").fadeToggle(200);
+})
+
+$("#user-button").on("touchstart", function() {
+    $("#user-dropdown").fadeToggle(200);
 })
 
 //---------------------------------------------------------------------------
