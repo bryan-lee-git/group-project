@@ -183,7 +183,7 @@ tbody tr:hover, td:hover {
     margin-bottom: 20px;
 }
 
-#carousel-arrows {
+/* #carousel-arrows {
  margin-top: -55px;
 }
 
@@ -193,8 +193,18 @@ tbody tr:hover, td:hover {
 
 .carousel-nav-arrows:hover {
     color: #1565c0;
+} */
+.swiper-slide{
+    text-align: center;
 }
-
+.swiper-pagination-bullet {
+    background: white;
+    opacity: 1;
+}
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background: orangered;
+}
 /* ------------------------- Search Input Form Styles ------------------------- */
 
 #tab-form, #yt-form {

@@ -10,6 +10,9 @@
     <!-- Materialize CSS -->
     <link type="text/css" rel="stylesheet" href="./assets/materialize/css/materialize.min.css" media="screen,projection">
 
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/css/swiper.css">
+
     <!-- Google Font Embed -->
     <link type="text/css" href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
 
@@ -76,78 +79,64 @@
                     <h1 class="center-align" id="welcome-header">A1 Guitar Learner</h1>
                     <h4 class="white-text head-four center-align">Your guitar learning companion app.</h4>
                 </div>
-            </div>
+            </div>     
         </section>  
-        
-        <!-- End Landing Page Header -->
+            
+            <!-- End Landing Page Header -->
+            
+            <!-- Begin Landing Page Feature Carousel -->
 
-        <!-- Begin Landing Page Feature Carousel -->
-
-        <div class="row" id= "carouselRow">
-            <div class="col s8 offset-s2 divider grey darken-2"></div><br>
-            <div class="col s12 m8 offset-m2">
-                <div class="carousel carousel-slider center">
-                    <div class="carousel-item waves-effect" id="tab-card" href="#one!">
-                        <h1 class="head-one blue-text darken-5">Guitar Tabs + Chords</h1>
-                        <h4 class="white-text head-four">Learn songs by your favorite musicians.</h4>
-                        <a href="#tabs-tab" id="tab-carousel-btn" class="btn-floating btn-large pulse" id="tab-icon"><i class="large material-icons">format_align_justify</i></a>
-                        <br/>
-                        <div id="carousel-arrows" class="row">
-                            <a href="Previo" class="col s2 movePrevCarousel middle-indicator-text waves-effect waves-light content-indicator">
-                                <i class="material-icons left medium middle-indicator-text carousel-nav-arrows">arrow_back</i>
-                            </a>
-                            <a href="Siguiente" class="col s2 offset-s8 moveNextCarousel middle-indicator-text waves-effect waves-light content-indicator">
-                                <i class="material-icons right medium middle-indicator-text carousel-nav-arrows">arrow_forward</i>
-                            </a>
+            <div class="container">
+                <div class="row">
+                    <div class="col s8 offset-s2 divider grey darken-2"></div>
+                    <div class="col s10 offset-s1 offset-s1">
+                        <div class="swiper-container">
+                          
+                            <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper">
+                              
+                                <!-- Slides -->
+                                <div class="swiper-slide">
+                                    <h1 class="head-one blue-text darken-5">Guitar Tabs</h1>
+                                    <h4 class="red-text head-four">Learn songs by your favorite musicians.</h4>
+                                    <a href="#tabs-tab" id="tab-carousel-btn" class="btn-floating btn-large pulse" id="tab-icon"><i class="large material-icons">format_align_justify</i></a>
+                                    <br/>
+                                    <br/>
+                                </div>
+                                <div class="swiper-slide">
+                                    <h1 class="head-one blue-text darken-5">Play-Through Videos</h1>
+                                    <h4 class="red-text head-four">Learn songs by watching others play.</h4>
+                                    <a href="#videos-tab" id="videos-carousel-btn" class="btn-floating btn-large pulse" id="play-icon"><i class="large material-icons">play_circle_filled</i></a>
+                                    <br/>
+                                    <br/>
+                                </div>
+                                <div class="swiper-slide">
+                                    <h1 class="head-one blue-text darken-5">Guitar Tuner</h1>
+                                    <h4 class="red-text head-four">Don't be a novice. Tune your instrument.</h4>
+                                    <a href="#tuner-tab" id="tuner-carousel-btn" class="btn-floating btn-large pulse" id="tuner-icon"><i class="large material-icons">music_note</i></a>
+                                    <br/>
+                                    <br/>
+                                </div>
+                                <div class="swiper-slide">
+                                    <h1 class="head-one blue-text darken-5">Metronome</h1>
+                                    <h4 class="red-text head-four">A metronome to keep your rhythm.</h4>
+                                    <a href="#metronome-tab" id="metronome-carousel-btn" class="btn-floating btn-large pulse" id="metronome-icon"><i class="large material-icons">graphic_eq</i></a>
+                                    <br/>
+                                    <br/>
+                                </div>
+                                ...
+                            </div>
+                          
+                            <!-- Pagination/Indicators -->
+                            <div class="swiper-pagination"></div>
+                        
+                            <!-- Navigation buttons -->
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
                         </div>
-                    </div>
-                    
-                    <div class="carousel-item waves-effect" id="video-card" href="#two!">
-                        <h1 class="head-one blue-text darken-5">Lesson Videos</h1>
-                        <h4 class="white-text head-four">Learn songs by watching others play.</h4>
-                        <a href="#videos-tab" id="videos-carousel-btn" class="btn-floating btn-large pulse" id="play-icon"><i class="large material-icons">play_circle_filled</i></a>
-                        <br/>
-                        <div id="carousel-arrows" class="row">
-                            <a href="Previo" class="col s2 movePrevCarousel middle-indicator-text waves-effect waves-light content-indicator">
-                                <i class="material-icons left medium middle-indicator-text carousel-nav-arrows">arrow_back</i>
-                            </a>
-                            <a href="Siguiente" class="col s2 offset-s8 moveNextCarousel middle-indicator-text waves-effect waves-light content-indicator">
-                                <i class="material-icons right medium middle-indicator-text carousel-nav-arrows">arrow_forward</i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item waves-effect" id="tuner-card" href="#three!">
-                        <h1 class="head-one blue-text darken-5">Guitar Tuner</h1>
-                        <h4 class="white-text head-four">Don't be a novice. Tune your instrument.</h4>
-                        <a href="#tuner-tab" id="tuner-carousel-btn" class="btn-floating btn-large pulse" id="tuner-icon"><i class="large material-icons">music_note</i></a>
-                        <br/>
-                        <div id="carousel-arrows" class="row">
-                            <a href="Previo" class="col s2 movePrevCarousel middle-indicator-text waves-effect waves-light content-indicator">
-                                <i class="material-icons left medium middle-indicator-text carousel-nav-arrows">arrow_back</i>
-                            </a>
-                            <a href="Siguiente" class="col s2 offset-s8 moveNextCarousel middle-indicator-text waves-effect waves-light content-indicator">
-                                <i class="material-icons right medium middle-indicator-text carousel-nav-arrows">arrow_forward</i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item waves-effect" id="metronome-card" href="#four!">
-                        <h1 class="head-one blue-text darken-5">Metronome</h1>
-                        <h4 class="white-text head-four">A metronome to keep your rhythm.</h4>
-                        <a href="#metronome-tab" id="metronome-carousel-btn" class="btn-floating btn-large pulse" id="metronome-icon"><i class="large material-icons">graphic_eq</i></a>
-                        <br/>
-                        <div id="carousel-arrows" class="row">
-                            <a href="Previo" class="col s2 movePrevCarousel middle-indicator-text waves-effect waves-light content-indicator">
-                                <i class="material-icons left medium middle-indicator-text carousel-nav-arrows">arrow_back</i>
-                            </a> 
-                            <a href="Siguiente" class="col s2 offset-s8 moveNextCarousel middle-indicator-text waves-effect waves-light content-indicator">
-                                <i class="material-icons right medium middle-indicator-text carousel-nav-arrows">arrow_forward</i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>    
+                    </div>                                                   
+                </div>                                            
+            </div>
         </div>
     </div>
 
@@ -182,6 +171,9 @@
 
      <!-- Materialize -->
      <script src="./assets/materialize/js/materialize.min.js"></script>
+
+      <!-- Swiper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/js/swiper.js"></script>
 
      <!--Landing page specific js file-->
      <script src="./assets/js/logic.js"></script>
