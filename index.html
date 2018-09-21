@@ -67,6 +67,7 @@
                               <li><a id="videos-dropdown"class="white-text" href="#video-tab">Videos</a></li>
                               <li><a id="tuner-dropdown"class="white-text" href="#tuner-tab">Tuner</a></li>
                               <li><a id="metronome-dropdown"class="white-text" href="#metronome-tab">Metronome</a></li>
+                              <li><a id="favorites-dropdown"class="white-text" href="#favorites-tab">Favorites</a></li>
                           </ul>
                       </div>
 
@@ -96,10 +97,12 @@
 
             <div class="col s12">
                 <ul class="tabs" id="tabs">
-                    <li id="tab-for-tabs" class="tab col m3 l3 s6"><a href="#tabs-tab">Tabs</a></li>
-                    <li id="tab-for-play" class="tab col m3 l3 s6"><a href="#videos-tab">Videos</a></li>
-                    <li id="tab-for-tuner" class="tab col m3 l3 s6" ><a href="#tuner-tab">Tuner</a></li>
-                    <li id="tab-for-metronome" class="tab col m3 l3 s6"><a href="#metronome-tab">Metronome</a></li>
+                    <li id="tab-for-tabs" class="tab col m2 s6"><a href="#tabs-tab">Tabs</a></li>
+                    <li id="tab-for-play" class="tab col m2 s6"><a href="#videos-tab">Videos</a></li>
+                    <li id="tab-for-tuner" class="tab col m2 s6" ><a href="#tuner-tab">Tuner</a></li>
+                    <li id="tab-for-metronome" class="tab col m2 s6"><a href="#metronome-tab">Metronome</a></li>
+                    <li id="tab-for-favorites" class="tab col m2 s6"><a href="#favorites-tab">Favorites</a></li>
+
                 </ul>
             </div>
 
@@ -217,6 +220,36 @@
 
             <!-- End Metronome Tab -->
 
+            <!-- Start Favorites Tab Content-->
+
+            <div class="container" id="favorites-tab">
+                <div class="row">
+                    <div class="col s6">
+                        <table id="artist-fav" class="display">
+                            <thead>
+                                <tr>
+                                    <th>Song <i style="margin-bottom: 20px;position: relative; top: 7px;" class="small material-icons">sort</i></th>
+                                    <th>Tabs <i style="margin-bottom: 20px;position: relative; top: 7px;" class="small material-icons">sort</i></th>
+                                    <th>Chords <i style="margin-bottom: 20px;position: relative; top: 7px;" class="small material-icons">sort</i></th>
+                                </tr>
+                            </thead>
+                            <tbody id="favorite-tabs"></tbody>
+                        </table>
+
+                    </div>
+                    <div class="col s6" id="favorite-vids">
+                            <button style="margin-bottom: 15px; border-radius: 5px;" id="prev-fav-btn" class="z-depth-5 blue darken-3 btn col s12">Previous Page</button>
+
+                            <div id="fav-video-view" class="col s12"></div>
+    
+                            <button style="margin-top: 5px; margin-bottom: 20px; border-radius: 5px;" id="next-fav-btn" class="z-depth-5 blue darken-3 btn col s12">Next Page</button>
+
+                    </div>
+                </div>
+            </div> <!--End Favorites container-->
+
+            <!-- End Favorites Tab Content-->
+
         </div>
 
         <!-- End Tabbed Feature Layout -->
@@ -323,6 +356,21 @@
                                 </a>
                             </div>
                         </div>
+
+                        <div class="carousel-item waves-effect" id="favorites-card" href="#five!">
+                                <h1 class="head-one blue-text darken-5">Favorites</h1>
+                                <h4 class="white-text head-four">One place to store your favorite tools.</h4>
+                                <a href="#favorites-tab" id="favorites-carousel-btn" class="btn-floating btn-large pulse" id="favorites-icon"><i class="large material-icons">favorite-border</i></a>
+                                <br/>
+                                <div id="carousel-arrows" class="row">
+                                    <a href="Previo" class="col s2 movePrevCarousel middle-indicator-text waves-effect waves-light content-indicator">
+                                        <i class="material-icons left medium middle-indicator-text carousel-nav-arrows">arrow_back</i>
+                                    </a> 
+                                    <a href="Siguiente" class="col s2 offset-s8 moveNextCarousel middle-indicator-text waves-effect waves-light content-indicator">
+                                        <i class="material-icons right medium middle-indicator-text carousel-nav-arrows">arrow_forward</i>
+                                    </a>
+                                </div>
+                            </div>
                     </div>
                 </div>    
             </div>
@@ -374,7 +422,7 @@
     <script src="./assets/js/songsterr.js"></script>
     
     <!-- Tuner App -->
-    <script src="./assets/js/tuner/js/onlinetuner.min.js"></script>
+    <!--<script src="./assets/js/tuner/js/onlinetuner.min.js"></script>-->
     
     <!-- Metronome -->
     <script src="./assets/js/metronome/metro.js"></script>

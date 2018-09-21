@@ -22,9 +22,9 @@ $("#tab-form").on("submit", function(event) {
 
 function fillTable(child) {
 
-    // console log entire child object
+    
 
-    console.log(child);
+    //console.log(child);
 
     // set variable to hold chords icon
     var chords = "";
@@ -69,36 +69,20 @@ function fillTable(child) {
     })
     
     // fill table with child data
+    
     $("tbody").append(
         "<tr>"
-        + "<td>" + "<i class='material-icons favs' id='" + child.title + "' name='" + child.title + "'>favorite_border</i>"
+        + "<td>" + "<i class='material-icons favs' id='" + child.id + "' name='" + child.artist.name + "' title='" + child.title + "' chords='" + child.chordsPresent + "' types='" + child.tabTypes + "'>favorite_border</i>"
         + "<td>" + child.title + "</td>"
         + "<td>" + types + "</td>"
         + "<td>" + chords + chordsTabUrl + "</td>"
         + "</tr>"
     )
-    console.log("child.title = " + child.title);
+    if (favorite.tabs.includes(child.id)) {
+        $("#" + child.id).text("favorite");
+    };
 
 };
-
-//listener on Favs to add to favorites
-
-$(".display").on("click", ".favs", function(event){
-    event.preventDefault();
-
-    var pickedTab = event.currentTarget.attributes.name.nodeValue;
-    var favTab = {
-        tabName: pickedTab
-        };
-    
-    firebase.database().ref("user/favs").push(favTab);
-
-    
-    console.log("hopefully, this is the value of the database: " + firebase.database().ref("user/favs/favtab").val().tabName);
-   console.log("here's the favs click event: " + console.dir(event));
-    console.log("Here's the child data to save into favTab: " + event.currentTarget.attributes.name.nodeValue);
-
-});
 
 // function to get list of tabs via the songsterr.com API
 
@@ -125,5 +109,33 @@ function getTabs(userInput) {
     })
 }; 
 
+//listener on Favs to add to favorites
+
+$(".display").on("click", ".favs", function(event){
+    event.preventDefault();
+
+    var pickedTab = {
+        artist: event.currentTarget.attributes.name.nodeValue,
+        title: event.currentTarget.attributes.title.nodeValue,
+        id: event.currentTarget.attributes.id.nodeValue,
+        chords: event.currentTarget.attributes.chords.nodeValue,
+        types: event.currentTarget.attributes.types.nodeValue
+    }
+
+    firebase.database().ref("user/favs/tabs").push(pickedTab);
+    $("#" + pickedTab.id).text("favorite");
+
+    console.log("from inside the favs listener inside songsterr.js, here's the selected fav: " + console.dir(pickedTab));
+    //console.log("hopefully, this is the value of the database: " + firebase.database().ref("user/favs/tabs").val());
+    console.log("here's the favs click event: " + console.dir(event));
+    console.log("Here's the artist to save into favTab: " + event.currentTarget.attributes.name.nodeValue);
+    console.log("Here's the title to save into favTab: " + event.currentTarget.attributes.title.nodeValue);
+    console.log("Here's the id to save into favTab: " + event.currentTarget.attributes.id.nodeValue);
+    console.log("Here's the types to save into favTab: " + event.currentTarget.attributes.types.nodeValue);
+    console.log("Here's the chords to save into favTab: " + event.currentTarget.attributes.chords.nodeValue);
+
+});
+    
+    
 getTabs("Nirvana");
 $("#artist-search").before("<h4 id='current-search' style='margin-top: 10px;' class='col s6 white-text'>Results for: " + "Nirvana" + "<h4>");

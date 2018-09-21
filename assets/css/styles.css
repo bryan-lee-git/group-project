@@ -218,7 +218,7 @@ canvas#tuner-instance {
     border-bottom: 1px solid orangered;
 }
 
-a#tab-for-tabs, a#tab-for-play, a#tab-for-tuner, a#tab-for-metronome {
+a#tab-for-tabs, a#tab-for-play, a#tab-for-tuner, a#tab-for-metronome, a#tab-for-favorites {
     font-weight: bold;
 }
 
@@ -267,7 +267,7 @@ a#tab-for-tabs, a#tab-for-play, a#tab-for-tuner, a#tab-for-metronome {
     font-family: 'Josefin Sans', sans-serif;
 }
 
-#tab-card, #video-card, #tuner-card, #metronome-card {
+#tab-card, #video-card, #tuner-card, #metronome-card, #favorites-card {
     color: orangered;
 }
 
