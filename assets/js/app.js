@@ -205,28 +205,24 @@ var config = {
 
   var database = firebase.database();
 
+//Define a local variable to hold incoming firebase data.
    var favorite = {
        tabs: [],
        vids: [],
    };
 
-   console.log("before any listeners in app.js, here's our local data for tabs: " + favorite.tabs);
-
+//Start an event listener for additional videos saved to favorites.
    database.ref("user/favs/vids").on("child_added", function(snap) {
 
+    if (!favorite.vids.includes(snap.val)) {
     favorite.vids.push(snap.val());
+};
 
-    console.log("favorite.vids: " + favorite.vids);
-
-    favorite.vids.forEach(function(vid) {
-
-  
     //fill favorites videos into their space
     $("#fav-video-view").empty();
 
-    console.log("from app.js inside the vids child added listener, vid = " + vid);
-    
-
+    favorite.vids.forEach(vid => {
+        
         // add the video embed to the page using standard YT embed code filled in with individual video IDs
         $("#fav-video-view").prepend(
             "<div class='col s12 m6 l6'><div style='border-radius: 10px; margin-bottom: 10px; margin-top: 10px' class='video-container z-depth-5'><iframe src='https://www.youtube.com/embed/" + vid + "' frameborder='0' allow='autoplay;' allowfullscreen='true'></iframe></div></div>"
@@ -234,45 +230,40 @@ var config = {
     
 });//end forEach on favorite.vids
 
-}); //end child-added listener on user/favs/vids
+}); //end child-added event listener on user/favs/vids
 
+
+//Start an event listener for additional tabs saved to favorites.
   database.ref("user/favs/tabs").on("child_added", function(snap) {
+
     //fill local array upon page load and when a new fav tab is added
     favorite.tabs.push(snap.val());
 
-    console.log("from inside the firebase listener in app.js, here's favorite.tabs: " + console.dir(favorite.tabs));
-    
-
-    //fill favorite tabs into their space
+    //fill favorite tabs into their space in the DOM
     //1. Empty the space
     $("#favorite-tabs").empty();
-
+    $('#artist-search').DataTable().destroy();
+    $('#artist-fav').DataTable().destroy();
+   
+  
     //2. Loop through the local array...
-    favorite.tabs.forEach(function(tab){
-        
-        console.log("What is the tab?? " + console.dir(tab));
-        //...to create a songster query for the song with the stored data = song id.
+    for (i = 0; i < favorite.tabs.length; i++) {
+
+        //draw a filled in heart for each favorite tab in the Tabs content table
+        var favTabID = favorite.tabs[i].id;
+
+        $("#" + favTabID).text("favorite");
+
+        //Create a songster query for the song with the stored data using the local variable array.
    
         var child = {
-            chordsPresent: tab.chords,
-            tabTypes: tab.types,
-            title: tab.title,
-            artist: tab.artist,
-            chordsPresent: tab.chords
-        }
-       console.log("Here's the child I'm about to sent to fillChart: " + console.dir(child));
-           fillChart(child);
+            chordsPresent: favorite.tabs[i].chords,
+            tabTypes: favorite.tabs[i].types,
+            title: favorite.tabs[i].title,
+            artist: favorite.tabs[i].artist,
+            chordsPresent: favorite.tabs[i].chords
+        };
       
-        $('#artist-search').DataTable().destroy();
-        $('#artist-fav').DataTable().destroy();
-        $('#artist-fav').DataTable();
-
-        $('#artist-fav').DataTable();
-        
-   
-
-    function fillChart(child) {
-
     var chords = "";
 
     // chords if true or if false
@@ -290,7 +281,9 @@ var config = {
     var chordsTabUrl = "";
 
     // for teach item in the tab types array do this stuff
-    child.tabTypes.forEach(function(type) {
+    var tTypes = child.tabTypes.split(",");
+    
+    tTypes.forEach(function(type) {
 
         // if there is a guitar tab...
         if (type === "TEXT_GUITAR_TAB") {
@@ -313,19 +306,16 @@ var config = {
             types.push(chordsTabUrl);
         }
     })
-    $("#favorite-tabs").append(
+    $("#favorite-tabs").prepend(
         "<tr>"
         + "<td>" + child.title + "</td>"
         + "<td>" + types + "</td>"
         + "<td>" + chords + chordsTabUrl + "</td>"
         + "</tr>"
     );
-
-    }
-
-}); //end filling favorite tabs section
-
-
+        console.log("here's where we are on the loop: " + i);
+        console.log("Here's child at this trip through the loop: " + console.dir(child));
+}; //end filling favorite tabs section for loop
 
 
 //---------------------------------------------------------------------------

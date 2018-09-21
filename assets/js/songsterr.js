@@ -78,10 +78,7 @@ function fillTable(child) {
         + "<td>" + chords + chordsTabUrl + "</td>"
         + "</tr>"
     )
-    if (favorite.tabs.includes(child.id)) {
-        $("#" + child.id).text("favorite");
-    };
-
+   
 };
 
 // function to get list of tabs via the songsterr.com API
@@ -120,10 +117,13 @@ $(".display").on("click", ".favs", function(event){
         id: event.currentTarget.attributes.id.nodeValue,
         chords: event.currentTarget.attributes.chords.nodeValue,
         types: event.currentTarget.attributes.types.nodeValue
-    }
+    };
+
+    favorite.tabs.forEach(function(){
+        
+    })
 
     firebase.database().ref("user/favs/tabs").push(pickedTab);
-    $("#" + pickedTab.id).text("favorite");
 
     console.log("from inside the favs listener inside songsterr.js, here's the selected fav: " + console.dir(pickedTab));
     //console.log("hopefully, this is the value of the database: " + firebase.database().ref("user/favs/tabs").val());
