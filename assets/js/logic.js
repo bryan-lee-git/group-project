@@ -25,37 +25,8 @@
     })
   });
 
-//  $('.carousel.carousel-slider').carousel({
-//   fullWidth: true,
-//   indicators: true
-// });
-// /Animate the carousel
-
-// function cycle() {
-//   var timer = setInterval(advance, 4000);
-//   function advance() {
-//       $('.carousel').carousel('next');
-//   }
-// };
-
-// cycle();
-
-// run materialize functions for site styling functionality.
-$(document).ready(function(){
-  // nav bar dropdown (Google Materialize)
-  $('.dropdown-trigger').dropdown({hover: true});
-  // floating buttons
-  $('.fixed-action-btn').floatingActionButton();
-  // collapsible initialization
-  $('.collapsible').collapsible();
-  // tabs initialization, mobile swipe
-});
-
-
-
 // when the mouse leaves the dropdown navigation menu area, fade it out of view
-
-$("#dropdown1").on("mouseleave", function(event) {
+$("#dropdown1").on("mouseleave", function() {
   $("#dropdown1").fadeOut(200);
 })
 
@@ -79,13 +50,28 @@ $('.movePrevCarousel').click(function(e){
     $('.carousel').carousel('prev');
 });
   
+// initialize carousel
 $('.carousel.carousel-slider').carousel({
     fullWidth: true,
     indicators: true
 });
+
+// toggle user-login section on carousel click
+$(".carousel-slider").on("click", function(){
+  $(".firebase-auth").show();
+});
+
+// toggle user log-in on nav button click
+$("#user-button, .carousel-slider").on("click", function(){
+  $(".firebase-auth").fadeToggle(500);
+  $("#home-tab").fadeToggle(500);
+});
+
+//----------------------------------------------------------------------------------------
+// FIREBASE INITIALIZATION FOR LANDING PAGE
+//----------------------------------------------------------------------------------------
   
-  
-// Initialize Firebase
+// initialize Firebase
 var config = {
   apiKey: "AIzaSyDF16YKI3mYgmTkUOQ09dANHOIVjMsFcJk",
   authDomain: "group-project-1-3b1fb.firebaseapp.com",
@@ -98,7 +84,7 @@ var config = {
 firebase.initializeApp(config);
 $(".firebase-auth").hide();
 
-// FirebaseUI config.
+// Firebase UI config
 var uiConfig = {
   signInSuccessUrl: 'index.html',
   signInOptions: [
@@ -121,19 +107,10 @@ var uiConfig = {
   }
 };
 
-$("#user-button, .carousel-slider").on("click", function(){
-  $(".firebase-auth").fadeToggle(500);
-  $("#home-tab").fadeToggle(500);
-});
-
-$(".carousel-slider").on("click", function(){
-    $(".firebase-auth").show();
-  });
-
-// Initialize the FirebaseUI Widget using Firebase.
+// initialize the FirebaseUI Widget using Firebase
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
 
-//The start method will wait until the DOM is loaded.
+// start method will wait until the DOM is loaded
 ui.start('#firebaseui-auth-container', uiConfig);
           
        

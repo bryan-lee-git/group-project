@@ -35,51 +35,52 @@
             margin-top: 100px;
         }
     </style>
+
 </head>
 
 <!-- Start UI -->
   
 <body>
 
-        <!-- Begin Main Nav Bar -->
-        <div class="navbar-fixed">
-            <nav>
-                <div class="nav-wrapper">
-                    <div class="container">
+    <!-- Begin Main Nav Bar -->
 
-                        <a href="#b" id="a-one-logo" class="brand-logo left"><img style="margin-top: 8px; margin-left:10px;" width="50px" src="./assets/images/a1-icon.png"></a>
-    
-                        <ul class="right">
-                            <li><a class="dropdown-trigger" data-target="show-signin" id="user-button"><i class="material-icons">person</i></a></li>
-                        </ul>
-                         
-                         
-                    </div>    
-                </div>
-
-            </nav>
-        </div> <!--End Navbar-->
-
-        <!--Begin Firebase UI container div-->
-        <div class="firebase-auth">    
-            <div id="firebaseui-auth-container">
-                <h5>Sign-In</h5>
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+                <div class="container">
+                    <a href="#b" id="a-one-logo" class="brand-logo left"><img style="margin-top: 8px; margin-left:10px;" width="50px" src="./assets/images/a1-icon.png"></a>
+                    <ul class="right">
+                        <li><a class="dropdown-trigger" data-target="show-signin" id="user-button"><i class="material-icons">person</i></a></li>
+                    </ul>
+                </div>    
             </div>
-            <!--End Firebase UI container div-->
-        </div> 
+        </nav>
+    </div> 
+    
+    <!-- End Main Navbar -->
 
-     <!-- Begin Landing Page Header -->
+    <!--Begin Firebase UI container div-->
+
+    <div class="firebase-auth">    
+        <div id="firebaseui-auth-container">
+            <h5>Sign-In</h5>
+        </div>
+    </div> 
+
+    <!--End Firebase UI container div-->
+
+    <!-- Begin Landing Page Header -->
       
-     <div id="home-tab">
+    <div id="home-tab">
 
-            <section id="header">
-                <div class="row">
-                    <div class="col s12">
-                        <h1 class="center-align" id="welcome-header">A1 Guitar Learner</h1>
-                        <h4 class="white-text head-four center-align">Your guitar learning companion app.</h4>
-                    </div>
+        <section id="header">
+            <div class="row">
+                <div class="col s12">
+                    <h1 class="center-align" id="welcome-header">A1 Guitar Learner</h1>
+                    <h4 class="white-text head-four center-align">Your guitar learning companion app.</h4>
                 </div>
-            </section>  
+            </div>     
+        </section>  
             
             <!-- End Landing Page Header -->
             
@@ -90,8 +91,10 @@
                     <div class="col s8 offset-s2 divider grey darken-2"></div>
                     <div class="col s10 offset-s1 offset-s1">
                         <div class="swiper-container">
+                          
                             <!-- Additional required wrapper -->
                             <div class="swiper-wrapper">
+                              
                                 <!-- Slides -->
                                 <div class="swiper-slide">
                                     <h1 class="head-one blue-text darken-5">Guitar Tabs</h1>
@@ -123,6 +126,7 @@
                                 </div>
                                 ...
                             </div>
+                          
                             <!-- Pagination/Indicators -->
                             <div class="swiper-pagination"></div>
                         
@@ -134,8 +138,9 @@
                 </div>                                            
             </div>
         </div>
+    </div>
 
-        <!-- End Landing Feature Carousel -->
+    <!-- End Landing Page Feature Carousel -->
 
     </div>
 
@@ -172,4 +177,7 @@
 
      <!--Landing page specific js file-->
      <script src="./assets/js/logic.js"></script>
+
+</body>
+</html>
     

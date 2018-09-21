@@ -3,7 +3,6 @@
 //----------------------------------------------------------------------------------------
 
 // first hide all areas until called upon
-
 $("#firebaseui-auth-container").hide(0);
 $("#tabs-tab").hide();
 $("#videos-tab").hide();
@@ -106,7 +105,7 @@ $("#about-dropdown").on("click", function(){
 })
 
 //credit dropdown button
-$("#credit-dropdown").on("click", function(event){
+$("#credit-dropdown").on("click", function(){
     $(window).scrollTop(0);
     $("#home-tab").hide();
     $("#credit-tab").slideToggle(1000);
@@ -185,34 +184,8 @@ $(document).ready(function () {
     })
 });
 
-// $('.carousel.carousel-slider').carousel({
-//     fullWidth: true,
-//     indicators: true
-// });
-
-//Animate the carousel
-// function cycle() {
-//     var timer = setInterval(advance, 4000);
-//     function advance() {
-//         $('.carousel').carousel('next');
-//     }
-// }; cycle();
-
-// move next carousel
-// $('.moveNextCarousel').click(function(e){
-//     e.preventDefault();
-//     e.stopPropagation();
-//     $('.carousel').carousel('next');
-// });
-
-// move prev carousel
-// $('.movePrevCarousel').click(function(e){
-//     e.preventDefault();
-//     e.stopPropagation();
-//     $('.carousel').carousel('prev');
-// });
-
 // run materialize functions for site styling functionality.
+
 $(document).ready(function(){
     // nav bar dropdown (Google Materialize)
     $('.dropdown-trigger').dropdown({hover: true});
@@ -227,7 +200,6 @@ $(document).ready(function(){
 // Firebase Config 
 //---------------------------------------------------------------------------
 
-// Initialize Firebase
 var config = {
     apiKey: "AIzaSyDF16YKI3mYgmTkUOQ09dANHOIVjMsFcJk",
     authDomain: "group-project-1-3b1fb.firebaseapp.com",
@@ -235,7 +207,7 @@ var config = {
     projectId: "group-project-1-3b1fb",
     storageBucket: "group-project-1-3b1fb.appspot.com",
     messagingSenderId: "502946428711"
-  };
+};
   
 firebase.initializeApp(config);
 var database = firebase.database();
@@ -261,8 +233,7 @@ initApp = function() {
        
        
       } else {
-        // User is signed out.
-       
+        // User is signed out
         window.location.assign('landing.html')
       }
     }, function(error) {
