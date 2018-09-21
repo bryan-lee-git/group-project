@@ -316,8 +316,6 @@ canvas#tuner-instance {
     margin-top: 40px;
     margin-left: auto;
     margin-right: auto;
-    box-shadow: 4px 4px 10px black;
-    visibility: visible;
 }
 
 /* ------------------------- Materialize Specific Styles ------------------------- */
