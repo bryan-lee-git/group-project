@@ -80,7 +80,7 @@ function getTabs(userInput) {
     $("tbody").empty();
     $("#artist-search").fadeIn(2000);
 
-    userInput = userInput.replace(/\s/g, "&");
+    userInput = userInput.replace(/\s/g, "%20");
     console.log("Here's what the user input looks like: " + userInput);
 
     var queryURL = "https://www.songsterr.com/a/ra/songs/byartists.json?artists=" + userInput;
