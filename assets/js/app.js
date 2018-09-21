@@ -175,7 +175,7 @@ $(document).ready(function () {
         },
         pagination: {
             el: '.swiper-pagination',
-            dynamicBullets: true,
+            //dynamicBullets: true,
         },
         autoplay: {
             delay: 3000,

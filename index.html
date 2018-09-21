@@ -300,6 +300,14 @@
                             <p class="credit-para"><img width="30px" style="margin-bottom: -5px;" src="./assets/images/firebase-icon.png" alt="Google Firebase"><a target="_blank" href="https://firebase.google.com/"> Google Firebase </a></p>
                         </div>
 
+                        <div class="col s4 offset-s2">
+                            <p class="credit-para"><img width="30px" style="margin-bottom: -5px;" src="./assets/images/google-analytics.png" alt="Google Analytics"><a target="_blank" href="http://analytics.google.com"> Google Analytics </a></p>
+                        </div>
+
+                        <div class="col s4">
+                            <p class="credit-para"><img width="30px" style="margin-bottom: -5px;" src="./assets/images/swiper-icon.png" alt="Swiper JS"><a target="_blank" href="http://idangero.us/swiper/"> Swiper by iDangero.us </a></p>
+                        </div>
+
                     </div>
                     <div class="col s12 divider grey darken-2"></div>
                     <br>
@@ -341,40 +349,44 @@
                                 <!-- Slides -->
                                 <div class="swiper-slide">
                                     <h1 class="head-one blue-text darken-5">Guitar Tabs</h1>
-                                    <h4 class="red-text head-four">Learn songs by your favorite musicians.</h4>
+                                    <h4 class="white-text head-four">Learn your favorite songs.</h4>
                                     <a href="#tabs-tab" id="tab-carousel-btn" class="btn-floating btn-large pulse" id="tab-icon"><i class="large material-icons">format_align_justify</i></a>
                                     <br/>
                                     <br/>
                                 </div>
                                 <div class="swiper-slide">
-                                    <h1 class="head-one blue-text darken-5">Play-Through Videos</h1>
-                                    <h4 class="red-text head-four">Learn songs by watching others play.</h4>
+                                    <h1 class="head-one blue-text darken-5">Lesson Videos</h1>
+                                    <h4 class="white-text head-four">Learn by watching others play.</h4>
                                     <a href="#videos-tab" id="videos-carousel-btn" class="btn-floating btn-large pulse" id="play-icon"><i class="large material-icons">play_circle_filled</i></a>
                                     <br/>
                                     <br/>
                                 </div>
                                 <div class="swiper-slide">
                                     <h1 class="head-one blue-text darken-5">Guitar Tuner</h1>
-                                    <h4 class="red-text head-four">Don't be a novice. Tune your instrument.</h4>
+                                    <h4 class="white-text head-four">To tune your instrument.</h4>
                                     <a href="#tuner-tab" id="tuner-carousel-btn" class="btn-floating btn-large pulse" id="tuner-icon"><i class="large material-icons">music_note</i></a>
                                     <br/>
                                     <br/>
                                 </div>
                                 <div class="swiper-slide">
                                     <h1 class="head-one blue-text darken-5">Metronome</h1>
-                                    <h4 class="red-text head-four">A metronome to keep your rhythm.</h4>
+                                    <h4 class="white-text head-four">To keep your rhythm.</h4>
                                     <a href="#metronome-tab" id="metronome-carousel-btn" class="btn-floating btn-large pulse" id="metronome-icon"><i class="large material-icons">graphic_eq</i></a>
                                     <br/>
                                     <br/>
                                 </div>
                                 ...
                             </div>
+                            <br><br>
                             <!-- Pagination/Indicators -->
                             <div class="swiper-pagination"></div>
                         
                             <!-- Navigation buttons -->
-                            <div class="swiper-button-prev"></div>
-                            <div class="swiper-button-next"></div>
+                            <div id="swiper-arrows">
+                                <div class="col s3 swiper-button-prev"></div>
+                                <div class="col s3 offset-s9 swiper-button-next"></div>
+                            </div>
+
                         </div>
                     </div>                                                   
                 </div>                                            
@@ -408,9 +420,6 @@
 
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
-    
-    <!-- Added this angular js file for canvas functionality on iPhone -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
     
     <!-- fitText.js for making font-sizes flexible -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FitText.js/1.2.0/jquery.fittext.min.js"></script>

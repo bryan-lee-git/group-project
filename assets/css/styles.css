@@ -183,28 +183,29 @@ tbody tr:hover, td:hover {
     margin-bottom: 20px;
 }
 
-/* #carousel-arrows {
- margin-top: -55px;
-}
-
-.carousel-nav-arrows {
-    color: orangered;
-}
-
-.carousel-nav-arrows:hover {
-    color: #1565c0;
-} */
 .swiper-slide{
     text-align: center;
 }
+
+.swiper-container {
+    max-height: 380px;
+}
+
+
 .swiper-pagination-bullet {
     background: white;
     opacity: 1;
 }
+
 .swiper-pagination-bullet-active {
     opacity: 1;
     background: orangered;
 }
+
+#swiper-arrows {
+    padding-top: 600px;
+}
+
 /* ------------------------- Search Input Form Styles ------------------------- */
 
 #tab-form, #yt-form {
@@ -625,6 +626,8 @@ p.credit-para {
     }
     #credit-contain, #about-contain {
         padding: 30px 20px 30px 20px;
+    }
+    #swiper-arrows {
     }
 }
 
