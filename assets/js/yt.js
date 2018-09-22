@@ -87,10 +87,21 @@ function getVideos(userInput) {
             var videoId = video.id.videoId;
 
             // add the video embed to the page using standard YT embed code filled in with individual video IDs
-            $("#video-view").prepend(
-                "<div class='col s12 m6 l6'><div style='border-radius: 10px; margin-bottom: 10px; margin-top: 10px' class='video-container'><iframe src='https://www.youtube.com/embed/" + videoId + "' frameborder='0' allow='autoplay;' allowfullscreen='true'></iframe></div></div>"
-            )
+            $("#video-view").prepend("<div class='col s12 m6 l6'><div style='border-radius: 10px; margin-bottom: 10px; margin-top: 10px' class='video-container'><iframe src='https://www.youtube.com/embed/" + videoId + "' frameborder='0' allow='autoplay;' allowfullscreen='true'></iframe></div></div>")
+            
         })
+
+        $("#video-view").on("click", "#vid-fav", function(event){
+            event.preventDefault();
+            
+            console.log("here's the youtube video clicked for favs: " + console.dir(event));
+            console.log("here's the video id from clicking the add favs button: " + event.currentTarget.attributes.data.value);
+            
+            var pickedVid = event.currentTarget.attributes.data.value;
+            firebase.database().ref("user/favs/vids").push(pickedVid);
+        });
     })
+  
     $("#video-view").fadeIn(2000);
+  
 }; getVideos("beginner guitar");
