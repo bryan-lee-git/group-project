@@ -5,6 +5,7 @@
 
 // hide the table
 $("#artist-search").hide();
+$("#tabs-view").hide();
 
 // take in the form input value when it is submitted and run it through the getTabs function
 $("#tab-form").on("submit", function(event) {
@@ -70,10 +71,10 @@ function fillTable(child) {
     
     $("tbody").append(
         "<tr>"
-        + "<td>" + "<i class='material-icons favs' id='" + child.id + "' name='" + child.artist.name + "' title='" + child.title + "' chords='" + child.chordsPresent + "' types='" + child.tabTypes + "'>favorite_border</i>"
         + "<td>" + child.title + "</td>"
         + "<td>" + types + "</td>"
         + "<td>" + chords + chordsTabUrl + "</td>"
+        + "<td>" + "<i class='material-icons favs' id='" + child.id + "' name='" + child.artist.name + "' title='" + child.title + "' chords='" + child.chordsPresent + "' types='" + child.tabTypes + "'>favorite_border</i>"
         + "</tr>"
     )
    
@@ -83,6 +84,7 @@ function fillTable(child) {
 function getTabs(userInput) {
 
     $("tbody").empty();
+    $("#tabs-view").fadeIn(1000);
     $("#artist-search").fadeIn(2000);
 
     userInput = userInput.replace(/\s/g, "%20");
@@ -130,7 +132,3 @@ $(".display").on("click", ".favs", function(event){
     console.log("Here's the chords to save into favTab: " + event.currentTarget.attributes.chords.nodeValue);
 
 });
-    
-// fill tabs table with search for "Nirvana at first load"
-getTabs("Nirvana");
-$("#artist-search").before("<h4 id='current-search' style='margin-top: 10px;' class='col s6 white-text'>Results for: " + "Nirvana" + "</h4>");
