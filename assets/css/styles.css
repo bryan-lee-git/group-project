@@ -1,4 +1,3 @@
-
 /* ------------------------- Global Element Styles -------------------------  */
 
 main {
@@ -312,10 +311,77 @@ tbody tr:hover, td:hover {
     border-radius: 10px;
 }
 
-canvas#tuner-instance {
+#tuner-area {
+    width:100%;
     margin-top: 40px;
     margin-left: auto;
     margin-right: auto;
+}
+
+#tuner-btns {
+    margin: 20px 0 0 0;
+}
+
+#tuner-btn {
+    background-color: #1565c0;
+}
+
+#tuner-btn:hover {
+    background-color: orangered;
+}
+
+#note { 
+    font-size: 164px; 
+}
+
+.droptarget { 
+    background-color: #348781;
+}
+
+div.confident {
+    color: green;
+}
+
+div.vague {
+    color: orangered;
+}
+
+#note { 
+    display: inline-block;
+    height:180px;
+    text-align: left;
+}
+
+#detector { 
+    width: 100%; 
+    height: 300px; 
+    margin: 20px auto 0 auto; 
+    text-align: center; 
+    padding-top: 10px;
+    background-color: #404040;
+    border-radius: 10px;
+    box-shadow: inset 4px 4px 10px #222, inset -4px -4px 10px #222;
+}
+
+#output { 
+    width: 300px; 
+    height: 42px; 
+}
+
+#flat { 
+    display: none; 
+}
+
+.sharp #sharp { 
+    display: none; 
+}
+
+#flat { 
+    display: inline; 
+}
+
+.sharp #sharp { 
+    display: inline; 
 }
 
 /* ------------------------- Materialize Specific Styles ------------------------- */
@@ -463,10 +529,15 @@ a#artist-search_paginate:hover {
 }
 
 #artist-search_filter {
+    margin-top: -15px;
+    margin-bottom: 10px;
     width: 50%;
     float: left;
     color: white;
-    margin-top: -30px;
+    background-color: #404040;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: inset 4px 4px 10px #222, inset -4px -4px 10px #222;
 }
 
 #artist-search_filter label {
@@ -607,9 +678,6 @@ p.credit-para {
     #metronome-tab {
         margin-top: -10px;
     }
-    canvas#tuner-instance {
-        margin-top: 20px;
-    }
     #firebaseui-auth-container {
         margin-top: 100px;
     }
@@ -626,6 +694,10 @@ p.credit-para {
         padding: 30px 20px 30px 20px;
     }
     #swiper-arrows {
+    }
+    embed {
+        width: 100%;
+        background-color: none;
     }
 }
 
@@ -657,5 +729,4 @@ p.credit-para {
     h4{
         font-size: 40px;
     }
-} 
-
+}

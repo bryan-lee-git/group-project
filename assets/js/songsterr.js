@@ -13,7 +13,8 @@ $("#tab-form").on("submit", function(event) {
     $('#artist-search').DataTable().destroy();
     getTabs(userInput);
     document.getElementById("tab-form").reset();
-    $("#artist-search").before("<h4 id='current-search' style='margin-top: 10px;' class='col s6 white-text'>Results for: " + userInput + "<h4>");
+    $("#tab-search").blur(); 
+    $("#artist-search").before("<h4 id='current-search' style='margin-top: 10px;' class='col s6 white-text'>Results for: " + userInput + "</h4>");
 });
 
 // function to fill up the data table from the getTabs resulting children
@@ -81,9 +82,9 @@ function getTabs(userInput) {
     $("#artist-search").fadeIn(2000);
 
     userInput = userInput.replace(/\s/g, "%20");
-    console.log("Here's what the user input looks like: " + userInput);
+    console.log("Here's what the user input looks like: '" + userInput);
 
-    var queryURL = "https://www.songsterr.com/a/ra/songs/byartists.json?artists=" + userInput;
+    var queryURL = 'https://www.songsterr.com/a/ra/songs/byartists.json?artists="' + userInput + '"';
 
     $.ajax({
         url: queryURL,
@@ -98,4 +99,4 @@ function getTabs(userInput) {
 
 // fill tabs table with search for "Nirvana at first load"
 getTabs("Nirvana");
-$("#artist-search").before("<h4 id='current-search' style='margin-top: 10px;' class='col s6 white-text'>Results for: " + "Nirvana" + "<h4>");
+$("#artist-search").before("<h4 id='current-search' style='margin-top: 10px;' class='col s6 white-text'>Results for: " + "Nirvana" + "</h4>");

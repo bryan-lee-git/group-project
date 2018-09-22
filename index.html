@@ -20,7 +20,7 @@
     <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <!-- Metronome Custom CSS -->
-    <link type="text/css" rel="stylesheet" href="./assets/js/metronome/metro.css">
+    <link type="text/css" rel="stylesheet" href="./assets/css/metro.css">
 
     <!--Firebase-->
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.4.1/firebaseui.css" />
@@ -190,10 +190,37 @@
             <!-- Begin Tuner Tab Content -->
 
             <div id="tuner-tab" class="col s12 center-align z-depth-5">
-                <script width="100%" src="https://embed.proguitar.com/web-guitar-tuner"></script><br>
-                <h4 class="white-text">Standard tuning is E-A-D-G-B-E.<br>If the circle turns <span class="green-text">green</span>, the string is in <span class="green-text">tune.</span><br><br>
+        
+                <div id="detector" class="vague">
+                    <div class="pitch"><span id="pitch">--</span>Hz</div>
+                    <div class="note"><span id="note">--</span></div>   
+                    <canvas id="output" width=300 height=42></canvas>
+                    <div id="detune"><span id="detune_amt">--</span><span id="flat">cents &#9837;</span><span id="sharp">cents &#9839;</span></div>
+                </div>
+
+                <div id="tuner-btns" class="row">
+                    <button id="tuner-btn" class="col s12 btn-large" onclick="toggleLiveInput()">Enable Microphone</button>
+                </div>
+        
+                <!-- just used for debugging
+                <canvas id="waveform" width="512" height="256"></canvas>
+                -->        
+                <script type="text/javascript">
+                    var _gaq = _gaq || [];
+                    _gaq.push(['_setAccount', 'UA-35593052-1']);
+                    _gaq.push(['_trackPageview']);
+        
+                    (function() {
+                        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                    })();
+                </script>
+                <br>
+
+                <h5 class="white-text">Standard tuning is E-A-D-G-B-E.<br>If you see a consistent <span class="green-text">green</span> letter, the string is in <span class="green-text">tune.</span><br><br>
                 See alternate guitar tunings <a target="_blank" href="https://en.wikipedia.org/wiki/List_of_guitar_tunings">here.</a>
-                </h4>
+                </h5><br>
             </div>
 
             <!-- End Tuner Content -->
@@ -201,8 +228,8 @@
             <!-- Begin Metronome Tab -->
 
             <div id="metronome-tab" class="col s12 z-depth-5">      
-
                 <section id="metro-container" class="metronome-container">
+
                     <div class="counter"></div>  
                     <i class="fa fa-cog options-btn"></i> 
 
@@ -213,11 +240,13 @@
                         <i class="fa fa-plus bpm-plus"></i>
                         </label>
                         <label>Beat: <input id="beat-area" type="text" value="4" class="ts-top"/></label>
+
                         <div style="margin-bottom: 15px;">
                             <input type="checkbox" id="timer-check" />
                             <label for="timer-check"></label>
                             Timer: <input id="timer-area" type="text" value="60" class="timer" />
                         </div>
+                        
                         <button id="tap-button" class="tap-btn">Tap</button>
                         <button id="play-button" class="play-btn">Play</button>
                     </div>
@@ -242,6 +271,7 @@
         <div id="about-tab" class="col s12">
             <div class="row">
                 <div id="about-contain" class="col s10 offset-s1 z-depth-5">
+
                     <h1 class="about-head">Panda Warriors Dev Group</h1>
                     <p class="about-names"><a target="blank" href="https://github.com/jamesschlader">Jim Schlader - The Sensei <img width="30px" style="margin-bottom: -5px;" src="./assets/images/github-hover.png" alt="Jim Schlader Github"></a></p>
                     <p class="about-names"><a target="blank" href="https://github.com/bishopcanno">Eric Bishop - The Samurai <img width="30px" style="margin-bottom: -5px;" src="./assets/images/github-hover.png" alt="Eric Bishop Github"></a></p>
@@ -253,11 +283,11 @@
                     <br>
 
                     <h3 class="about-head">The "Why" Behind A1 Guitar Learner</h3>
-
                     <p class="about-para">Let's start with getting the name out of the way... We named ourselves "The Panda Warriors", totally off of a whim. We wanted to have fun with this project and we seemed to accomplish exactly that.</p>
                     <p class="about-para">The A1 in "A1 Guitar Learner" stands for "All-in-one". We wanted to create one application that a user could go to in order to find everything that they need to begin playing the guitar!</p>
                     <p class="about-para">The four of us started this project for a Coding and Web Development course that we were taking through the University of Utah. It has been a really fun learning experience and a great way to immerse ourselves into the world of Web Development.</p>
                     <p class="about-para">One thing that we all seemed to have in common was our love of music and our innate desire to help others find their love for it as well. We decided to build off of that and create something that was easy to use, fun, and useful on the go. Hopefully this helps tons of people across the globe begin their journey of learning how to play the guitar!</p>
+                
                 </div>
             </div>
         </div>
@@ -271,11 +301,9 @@
                 <div id="credit-contain" class="col s10 offset-s1 z-depth-5">
 
                     <h1 class="credit-head">Credit Where Credit Is Due!</h1>
-
                     <p class="credit-para">We would like to extend credit to the other great developers that built some of the amazing things that we implemented into our application.</p>
                     
                     <div class="col s12 divider grey darken-2"></div><br><br>
-
 
                     <div class="row">
                         <div class="col s12 m4 l4">
@@ -309,6 +337,7 @@
                         </div>
 
                     </div>
+
                     <div class="col s12 divider grey darken-2"></div>
                     <br>
 
@@ -430,6 +459,9 @@
     <!-- Materialize -->
     <script src="./assets/materialize/js/materialize.min.js"></script>
 
+    <!-- Pitch Detect Tuner -->
+    <script src="./assets/PitchDetect/js/pitchdetect.js"></script>
+
     <!-- Swiper JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/js/swiper.js"></script>
 
@@ -440,7 +472,7 @@
     <script src="./assets/js/songsterr.js"></script>
         
     <!-- Metronome -->
-    <script src="./assets/js/metronome/metro.js"></script>
+    <script src="./assets/js/metro.js"></script>
    
     <!-- Main App -->
     <script src="./assets/js/app.js"></script>
