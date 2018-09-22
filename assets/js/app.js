@@ -2,6 +2,17 @@
 // Tabs Click Display/Hide Functionality
 //----------------------------------------------------------------------------------------
 
+// first hide all areas until called upon
+$("#firebaseui-auth-container").hide(0);
+$("#tabs-tab").hide(0);
+$("#videos-tab").hide(0);
+$("#tuner-tab").hide(0);
+$("#metronome-tab").hide(0);
+$("#about-tab").hide(0);
+$("#credit-tab").hide(0);
+$("#favorites-tab").hide(0);
+
+
 // home button
 $("#home-button, .brand-logo").on("click", function() {
     $(window).scrollTop(0);
