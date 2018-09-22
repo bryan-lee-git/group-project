@@ -7,7 +7,7 @@ var currentPage = 0;
 var userInput = "";
 
 // load next set of videos button
-$("#next-btn").on("click", function(event) {
+$("#next-btn, #next-btn2").on("click", function(event) {
     $(window).scrollTop(0);
     event.preventDefault();
     currentPage++;
@@ -16,7 +16,7 @@ $("#next-btn").on("click", function(event) {
 })
 
 // load previous set of videos button
-$("#prev-btn").on("click", function(event) {
+$("#prev-btn, #prev-btn2").on("click", function(event) {
     if (currentPage > 0) {
         event.preventDefault();
         currentPage--;
@@ -87,9 +87,7 @@ function getVideos(userInput) {
             var videoId = video.id.videoId;
 
             // add the video embed to the page using standard YT embed code filled in with individual video IDs
-            $("#video-view").prepend(
-                "<div class='col s12 m6 l6'><div style='border-radius: 10px; margin-bottom: 10px; margin-top: 10px' class='video-container z-depth-5'><iframe src='https://www.youtube.com/embed/" + videoId + "' frameborder='0' allow='autoplay;' allowfullscreen='true'></iframe><a id='vid-fav' data='" + videoId + "'class='waves-effect waves-light btn-small'>Add to Favs</a></div></div>"
-            )
+            $("#video-view").prepend("<div class='col s12 m6 l6'><div style='border-radius: 10px; margin-bottom: 10px; margin-top: 10px' class='video-container'><iframe src='https://www.youtube.com/embed/" + videoId + "' frameborder='0' allow='autoplay;' allowfullscreen='true'></iframe></div></div>")
             
         })
 
@@ -103,5 +101,7 @@ function getVideos(userInput) {
             firebase.database().ref("user/favs/vids").push(pickedVid);
         });
     })
+  
     $("#video-view").fadeIn(2000);
+  
 }; getVideos("beginner guitar");

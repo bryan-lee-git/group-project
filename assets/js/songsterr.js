@@ -7,7 +7,6 @@
 $("#artist-search").hide();
 
 // take in the form input value when it is submitted and run it through the getTabs function
-
 $("#tab-form").on("submit", function(event) {
     $("#current-search").remove();
     event.preventDefault();
@@ -19,12 +18,10 @@ $("#tab-form").on("submit", function(event) {
 });
 
 // function to fill up the data table from the getTabs resulting children
-
 function fillTable(child) {
 
-    
-
-    //console.log(child);
+    // console log entire child object
+    console.log(child);
 
     // set variable to hold chords icon
     var chords = "";
@@ -82,15 +79,12 @@ function fillTable(child) {
 };
 
 // function to get list of tabs via the songsterr.com API
-
 function getTabs(userInput) {
 
     $("tbody").empty();
-
     $("#artist-search").fadeIn(2000);
 
-    userInput = userInput.replace(/\s/g, "&");
-
+    userInput = userInput.replace(/\s/g, "%20");
     console.log("Here's what the user input looks like: " + userInput);
 
     var queryURL = "https://www.songsterr.com/a/ra/songs/byartists.json?artists=" + userInput;
@@ -136,6 +130,6 @@ $(".display").on("click", ".favs", function(event){
 
 });
     
-    
+// fill tabs table with search for "Nirvana at first load"
 getTabs("Nirvana");
 $("#artist-search").before("<h4 id='current-search' style='margin-top: 10px;' class='col s6 white-text'>Results for: " + "Nirvana" + "<h4>");

@@ -2,30 +2,6 @@
 // Tabs Click Display/Hide Functionality
 //----------------------------------------------------------------------------------------
 
-//hide all tab areas until called upon
-$(document).ready(function() {
-    $("#tabs-tab").hide();
-    $("#videos-tab").hide();
-    $("#tuner-tab").hide();
-    $("#metronome-tab").hide();
-    $("#favorites-tab").hide();
-    $("#about-tab").hide();
-});
-
- // move next carousel
- $('.moveNextCarousel').click(function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    $('.carousel').carousel('next');
- });
-
- // move prev carousel
- $('.movePrevCarousel').click(function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    $('.carousel').carousel('prev');
- });
-
 // home button
 $("#home-button, .brand-logo").on("click", function() {
     $(window).scrollTop(0);
@@ -41,6 +17,7 @@ $("#home-button, .brand-logo").on("click", function() {
     $("#tab-for-metronome").removeClass("tab-active");
     $("#tab-for-favorites").removeClass("tab-active");
     $("#about-tab").hide();
+    $("#credit-tab").hide();
 })
 
 // tabs tab button
@@ -58,6 +35,7 @@ $("#tab-for-tabs, #tab-carousel-btn, #tab-dropdown").on("click", function(){
     $("#tab-for-metronome").removeClass("tab-active");
     $("#tab-for-favorites").removeClass("tab-active");
     $("#about-tab").hide();
+    $("#credit-tab").hide();
 })
 
 // videos tab button
@@ -75,6 +53,7 @@ $("#tab-for-play, #videos-carousel-btn, #videos-dropdown").on("click", function(
     $("#tab-for-metronome").removeClass("tab-active");
     $("#tab-for-favorites").removeClass("tab-active");
     $("#about-tab").hide();
+    $("#credit-tab").hide();
 })
 
 // tuner tab button
@@ -92,12 +71,13 @@ $("#tab-for-tuner, #tuner-carousel-btn, #tuner-dropdown").on("click", function()
     $("#tab-for-metronome").removeClass("tab-active");
     $("#tab-for-favorites").removeClass("tab-active");
     $("#about-tab").hide();
+    $("#credit-tab").hide();
     initializeTuner();
 })
 
 // metronome tab button
 $("#tab-for-metronome, #metronome-carousel-btn, #metronome-dropdown").on("click", function(){
-    $(window).scrollTop(500);
+    $(window).scrollTop(0);
     $("#home-tab").hide();
     $("#metronome-tab").slideToggle(1000);
     $("#tabs-tab").hide();
@@ -127,6 +107,7 @@ $("#tab-for-favorites, #favorites-carousel-btn, #favorites-dropdown").on("click"
     $("#tab-for-metronome").removeClass("tab-active");
     $("#tab-for-favorites").addClass("tab-active");
     $("#about-tab").hide();
+    $("#credit-tab").hide();
 })
 
 // about us dropdown button
@@ -139,20 +120,91 @@ $("#about-dropdown").on("click", function(){
     $("#favorites-tab").hide();
     $("#tabs-tab").hide();
     $("#videos-tab").hide();
+    $("#credit-tab").hide();
+})
+
+//credit dropdown button
+$("#credit-dropdown").on("click", function(){
+    $(window).scrollTop(0);
+    $("#home-tab").hide();
+    $("#credit-tab").slideToggle(1000);
+    $("#about-tab").hide();
+    $("#tuner-tab").hide();
+    $("#metronome-tab").hide();
+    $("#tabs-tab").hide();
+    $("#videos-tab").hide();
+})
+
+// when the mouse leaves the dropdown navigation menu area, fade it out of view
+$("#dropdown1").on("mouseleave", function() {
+    $("#dropdown1").fadeOut(200);
+})
+
+// hide the menus whenever the mouse is over the body (which means the mouse has left the dropdown content)
+$("#main-container").on("mouseover", function() {
+    $("#dropdown1, #user-dropdown").fadeOut(200);
+})
+
+// content dropdown on content icon mouseover
+$("#content-button").on("mouseover", function() {
+    $("#user-dropdown").fadeOut(200);
+})
+
+// when the mouse leaves the dropdown navigation menu area, fade it out of view
+$("#user-dropdown").on("mouseleave", function() {
+    $("#user-dropdown").fadeOut(200);
+})
+
+// user dropdown on icon mouseover
+$("#user-button").on("mouseover", function() {
+    $("#dropdown1").fadeOut(200);
+})
+
+// when the dropdown icon or any dropdown menu item is clicked on, hide the dropdown menu
+$("#tab-dropdown, #videos-dropdown, #tuner-dropdown, #metronome-dropdown").on("click", function() {
+    event.preventDefault();
+    $("#dropdown1").fadeToggle(200);
+})
+
+// content dropdown menu for mobile
+$("#content-button").on("touchstart", function() {
+    $("#dropdown1").fadeToggle(200);
+})
+
+// user dropdown menu for mobile
+$("#user-button").on("touchstart", function() {
+    $("#user-dropdown").fadeToggle(200);
 })
 
 //----------------------------------------------------------------------------------------
 // MATERIALIZE FUNCTIONALITY
 //----------------------------------------------------------------------------------------
 
- // carousel functionality (Google Materialize)
+// carousel functionality (Swiper)
 
- $('.carousel.carousel-slider').carousel({
-    fullWidth: true,
-    indicators: true
+$(document).ready(function () {
+    //initialize swiper when document ready
+    var mySwiper = new Swiper ('.swiper-container', {
+        // Optional parameters include horizontal scrolling, looping, nav arrows, pagination with dynamic bullets, and autoplay
+        direction: 'horizontal',
+        loop: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            //dynamicBullets: true,
+        },
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },      
+    })
 });
 
 // run materialize functions for site styling functionality.
+
 $(document).ready(function(){
     // nav bar dropdown (Google Materialize)
     $('.dropdown-trigger').dropdown({hover: true});
@@ -163,35 +215,10 @@ $(document).ready(function(){
     // tabs initialization, mobile swipe
 });
 
-//Animate the carousel
-
-function cycle() {
-    var timer = setInterval(advance, 4000);
-    function advance() {
-        $('.carousel').carousel('next');
-    }
-};
-
-cycle();
-
-// when the mouse leaves the dropdown navigation menu area, fade it out of view
-
-$("#dropdown1").on("mouseleave", function(event) {
-    $("#dropdown1").fadeOut(200);
-
-})
-
-// when the dropdown icon or any dropdown menu item is clicked on, hide the dropdown menu
-$(".dropdown-trigger, #tab-dropdown, #videos-dropdown, #tuner-dropdown, #metronome-dropdown").on("click", function() {
-    event.preventDefault();
-    $("#dropdown1").fadeToggle(200);
-})
-
 //---------------------------------------------------------------------------
 // Firebase Config 
 //---------------------------------------------------------------------------
 
-// Initialize Firebase
 var config = {
     apiKey: "AIzaSyDF16YKI3mYgmTkUOQ09dANHOIVjMsFcJk",
     authDomain: "group-project-1-3b1fb.firebaseapp.com",
@@ -199,11 +226,10 @@ var config = {
     projectId: "group-project-1-3b1fb",
     storageBucket: "group-project-1-3b1fb.appspot.com",
     messagingSenderId: "502946428711"
-  };
+};
   
-  firebase.initializeApp(config);
-
-  var database = firebase.database();
+firebase.initializeApp(config);
+var database = firebase.database();
 
 //Define a local variable to hold incoming firebase data.
    var favorite = {
@@ -322,7 +348,8 @@ var config = {
 // Firebase Authentication Config with UI
 //---------------------------------------------------------------------------
 
-  initApp = function() {
+initApp = function() {
+
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
         // User is signed in.
@@ -338,20 +365,19 @@ var config = {
        
        
       } else {
-        // User is signed out.
-       
+        // User is signed out
         window.location.assign('landing.html')
       };
     }, function(error) {
       console.log(error);
     });
-  };
+};
 
-  window.addEventListener('load', function() {
+window.addEventListener('load', function() {
     initApp()
-  });
+});
 
-  $("#logout").on("click", function(){
+$("#logout").on("click", function(){
     firebase.auth().signOut();
   })
 })
