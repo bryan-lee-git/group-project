@@ -72,7 +72,6 @@ $("#tab-for-tuner, #tuner-carousel-btn, #tuner-dropdown").on("click", function()
     $("#tab-for-favorites").removeClass("tab-active");
     $("#about-tab").hide();
     $("#credit-tab").hide();
-    initializeTuner();
 })
 
 // metronome tab button
