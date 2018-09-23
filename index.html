@@ -46,8 +46,8 @@
 
                     <ul class="right">
                         <li><a id="user-button" class="dropdown-trigger" data-target="user-dropdown"><i class="material-icons">person</i></a></li>
-                        <li><a id="home-button" href="#home-tab"><i class="material-icons">home</i></a></li>
                         <li><a id="content-button" class="dropdown-trigger" data-target="dropdown1"><i class="material-icons">menu</i></a></li>
+                        <li><a id="home-button" href="#home-tab"><i class="material-icons">home</i></a></li>
                     </ul>
 
                     <!-- User UL dropdown Content -->
@@ -264,33 +264,37 @@
 
             <!-- End Metronome Tab -->
 
-            <!-- Start Favorites Tab Content-->
+            <!-- Start Favorites Section Content-->
 
-            <div class="container" id="favorites-tab">
-                <div class="row">
-                    <div class="col s6">
-                        <table id="artist-fav" class="display">
-                            <thead>
-                                <tr>
-                                    <th>Song <i style="margin-bottom: 20px;position: relative; top: 7px;" class="small material-icons">sort</i></th>
-                                    <th>Tabs <i style="margin-bottom: 20px;position: relative; top: 7px;" class="small material-icons">sort</i></th>
-                                    <th>Chords <i style="margin-bottom: 20px;position: relative; top: 7px;" class="small material-icons">sort</i></th>
-                                </tr>
-                            </thead>
-                            <tbody id="favorite-tabs"></tbody>
-                        </table>
+            <div class="col s12 z-depth-5" id="favorites-tab">
 
-                    </div>
-                    <div class="col s6" id="favorite-vids">
-                            <button style="margin-bottom: 15px; border-radius: 5px;" id="prev-fav-btn" class="z-depth-5 blue darken-3 btn col s12">Previous Page</button>
-
-                            <div id="fav-video-view" class="col s12"></div>
-    
-                            <button style="margin-top: 5px; margin-bottom: 20px; border-radius: 5px;" id="next-fav-btn" class="z-depth-5 blue darken-3 btn col s12">Next Page</button>
-
-                    </div>
+                <div class="col s12 m12 l6">
+                    
+                    <h3 class="white-text center-align">Saved Tabs + Chords</h3>
+                    <table id="artist-fav" class="display">
+                        <thead>
+                            <tr>
+                                <th>Song</th>
+                                <th>Tabs + Chords</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody id="favorite-tabs"></tbody>
+                    </table>
                 </div>
-            </div> <!--End Favorites container-->
+
+                <div class="col col s12 m12 l6" id="favorite-vids">
+                    <h3 class="white-text center-align">Saved Videos</h3>
+
+                    <button style="margin-bottom: 15px; border-radius: 5px;" id="prev-fav-btn" class="z-depth-5 blue darken-3 btn col s12">Previous Page</button>
+
+                    <div id="fav-video-view" class="col s12"></div>
+
+                    <button style="margin-top: 5px; margin-bottom: 20px; border-radius: 5px;" id="next-fav-btn" class="z-depth-5 blue darken-3 btn col s12">Next Page</button>
+                </div>
+            </div> 
+            
+            <!--End Favorites Section -->
 
             <!-- End Favorites Tab Content-->
 

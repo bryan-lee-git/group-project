@@ -2,6 +2,9 @@
 // YOUTUBE API
 //----------------------------------------------------------------------------------------
 
+// hide video view until videos are called for
+$("#video-view").hide();
+
 // set a current page variable to zero for view pagination
 var currentPage = 0;
 var userInput = "";
@@ -24,9 +27,6 @@ $("#prev-btn, #prev-btn2").on("click", function(event) {
         getVideos(userInput);
     }
 })
-
-// hide video view until videos are called for
-$("#video-view").hide();
 
 // click function to get list of videos from YouTube Data API
 $("#yt-form").on("submit", function(event) {
@@ -87,21 +87,22 @@ function getVideos(userInput) {
             var videoId = video.id.videoId;
 
             // add the video embed to the page using standard YT embed code filled in with individual video IDs
-            $("#video-view").prepend("<div class='col s12 m6 l6'><div style='border-radius: 10px; margin-bottom: 10px; margin-top: 10px' class='video-container'><iframe src='https://www.youtube.com/embed/" + videoId + "' frameborder='0' allow='autoplay;' allowfullscreen='true'></iframe></div></div>")
+            $("#video-view").prepend("<div class='col s12 m6 l6'><div style='border-radius: 10px; margin-bottom: 10px; margin-top: 10px' class='video-container'><iframe src='https://www.youtube.com/embed/" + videoId + "' frameborder='0' allow='autoplay;' allowfullscreen='true'></iframe></div><button class='save-btn col s12 btn'>Save to Favorites</button></div>")
             
         })
 
-        $("#video-view").on("click", "#vid-fav", function(event){
-            event.preventDefault();
-            
-            console.log("here's the youtube video clicked for favs: " + console.dir(event));
-            console.log("here's the video id from clicking the add favs button: " + event.currentTarget.attributes.data.value);
-            
-            var pickedVid = event.currentTarget.attributes.data.value;
-            firebase.database().ref("user/favs/vids").push(pickedVid);
-        });
     })
   
     $("#video-view").fadeIn(2000);
   
 }; getVideos("beginner guitar");
+
+$("#main-container").on("click", ".save-btn", function(event){
+
+    event.preventDefault();
+    var videoContent = $(this.parentNode.children[0]);
+    var videoSave = videoContent.html();
+    console.log(videoSave.toString());
+    
+    firebase.database().ref("user/favs/vids").push(videoSave.toString());
+});

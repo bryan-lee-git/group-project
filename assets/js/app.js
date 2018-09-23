@@ -2,16 +2,44 @@
 // Tabs Click Display/Hide Functionality
 //----------------------------------------------------------------------------------------
 
-// first hide all areas until called upon
-$("#firebaseui-auth-container").hide(0);
-$("#tabs-tab").hide(0);
-$("#videos-tab").hide(0);
-$("#tuner-tab").hide(0);
-$("#metronome-tab").hide(0);
-$("#about-tab").hide(0);
-$("#credit-tab").hide(0);
-$("#favorites-tab").hide(0);
+$(document).ready(function() {
 
+    // hide all areas until called upon
+    $("#firebaseui-auth-container").hide();
+    $("#tabs-tab").hide();
+    $("#videos-tab").hide();
+    $("#tuner-tab").hide();
+    $("#metronome-tab").hide();
+    $("#about-tab").hide();
+    $("#credit-tab").hide();
+    $("#favorites-tab").hide();
+});
+
+// carousel functionality (Swiper)
+$(document).ready(function () {
+
+    //initialize swiper when document ready
+    var mySwiper = new Swiper ('.swiper-container', {
+
+        // Optional parameters include horizontal scrolling, looping, nav arrows, pagination with dynamic bullets, and autoplay
+        direction: 'horizontal',
+        loop: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+        pagination: {
+            el: '.swiper-pagination',
+              //dynamicBullets: true,
+        },
+
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: true,
+        },
+    })
+});
 
 // home button
 $("#home-button, .brand-logo").on("click", function() {
@@ -118,7 +146,7 @@ $("#tab-for-favorites, #favorites-carousel-btn, #favorites-dropdown").on("click"
     $("#tab-for-favorites").addClass("tab-active");
     $("#about-tab").hide();
     $("#credit-tab").hide();
-})
+});
 
 // about us dropdown button
 $("#about-dropdown").on("click", function(){
@@ -131,7 +159,7 @@ $("#about-dropdown").on("click", function(){
     $("#tabs-tab").hide();
     $("#videos-tab").hide();
     $("#credit-tab").hide();
-})
+});
 
 //credit dropdown button
 $("#credit-dropdown").on("click", function(){
@@ -143,75 +171,53 @@ $("#credit-dropdown").on("click", function(){
     $("#metronome-tab").hide();
     $("#tabs-tab").hide();
     $("#videos-tab").hide();
-})
+    $("#favorites-tab").hide();
+});
 
 // when the mouse leaves the dropdown navigation menu area, fade it out of view
 $("#dropdown1").on("mouseleave", function() {
     $("#dropdown1").fadeOut(200);
-})
+});
 
 // hide the menus whenever the mouse is over the body (which means the mouse has left the dropdown content)
 $("#main-container").on("mouseover", function() {
     $("#dropdown1, #user-dropdown").fadeOut(200);
-})
+});
 
 // content dropdown on content icon mouseover
 $("#content-button").on("mouseover", function() {
     $("#user-dropdown").fadeOut(200);
-})
+});
 
 // when the mouse leaves the dropdown navigation menu area, fade it out of view
 $("#user-dropdown").on("mouseleave", function() {
     $("#user-dropdown").fadeOut(200);
-})
+});
 
 // user dropdown on icon mouseover
 $("#user-button").on("mouseover", function() {
     $("#dropdown1").fadeOut(200);
-})
+});
 
 // when the dropdown icon or any dropdown menu item is clicked on, hide the dropdown menu
-$("#tab-dropdown, #videos-dropdown, #tuner-dropdown, #metronome-dropdown").on("click", function() {
+$("#tab-dropdown, #videos-dropdown, #tuner-dropdown, #metronome-dropdown").on("click", function(event) {
     event.preventDefault();
     $("#dropdown1").fadeToggle(200);
-})
+});
 
 // content dropdown menu for mobile
 $("#content-button").on("touchstart", function() {
     $("#dropdown1").fadeToggle(200);
-})
+});
 
 // user dropdown menu for mobile
 $("#user-button").on("touchstart", function() {
     $("#user-dropdown").fadeToggle(200);
-})
+});
 
 //----------------------------------------------------------------------------------------
 // MATERIALIZE FUNCTIONALITY
 //----------------------------------------------------------------------------------------
-
-// carousel functionality (Swiper)
-
-$(document).ready(function () {
-    //initialize swiper when document ready
-    var mySwiper = new Swiper ('.swiper-container', {
-        // Optional parameters include horizontal scrolling, looping, nav arrows, pagination with dynamic bullets, and autoplay
-        direction: 'horizontal',
-        loop: true,
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            //dynamicBullets: true,
-        },
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-        },      
-    })
-});
 
 // run materialize functions for site styling functionality.
 
@@ -230,129 +236,16 @@ $(document).ready(function(){
 //---------------------------------------------------------------------------
 
 var config = {
-    apiKey: "AIzaSyDF16YKI3mYgmTkUOQ09dANHOIVjMsFcJk",
-    authDomain: "group-project-1-3b1fb.firebaseapp.com",
-    databaseURL: "https://group-project-1-3b1fb.firebaseio.com",
-    projectId: "group-project-1-3b1fb",
-    storageBucket: "group-project-1-3b1fb.appspot.com",
-    messagingSenderId: "502946428711"
+    apiKey: "AIzaSyA7JCfzX0k3UcXiQh195gMsVhGChW_xHu0",
+    authDomain: "fir-test-6bb17.firebaseapp.com",
+    databaseURL: "https://fir-test-6bb17.firebaseio.com",
+    projectId: "fir-test-6bb17",
+    storageBucket: "fir-test-6bb17.appspot.com",
+    messagingSenderId: "250844724426"
 };
   
 firebase.initializeApp(config);
 var database = firebase.database();
-
-//Define a local variable to hold incoming firebase data.
-   var favorite = {
-       tabs: [],
-       vids: [],
-   };
-
-//Start an event listener for additional videos saved to favorites.
-   database.ref("user/favs/vids").on("child_added", function(snap) {
-
-    if (!favorite.vids.includes(snap.val)) {
-    favorite.vids.push(snap.val());
-};
-
-    //fill favorites videos into their space
-    $("#fav-video-view").empty();
-
-    favorite.vids.forEach(vid => {
-        
-        // add the video embed to the page using standard YT embed code filled in with individual video IDs
-        $("#fav-video-view").prepend(
-            "<div class='col s12 m6 l6'><div style='border-radius: 10px; margin-bottom: 10px; margin-top: 10px' class='video-container z-depth-5'><iframe src='https://www.youtube.com/embed/" + vid + "' frameborder='0' allow='autoplay;' allowfullscreen='true'></iframe></div></div>"
-        )
-    
-});//end forEach on favorite.vids
-
-}); //end child-added event listener on user/favs/vids
-
-
-//Start an event listener for additional tabs saved to favorites.
-  database.ref("user/favs/tabs").on("child_added", function(snap) {
-
-    //fill local array upon page load and when a new fav tab is added
-    favorite.tabs.push(snap.val());
-
-    //fill favorite tabs into their space in the DOM
-    //1. Empty the space
-    $("#favorite-tabs").empty();
-    $('#artist-search').DataTable().destroy();
-    $('#artist-fav').DataTable().destroy();
-   
-  
-    //2. Loop through the local array...
-    for (i = 0; i < favorite.tabs.length; i++) {
-
-        //draw a filled in heart for each favorite tab in the Tabs content table
-        var favTabID = favorite.tabs[i].id;
-
-        $("#" + favTabID).text("favorite");
-
-        //Create a songster query for the song with the stored data using the local variable array.
-   
-        var child = {
-            chordsPresent: favorite.tabs[i].chords,
-            tabTypes: favorite.tabs[i].types,
-            title: favorite.tabs[i].title,
-            artist: favorite.tabs[i].artist,
-            chordsPresent: favorite.tabs[i].chords
-        };
-      
-    var chords = "";
-
-    // chords if true or if false
-    if (child.chordsPresent === true) {
-        chords = "✅";
-    } else {
-        chords = "❌";
-    }
-    
-    // create an empty variable to hold tab links
-    var types = [];
-    var guitarTabUrl = "";
-    var bassTabUrl = "";
-    var playerTabUrl = "";
-    var chordsTabUrl = "";
-
-    // for teach item in the tab types array do this stuff
-    var tTypes = child.tabTypes.split(",");
-    
-    tTypes.forEach(function(type) {
-
-        // if there is a guitar tab...
-        if (type === "TEXT_GUITAR_TAB") {
-            guitarTabUrl = "<a target='_blank' href='http://www.songsterr.com/a/wa/bestMatchForQueryString?s=" + child.title + "&a=" + child.artist + "&track=guitar&inst=guitar'> Guitar Tab</a>";
-            types.push(guitarTabUrl);
-
-        // if there is a bass tab...            
-        } else if (type === "TEXT_BASS_TAB") {
-            bassTabUrl = "<a target='_blank' href='http://www.songsterr.com/a/wa/bestMatchForQueryString?s=" + child.title + "&a=" + child.artist + "&track=bass&inst=bass'> Bass Tab</a>";
-            types.push(bassTabUrl);
-        }
-
-        // if there is a player tab...
-        if (type === "PLAYER") {
-            playerTabUrl = "<a target='_blank' href='http://www.songsterr.com/a/wa/bestMatchForQueryString?s=" + child.title + "&a=" + child.artist + "&track=player'> Tab Player</a>";
-            types.push(playerTabUrl);
-        }
-        if (type === "CHORDS") {
-            chordsTabUrl = "<a target='_blank' href='https://www.songsterr.com/a/wsa/" + child.artist + "-" + child.title + "-chords-s" + child.id + "'> View Chords</a>";
-            types.push(chordsTabUrl);
-        }
-    })
-    $("#favorite-tabs").prepend(
-        "<tr>"
-        + "<td>" + child.title + "</td>"
-        + "<td>" + types + "</td>"
-        + "<td>" + chords + chordsTabUrl + "</td>"
-        + "</tr>"
-    );
-        console.log("here's where we are on the loop: " + i);
-        console.log("Here's child at this trip through the loop: " + console.dir(child));
-}; //end filling favorite tabs section for loop
-
 
 //---------------------------------------------------------------------------
 // Firebase Authentication Config with UI
@@ -389,5 +282,182 @@ window.addEventListener('load', function() {
 
 $("#logout").on("click", function(){
     firebase.auth().signOut();
-  })
-})
+});
+
+//----------------------------------------------------------------------------------------
+// FAVORITES SECTION FUNCTIONALITY
+//----------------------------------------------------------------------------------------
+
+// define a local variable to hold incoming firebase data.
+var favorite = {
+    tabs: [],
+    vids: [],
+};
+
+// start an event listener for additional videos saved to favorites.
+database.ref("user/favs/vids").on("child_added", function(snap) {
+
+    if (!favorite.vids.includes(snap.val)) {
+        favorite.vids.push(snap.val());
+    };
+
+    $("#fav-video-view").empty();
+
+    favorite.vids.forEach(vid => {
+        
+        // add the video embed to the page using standard YT embed code filled in with individual video IDs
+        $("#fav-video-view").prepend(
+            "<div class='col s12 m6 l6'><div style='border-radius: 10px; margin-bottom: 10px; margin-top: 10px' class='video-container'>" + vid + "</div><button class='video-remove-btn col s12 btn'>Remove</button></div>"
+        )
+    });
+
+    // click function for deleting items from the screen and database
+    $(".video-remove-btn").on("click", function(event) {
+
+        var deleteCode = this.parentNode.children[0];
+        console.log($(deleteCode).html());
+
+        // prevent any default click functions
+        event.preventDefault();
+
+        // get unique identifier value to delete desired row of data from page and from storage
+        var storageIndex = parseInt($(this).attr("value"));
+        $(this.parentNode).remove();
+
+        // remove this child/row of data from the database
+        database.ref("user/favs/vids").once("value", function(snapshot) {
+
+            // for each child in the database
+            snapshot.forEach(function(childNode) {
+
+                if(childNode.val() === $(deleteCode).html()) {
+                    var deleteId = childNode.key;
+                    database.ref("user/favs/vids/" + deleteId).remove();
+                }
+
+                
+            })
+
+        })
+    })
+});
+
+// start an event listener for additional tabs saved to favorites.
+database.ref("user/favs/tabs").on("child_added", function(snap) {
+
+    // fill local array upon page load and when a new fav tab is added
+    favorite.tabs.push(snap.val());
+
+    // fill favorite tabs into their space in the DOM
+    // 1. Empty the space
+    $("#favorite-tabs").empty();
+    $('#artist-fav').DataTable().destroy();
+  
+    // 2. Loop through the local array...
+    for (i = 0; i < favorite.tabs.length; i++) {
+
+        //draw a filled in heart for each favorite tab in the Tabs content table
+        var favTabID = favorite.tabs[i].id;
+
+        $("#" + favTabID).text("favorite");
+
+        // create a songster query for the song with the stored data using the local variable array.
+   
+        var child = {
+            chordsPresent: favorite.tabs[i].chords,
+            tabTypes: favorite.tabs[i].types,
+            title: favorite.tabs[i].title,
+            artist: favorite.tabs[i].artist,
+            chordsPresent: favorite.tabs[i].chords
+        };
+
+        // create an empty variable to hold tab links
+        var types = [];
+        var guitarTabUrl = "";
+        var bassTabUrl = "";
+        var playerTabUrl = "";
+        var chordsTabUrl = "";
+
+        // for teach item in the tab types array do this stuff
+        var tTypes = child.tabTypes.split(",");
+    
+        // construct URLs based upon types available according to API docs
+        tTypes.forEach(function(type) {
+
+            // if there is a guitar tab...
+            if (type === "TEXT_GUITAR_TAB") {
+                guitarTabUrl = "<a target='_blank' href='http://www.songsterr.com/a/wa/bestMatchForQueryString?s=" + child.title + "&a=" + child.artist + "&track=guitar&inst=guitar'> Guitar Tab</a>";
+                types.push(guitarTabUrl);
+
+            // if there is a bass tab...            
+            } else if (type === "TEXT_BASS_TAB") {
+                bassTabUrl = "<a target='_blank' href='http://www.songsterr.com/a/wa/bestMatchForQueryString?s=" + child.title + "&a=" + child.artist + "&track=bass&inst=bass'> Bass Tab</a>";
+                types.push(bassTabUrl);
+            }
+
+            // if there is a player tab...
+            if (type === "PLAYER") {
+                playerTabUrl = "<a target='_blank' href='http://www.songsterr.com/a/wa/bestMatchForQueryString?s=" + child.title + "&a=" + child.artist + "&track=player'> Tab Player</a>";
+                types.push(playerTabUrl);
+            }
+            // there are are chords available
+            if (type === "CHORDS") {
+                chordsTabUrl = "<a target='_blank' href='https://www.songsterr.com/a/wsa/" + child.artist + "-" + child.title + "-chords-s" + child.id + "'> View Chords</a>";
+                types.push(chordsTabUrl);
+            }
+        })
+
+        $("#favorite-tabs").prepend(
+            "<tr id='" + favorite.tabs[i].id + "'>"
+            + "<td>" + child.title + "</td>"
+            + "<td>" + types + "</td>"
+            + "<td class='trash-tab' value='" + favorite.tabs[i].id + "'><i class='fav-delete material-icons medium'>delete</i></td>"
+            + "</tr>"
+        );
+
+        $(".fav-delete").on("mouseover", function() {
+            $(this).empty();
+            $(this).text("delete_forever");
+        });
+
+        $(".fav-delete").on("mouseleave", function() {
+            $(this).empty();
+            $(this).text("delete");
+        })
+        
+        // console.log("here's where we are on the loop: " + i);
+        // console.log("Here's child at this trip through the loop: " + console.dir(child));
+    }
+
+    // click function for deleting items from the screen and database
+    $(".trash-tab").on("click", function(event) {
+
+        // prevent any default click functions
+        event.preventDefault();
+
+        // get unique identifier value to delete desired row of data from page and from storage
+        var deleteBtn = $(this).attr("value");
+
+        var tableDelete = "#" + deleteBtn;
+        console.log(tableDelete);
+
+        // delete from table
+        $(tableDelete).remove();
+
+        // remove this child/row of data from the database
+        database.ref("user/favs/tabs").once("value", function(snapshot) {
+
+            // for each child in the database
+            snapshot.forEach(function(childNode) {
+
+                // if the childNode's trainNumber equals the value of the clicked delete button
+                if (childNode.val().id === deleteBtn) {
+
+                    // remove that child from the database 
+                    var deleteId = childNode.key;
+                    database.ref("user/favs/tabs/" + deleteId).remove();
+                }
+            })
+        })
+    })
+});
