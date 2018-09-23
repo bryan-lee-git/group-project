@@ -2,8 +2,7 @@
 // SONGSTER API
 //----------------------------------------------------------------------------------------
 
-
-// hide the table
+// start by hiding the table
 $("#artist-search").hide();
 $("#tabs-view").hide();
 
@@ -104,8 +103,8 @@ function getTabs(userInput) {
 }; 
 
 //listener on Favs to add to favorites
-
-$(".display").on("click", ".favs", function(event){
+$(".display").on("click", ".favs", function(event) {
+    
     event.preventDefault();
 
     var pickedTab = {
