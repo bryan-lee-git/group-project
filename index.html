@@ -26,7 +26,7 @@
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.4.1/firebaseui.css" />
    
     <!-- Main Custom CSS -->
-    <link type="text/css" rel="stylesheet" href="./assets/css/styles.css">
+    <link type="text/css" rel="stylesheet" href="./assets/css/min/styles.min.css">
     
     <title>A1 Guitar Learner - Guitar Learning Companion App</title>
 
@@ -42,7 +42,7 @@
             <div class="nav-wrapper">
                 <div class="container">
                   
-                    <a href="#home-tab" id="a-one-logo" class="brand-logo left"><img style="margin-top: 8px; margin-left:5px;" width="50px" src="./assets/images/a1-icon.png"></a>
+                    <a href="#home-tab" id="a-one-logo" class="brand-logo left"><img width="50px" src="./assets/images/a1-icon.png"></a>
 
                     <ul class="right">
                         <li><a id="user-button" class="dropdown-trigger" data-target="user-dropdown"><i class="material-icons">person</i></a></li>
@@ -134,9 +134,9 @@
                         <table id="artist-search" class="display">
                             <thead>
                                 <tr>
-                                    <th>Song <i style="margin-bottom: 20px;position: relative; top: 7px;" class="small material-icons">sort</i></th>
-                                    <th>Tabs <i style="margin-bottom: 20px;position: relative; top: 7px;" class="small material-icons">sort</i></th>
-                                    <th>Chords <i style="margin-bottom: 20px;position: relative; top: 7px;" class="small material-icons">sort</i></th>
+                                    <th>Song <i class="artist-sort-icon small material-icons">sort</i></th>
+                                    <th>Tabs <i class="artist-sort-icon small material-icons">sort</i></th>
+                                    <th>Chords <i class="artist-sort-icon small material-icons">sort</i></th>
                                     <th>Favs</th>
                                 </tr>
                             </thead>
@@ -170,8 +170,8 @@
                     <div id="videos-tab-view" class="col s12 z-depth-5">
 
                         <div id="button-row1" class="row">
-                            <button style="border-radius: 5px;" id="prev-btn" class="z-depth-5 blue darken-3 btn-large col s2 left"><i id="prev-icon" class="material-icons">trending_flat</i></button>
-                            <button style="border-radius: 5px;" id="next-btn" class="z-depth-5 blue darken-3 btn-large col s2 right"><i class="material-icons">trending_flat</i></button>
+                            <button id="prev-btn" class="z-depth-5 blue darken-3 btn-large col s2 left"><i id="prev-icon" class="material-icons">trending_flat</i></button>
+                            <button id="next-btn" class="z-depth-5 blue darken-3 btn-large col s2 right"><i class="material-icons">trending_flat</i></button>
                         </div>
         
                         <div id="video-row" class="row">
@@ -179,8 +179,8 @@
                         </div>
         
                         <div id="button-row2" class="row">
-                            <button style="border-radius: 5px;" id="prev-btn2" class="z-depth-5 blue darken-3 btn-large col s2 left"><i id="prev-icon" class="material-icons">trending_flat</i></button>
-                            <button style="border-radius: 5px;" id="next-btn2" class="z-depth-5 blue darken-3 btn-large col s2 right"><i class="material-icons">trending_flat</i></button>
+                            <button id="prev-btn2" class="z-depth-5 blue darken-3 btn-large col s2 left"><i id="prev-icon" class="material-icons">trending_flat</i></button>
+                            <button id="next-btn2" class="z-depth-5 blue darken-3 btn-large col s2 right"><i class="material-icons">trending_flat</i></button>
                         </div>
 
                     </div>
@@ -243,7 +243,7 @@
                         </label>
                         <label>Beat: <input id="beat-area" type="text" value="4" class="ts-top"/></label>
 
-                        <div style="margin-bottom: 15px;">
+                        <div id="timer-checkbox">
                             <input type="checkbox" id="timer-check" />
                             <label for="timer-check"></label>
                             Timer: <input id="timer-area" type="text" value="60" class="timer" />
@@ -285,12 +285,7 @@
 
                 <div class="col col s12 m12 l6" id="favorite-vids">
                     <h3 class="white-text center-align">Saved Videos</h3>
-
-                    <button style="margin-bottom: 15px; border-radius: 5px;" id="prev-fav-btn" class="z-depth-5 blue darken-3 btn col s12">Previous Page</button>
-
                     <div id="fav-video-view" class="col s12"></div>
-
-                    <button style="margin-top: 5px; margin-bottom: 20px; border-radius: 5px;" id="next-fav-btn" class="z-depth-5 blue darken-3 btn col s12">Next Page</button>
                 </div>
             </div> 
             
@@ -309,10 +304,10 @@
                 <div id="about-contain" class="col s10 offset-s1 z-depth-5">
 
                     <h1 class="about-head">Panda Warriors Dev Group</h1>
-                    <p class="about-names"><a target="blank" href="https://github.com/jamesschlader">Jim Schlader - The Sensei <img width="30px" style="margin-bottom: -5px;" src="./assets/images/github-hover.png" alt="Jim Schlader Github"></a></p>
-                    <p class="about-names"><a target="blank" href="https://github.com/bishopcanno">Eric Bishop - The Samurai <img width="30px" style="margin-bottom: -5px;" src="./assets/images/github-hover.png" alt="Eric Bishop Github"></a></p>
-                    <p class="about-names"><a target="blank" href="https://github.com/bryan-lee-git">Bryan Lee - The Ninja <img width="30px" style="margin-bottom: -5px;" src="./assets/images/github-hover.png" alt="Bryan Lee Github"></a></p>
-                    <p class="about-names"><a target="blank" href="https://github.com/Skeeter404">Bronson Bird - The Shaolin Monk <img width="30px" style="margin-bottom: -5px;" src="./assets/images/github-hover.png" alt="Bronson Bird Github"></a></p>
+                    <p class="about-names"><a target="blank" href="https://github.com/jamesschlader">Jim Schlader - The Sensei <img width="30px" src="./assets/images/github-hover.png" alt="Jim Schlader Github"></a></p>
+                    <p class="about-names"><a target="blank" href="https://github.com/bishopcanno">Eric Bishop - The Samurai <img width="30px" src="./assets/images/github-hover.png" alt="Eric Bishop Github"></a></p>
+                    <p class="about-names"><a target="blank" href="https://github.com/bryan-lee-git">Bryan Lee - The Ninja <img width="30px" src="./assets/images/github-hover.png" alt="Bryan Lee Github"></a></p>
+                    <p class="about-names"><a target="blank" href="https://github.com/Skeeter404">Bronson Bird - The Shaolin Monk <img width="30px" src="./assets/images/github-hover.png" alt="Bronson Bird Github"></a></p>
                     <br><br>
 
                     <div class="col s12 divider grey darken-2"></div>
@@ -343,33 +338,33 @@
 
                     <div class="row">
                         <div class="col s12 m4 l4">
-                            <p class="credit-para"><img width="30px" style="margin-bottom: -5px;" src="./assets/images/songsterr-icon.png" alt="Songsterr API icon"><a target="_blank" href="https://www.songsterr.com/a/wa/api"> Songsterr API </a></p>
+                            <p class="credit-para"><img width="30px" src="./assets/images/songsterr-icon.png" alt="Songsterr API icon"><a target="_blank" href="https://www.songsterr.com/a/wa/api"> Songsterr API </a></p>
                         </div>
                         <div class="col s12 m4 l4">
-                            <p class="credit-para"><img width="30px" style="margin-bottom: -5px;" src="./assets/images/yt-icon.png" alt="YouTube API icon"><a target="_blank" href="https://developers.google.com/youtube/v3/docs/"> Youtube Data API </a></p>
+                            <p class="credit-para"><img width="30px" src="./assets/images/yt-icon.png" alt="YouTube API icon"><a target="_blank" href="https://developers.google.com/youtube/v3/docs/"> Youtube Data API </a></p>
                         </div>
                         <div class="col s12 m4 l4">
-                                <p class="credit-para"><img width="30px" style="margin-bottom: -5px;" src="./assets/images/datatablesjs-icon.png" alt="DataTables.js icon"><a target="_blank" href="https://datatables.net/"> DataTables.js </a></p>
-                        </div>
-
-                        <div class="col s12 m4 l4">
-                            <p class="credit-para"><img width="30px" style="margin-bottom: -5px;" src="./assets/images/materialize-logo.png" alt="Google Materialize API icon"><a target="_blank" href="https://materializecss.com/"> Google Materialize </a></p>
+                                <p class="credit-para"><img width="30px" src="./assets/images/datatablesjs-icon.png" alt="DataTables.js icon"><a target="_blank" href="https://datatables.net/"> DataTables.js </a></p>
                         </div>
 
                         <div class="col s12 m4 l4">
-                            <p class="credit-para"><img width="30px" style="margin-bottom: -5px;" src="./assets/images/material-design-icon.png" alt="Google Material Design Icons"><a target="_blank" href="https://material.io/tools/icons/?icon=trending_flat&style=baseline"> Google Material Design </a></p>
+                            <p class="credit-para"><img width="30px" src="./assets/images/materialize-logo.png" alt="Google Materialize API icon"><a target="_blank" href="https://materializecss.com/"> Google Materialize </a></p>
                         </div>
 
                         <div class="col s12 m4 l4">
-                            <p class="credit-para"><img width="30px" style="margin-bottom: -5px;" src="./assets/images/firebase-icon.png" alt="Google Firebase"><a target="_blank" href="https://firebase.google.com/"> Google Firebase </a></p>
+                            <p class="credit-para"><img width="30px" src="./assets/images/material-design-icon.png" alt="Google Material Design Icons"><a target="_blank" href="https://material.io/tools/icons/?icon=trending_flat&style=baseline"> Google Material Design </a></p>
+                        </div>
+
+                        <div class="col s12 m4 l4">
+                            <p class="credit-para"><img width="30px" src="./assets/images/firebase-icon.png" alt="Google Firebase"><a target="_blank" href="https://firebase.google.com/"> Google Firebase </a></p>
                         </div>
 
                         <div class="col s4 offset-s2">
-                            <p class="credit-para"><img width="30px" style="margin-bottom: -5px;" src="./assets/images/google-analytics.png" alt="Google Analytics"><a target="_blank" href="http://analytics.google.com"> Google Analytics </a></p>
+                            <p class="credit-para"><img width="30px" src="./assets/images/google-analytics.png" alt="Google Analytics"><a target="_blank" href="http://analytics.google.com"> Google Analytics </a></p>
                         </div>
 
                         <div class="col s4">
-                            <p class="credit-para"><img width="30px" style="margin-bottom: -5px;" src="./assets/images/swiper-icon.png" alt="Swiper JS"><a target="_blank" href="http://idangero.us/swiper/"> Swiper by iDangero.us </a></p>
+                            <p class="credit-para"><img width="30px" src="./assets/images/swiper-icon.png" alt="Swiper JS"><a target="_blank" href="http://idangero.us/swiper/"> Swiper by iDangero.us </a></p>
                         </div>
 
                     </div>
@@ -501,17 +496,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/js/swiper.js"></script>
 
     <!-- YouTube API -->
-    <script src="./assets/js/yt.js"></script>
+    <script src="./assets/js/min/yt.min.js"></script>
 
    
     <!-- Songsterr API -->
-    <script src="./assets/js/songsterr.js"></script>
+    <script src="./assets/js/min/songsterr.min.js"></script>
   
     <!-- Metronome -->
-    <script src="./assets/js/metro.js"></script>
+    <script src="./assets/js/min/metro.min.js"></script>
    
     <!-- Main App -->
-    <script src="./assets/js/app.js"></script>
+    <script src="./assets/js/min/app.min.js"></script>
 
 </body>
 

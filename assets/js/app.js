@@ -303,7 +303,7 @@ database.ref("user/favs/vids").on("child_added", function(snap) {
 
     $("#fav-video-view").empty();
 
-    favorite.vids.forEach(vid => {
+    favorite.vids.forEach(function(vid) {
         
         // add the video embed to the page using standard YT embed code filled in with individual video IDs
         $("#fav-video-view").prepend(
