@@ -36,6 +36,7 @@ $("#yt-form").on("submit", function(event) {
     userInput = $("#youtube-search").val().trim();
     getVideos(userInput);
     document.getElementById("yt-form").reset();
+    $("#youtube-search").blur()
 })
 
 // function to pull videos from YT

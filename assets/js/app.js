@@ -2,18 +2,15 @@
 // Tabs Click Display/Hide Functionality
 //----------------------------------------------------------------------------------------
 
-$(document).ready(function() {
-
-    // hide all areas until called upon
-    $("#firebaseui-auth-container").hide();
-    $("#tabs-tab").hide();
-    $("#videos-tab").hide();
-    $("#tuner-tab").hide();
-    $("#metronome-tab").hide();
-    $("#about-tab").hide();
-    $("#credit-tab").hide();
-    $("#favorites-tab").hide();
-});
+ // hide all areas until called upon
+ $("#firebaseui-auth-container").hide();
+ $("#tabs-tab").hide();
+ $("#videos-tab").hide();
+ $("#tuner-tab").hide();
+ $("#metronome-tab").hide();
+ $("#about-tab").hide();
+ $("#credit-tab").hide();
+ $("#favorites-tab").hide();
 
 // carousel functionality (Swiper)
 $(document).ready(function () {
@@ -223,7 +220,7 @@ $("#user-button").on("touchstart", function() {
 
 $(document).ready(function(){
     // nav bar dropdown (Google Materialize)
-    $('.dropdown-trigger').dropdown({hover: true});
+    $('.dropdown-trigger').dropdown();
     // floating buttons
     $('.fixed-action-btn').floatingActionButton();
     // collapsible initialization

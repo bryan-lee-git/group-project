@@ -191,7 +191,6 @@ tbody tr:hover, td:hover {
 }
 
 .swiper-container {
-    max-height: 380px;
 }
 
 
@@ -205,8 +204,12 @@ tbody tr:hover, td:hover {
     background: orangered;
 }
 
+.swiper-pagination {
+    margin-top:400px !important;
+}
+
 #swiper-arrows {
-    padding-top: 600px;
+    padding-top: 100px;
 }
 
 /* ------------------------- Search Input Form Styles ------------------------- */
@@ -284,9 +287,9 @@ tbody tr:hover, td:hover {
 
 #favorites-tab {
     margin-top: -50px;
-    margin-bottom: 55px;
+    margin-bottom: 70px;
     background-color: rgba(30, 30, 30, 0.7);
-    padding: 10px 20px 10px 20px;
+    padding: 20px 20px 20px 20px;
     border-radius: 10px;
     position: relative;
     top: 50px;
@@ -524,13 +527,18 @@ a#tab-for-tabs, a#tab-for-play, a#tab-for-tuner, a#tab-for-metronome {
 }
 
 #dropdown1, #user-dropdown {
+    position: fixed;
     opacity: 1.0;
-    top: -65px;
     background-color: #1565c0;
+    top:-65px;
 }
 
 #dropdown1 a:hover, #user-dropdown a:hover {
     background-color: orangered;
+}
+
+#tuner-dropdown, #tab-dropdown, #metronome-dropdown, #videos-dropdown, #user, #favorites-dropdown, #edit-profile, #invite-members, #logout {
+    font-size: 12px;
 }
 
 .dropdown-content {
@@ -741,7 +749,6 @@ p.credit-para {
     #firebaseui-auth-container {
         margin-top: 100px;
     }
- 
     #welcome-header {
         margin-top: 40px;
     }
@@ -753,11 +760,16 @@ p.credit-para {
     #credit-contain, #about-contain {
         padding: 30px 20px 30px 20px;
     }
-    #swiper-arrows {
-    }
     embed {
         width: 100%;
         background-color: none;
+    }
+    #dropdown1, #user-dropdown {
+        opacity: 1.0;
+        background-color: #1565c0;
+        position:fixed;
+        text-align:right;
+        right: 0px;
     }
 }
 
