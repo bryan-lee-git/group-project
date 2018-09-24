@@ -74,7 +74,7 @@ h4 {
     position:absolute;
     margin-left: auto;
     margin-right: auto;
-    width: 360px;
+    width: 340px;
     margin-top: 150px;
     left: 0;
     right: 0;
@@ -191,6 +191,7 @@ tbody tr:hover, td:hover {
 }
 
 .swiper-container {
+    min-height: 370px;
 }
 
 
@@ -202,14 +203,6 @@ tbody tr:hover, td:hover {
 .swiper-pagination-bullet-active {
     opacity: 1;
     background: orangered;
-}
-
-.swiper-pagination {
-    margin-top:400px !important;
-}
-
-#swiper-arrows {
-    padding-top: 100px;
 }
 
 /* ------------------------- Search Input Form Styles ------------------------- */
@@ -538,7 +531,7 @@ a#tab-for-tabs, a#tab-for-play, a#tab-for-tuner, a#tab-for-metronome {
 }
 
 #tuner-dropdown, #tab-dropdown, #metronome-dropdown, #videos-dropdown, #user, #favorites-dropdown, #edit-profile, #invite-members, #logout {
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .dropdown-content {
@@ -554,6 +547,10 @@ a#tab-for-tabs, a#tab-for-play, a#tab-for-tuner, a#tab-for-metronome {
 }
 
 /* ------------------------- DataTables.js Override Styles ------------------------- */
+
+#artist-fav{
+    margin-top:10px;
+}
 
 div#artist-search_paginate.dataTables_paginate.paging_simple_numbers {
     color: #1565c0;
