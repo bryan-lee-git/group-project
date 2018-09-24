@@ -131,3 +131,6 @@ $(".display").on("click", ".favs", function(event) {
     console.log("Here's the chords to save into favTab: " + event.currentTarget.attributes.chords.nodeValue);
 
 });
+
+getTabs("Nirvana");
+$("#artist-search").before("<h4 id='current-search' style='margin-top: 10px;' class='col s6 white-text'>Results for: Nirvana</h4>");
