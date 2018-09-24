@@ -549,7 +549,7 @@ a#tab-for-tabs, a#tab-for-play, a#tab-for-tuner, a#tab-for-metronome {
 /* ------------------------- DataTables.js Override Styles ------------------------- */
 
 #artist-fav{
-    margin-top:10px;
+    margin-top:31px;
 }
 
 div#artist-search_paginate.dataTables_paginate.paging_simple_numbers {
@@ -749,7 +749,7 @@ p.credit-para {
     #welcome-header {
         margin-top: 40px;
     }
-    #tabs-view, #videos-tab-view, #tuner-tab, #metronome-tab {
+    #tabs-view, #videos-tab-view, #tuner-tab, #metronome-tab, #favorites-tab {
         padding: 30px 20px 30px 20px;
         background-color: transparent;
         box-shadow:none;
@@ -767,6 +767,9 @@ p.credit-para {
         position:fixed;
         text-align:right;
         right: 0px;
+    }
+    p.about-names {
+        font-size:16px !important;
     }
 }
 
