@@ -68,7 +68,7 @@ function fillTable(child) {
     
     // fill table with child data
     
-    $("tbody").append(
+    $("#tabs-body").append(
         "<tr>"
         + "<td>" + child.title + "</td>"
         + "<td>" + types + "</td>"
