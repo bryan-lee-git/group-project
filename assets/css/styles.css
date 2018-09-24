@@ -249,6 +249,7 @@ tbody tr:hover, td:hover {
 #prev-btn, #prev-btn2 {
     margin-left: 25px;
     margin-bottom:-50px;
+    border-radius: 5px;
 }
 
 #prev-icon {
@@ -261,6 +262,7 @@ tbody tr:hover, td:hover {
 
 #next-btn, #next-btn2 {
     margin-right: 25px;
+    border-radius: 5px;
 }
 
 #prev-btn:hover, #next-btn:hover, #prev-btn2:hover, #next-btn2:hover, #prev-fav-btn:hover, #next-fav-btn:hover {
@@ -273,10 +275,11 @@ tbody tr:hover, td:hover {
 
 .video-remove-btn, .save-btn {
     background-color: orangered !important;
+    border-radius: 5px;
 }
 
 .video-remove-btn:hover, .save-btn:hover {
-    background-color: #1565c0;
+    background-color: #1565c0 !important;
 }
 
 #favorites-tab {
@@ -296,6 +299,10 @@ tbody tr:hover, td:hover {
     background-color: rgba(30, 30, 30, 0.7);
     padding: 40px 60px 40px 60px;
     border-radius: 10px;
+}
+
+#timer-checkbox {
+    margin-bottom: 15px;
 }
 
 #control-container {
@@ -451,6 +458,11 @@ a#tab-for-tabs, a#tab-for-play, a#tab-for-tuner, a#tab-for-metronome {
     display: none;
 }
 
+#a-one-logo {
+    margin-top: 8px;
+    margin-left:10px;
+}
+
 .nav-wrapper {
     background-color: orangered;
     box-shadow: 5px 5px 4px black;
@@ -475,6 +487,13 @@ a#tab-for-tabs, a#tab-for-play, a#tab-for-tuner, a#tab-for-metronome {
     color: orangered;
     font-family: 'Josefin Sans', sans-serif;
     margin-top: 40px;
+}
+
+#welcome-header-landing {
+    color: orangered;
+    font-family: 'Josefin Sans', sans-serif;
+    margin-top: 40px;
+    margin-top: 100px;
 }
 
 #tab-card, #video-card, #tuner-card, #metronome-card, #favorites-card {
@@ -545,6 +564,12 @@ a#artist-search_paginate:hover {
 .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
     color: orangered;
     font-weight: bold;
+}
+
+.artist-sort-icon {
+    margin-bottom: 20px;
+    position: relative;
+    top: 7px;
 }
 
 #artist-search_wrapper {
@@ -628,8 +653,8 @@ a#artist-search_paginate:hover {
 }
 
 .about-names {
-    margin-bottom: 0px;
     margin-top: 0px;
+    margin-bottom: -5px;
 }
 
 .credit-para a {
